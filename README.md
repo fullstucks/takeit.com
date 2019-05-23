@@ -1,2 +1,2 @@
 # takeit.com
-Source code for the take.com website
+Source code for the takeit.com website
