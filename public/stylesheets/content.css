@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    font: 14px "Ubuntu", Helvetica, Arial, sans-serif;
+}
+
+#message-large {
+    width: 50%;
+    text-align: center;
+    margin: 140px auto;
+    margin-bottom: 150px;
+    
+}
+
+#message-large span {
+    font-size:  50pt;
+    font-weight: bold;
+}
+
+#search-section {
+    margin: 0;
+    text-align: center;
+    justify-items: center;
+    padding: 30px;
+    background: url(/images/search-bg2.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+#search-section form {
+    justify-content: space-evenly;
+    display: flex;
+    width: 50%;
+    margin: 10px auto;
+}
+
+
+#search-input {
+    margin: 15px;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    border: transparent;
+}
+
+#search-btn {
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    border: transparent;
+    margin: 15px;
+    width: 15%;
+    color: white;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+}

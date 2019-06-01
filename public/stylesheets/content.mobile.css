@@ -1,0 +1,21 @@
+@media screen and (max-device-width: 500px){
+    #message-large span{
+        font-size: 45pt;
+        font-weight: bold;
+    }
+
+    .t-title-small{
+        font-size: 30pt;
+    }
+
+    #search-section form {
+        width: 90%;
+    }
+    #search-input, #search-btn {
+        height: 60px;
+        font-size: 25pt;
+    }
+    #search-btn{
+        width: 20%;
+    }
+}

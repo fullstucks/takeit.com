@@ -1,8 +1,69 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+/* ----------- buttons ------------ */
+.btn {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid;
+  height: 30%;
+  cursor: pointer;
 }
 
-a {
-  color: #00B7FF;
+.btn span {
+  margin: 0;
+  font: 10pt "Helvetica", Arial, sans-serif;
+}
+
+
+
+/* ----------- borders ------------ */
+.border-black {
+  border-color: black;
+}
+
+.border-indigo {
+  border-color: var(--primary-indigo);
+}
+
+
+
+
+/* ----------- backgrounds ------------ */
+.bg-indigo {
+  background-color: var(--primary-indigo);
+}
+
+.bg-transparent {
+  color: transparent;
+}
+
+
+
+/* ----------- text ------------ */
+.t-white {
+  color: white;
+}
+
+.t-black {
+  color: black;
+}
+
+.t-indigo {
+  color: var(--primary-indigo)
+}
+
+.t-dark {
+  color: var(--dark);
+}
+
+.t-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.t-title-small{
+  font-size: 14pt;
 }
