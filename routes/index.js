@@ -9,4 +9,11 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.get('/nosotros', function (req, res, next) {
+  res.render('ondev', {
+    title: 'Takeit.com',
+    logged: false
+  })
+})
+
 module.exports = router;
