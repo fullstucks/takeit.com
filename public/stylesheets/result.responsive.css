@@ -80,6 +80,7 @@
     }
 }
 
+
 /* default iPad screens */
 @media only screen and (device-width: 768px) {
    
@@ -90,5 +91,39 @@
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-  /* For landscape layouts only */
+    .result_container{
+        width: 100%;
+    }
+    .result-box{
+        width: 95%;
+        height: 230px;
+    }
+    .result-box.description{
+        width: 50%;
+    }
+    .result-box.options{
+        width: 20%;
+    }
+    .result-box img{
+        height: 200px;
+    }
+    .result-box h1{
+        font-size: 30pt;
+    }
+    .result-box h3{
+        font-size: 20pt;
+    }
+    .result-box p{
+        display: none;
+    }
+
+    .result-box .options button{
+        background: var(--primary-blue);
+        font-size: 20pt;
+        border-radius: 5px;
+        border: transparent;
+        padding: 12px;
+        color: white;
+        cursor: pointer;
+    }
 }
