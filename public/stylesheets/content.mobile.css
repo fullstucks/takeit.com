@@ -26,6 +26,9 @@
     .summary-section{
         margin: 40px;
     }
+    .summary-section span{
+        font-size: 24pt;
+    }
     .cards-container{
         flex-direction: column;
         align-content: center;
