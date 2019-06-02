@@ -19,6 +19,10 @@
         width: 200px;
     }
 
+    #mapa{
+        display: none;
+    }
+
     .summary-section{
         margin: 40px;
     }
@@ -77,5 +81,10 @@
 
     .card:hover{
         margin-bottom: 60px;
+    }
+
+    iframe{
+        width: 500px;
+        height: 400px
     }
 }
