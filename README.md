@@ -1,14 +1,14 @@
 # takeit.com
 Source code for the takeit.com website
 
-**Requirements:**
+* **Requirements:**
     * nodejs
     * yarn or npm
 
-**install:**
+* **Install:**
     * yarn; or 
     * npm install
 
-**Run test:**
+* **Run test:**
     * yarn start;  or
     * npm run start

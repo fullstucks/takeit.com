@@ -27,7 +27,7 @@
         margin: 40px;
     }
     .summary-section span{
-        font-size: 24pt;
+        font-size: 30pt;
     }
     .cards-container{
         flex-direction: column;
@@ -50,9 +50,13 @@
     }
 }
 
-@media screen and (max-width: 820px){
+@media screen and (max-width: 920px){
+    #message-large{
+        width: 80%;
+    }
     #message-large span{
-        font-size: 30pt;
+        width: 90%;
+        font-size: 28pt;
         font-weight: bold;
     }
 
