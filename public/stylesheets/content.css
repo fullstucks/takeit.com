@@ -12,6 +12,15 @@
     
 }
 
+#message-large-left {
+    text-align: left;
+}
+
+#message-large-left span {
+    font-size:  70pt;
+    font-weight: bold;
+}
+
 #message-large span {
     font-size:  50pt;
     font-weight: bold;
@@ -119,3 +128,24 @@ hr{
     height: 150px;
 }
 
+#info-title *{
+    display: inline-block;
+}
+
+#info-title div.takeit-btn {
+    margin-left: 50% auto;
+}
+
+.root {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#descripcion {
+    text-align: justify;
+    margin-right: 40%;
+}
+
+#imagenes-restaurante, #imagenes-platos {
+    margin-top: 5%;
+}
