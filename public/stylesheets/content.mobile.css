@@ -3,6 +3,10 @@
         font-size: 45pt;
         font-weight: bold;
     }
+    #message-large-left span{
+        font-size: 40pt;
+        font-weight: bold;
+    }
 
     .t-title-small{
         font-size: 30pt;
@@ -46,6 +50,11 @@
 @media screen and (max-width: 820px){
     #message-large span{
         font-size: 30pt;
+        font-weight: bold;
+    }
+
+    #message-large-left span{
+        font-size: 40pt;
         font-weight: bold;
     }
 

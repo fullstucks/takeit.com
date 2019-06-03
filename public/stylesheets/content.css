@@ -128,13 +128,13 @@ hr{
     height: 150px;
 }
 
-#info-title *{
-    display: inline-block;
+#info-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#info-title div.takeit-btn {
-    margin-left: 50% auto;
-}
 
 .root {
     margin-left: 5%;
