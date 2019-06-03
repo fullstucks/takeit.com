@@ -1,0 +1,107 @@
+ section {
+    align-content: center;
+
+}
+section .selection {
+ 	width: 70%;
+    margin:auto;
+    margin-top: 30px;
+    transition: height 0.3s;
+    background-color:  #ffffff;
+    border-bottom:solid;
+    border-color: grey;
+    
+} 
+
+section nav ul{
+ 	list-style:none;
+ 	overflow: hidden;
+ 	text-align: center;
+ 	justify-content: space-between;
+} 
+section nav ul li{
+ 	float:left;
+
+ } 
+section nav ul li a{
+ 	display: inline-block;
+ 	padding: 20px;
+ 	color:grey;
+ 	text-decoration: none;
+ 	justify-content: space-between;
+
+} 
+section nav ul li a:hover{
+ 	background: var(--primary-blue);
+ 	color:#ffffff;
+} 
+.reserva{
+	display: flex;
+	width: 70%;
+	margin:auto;
+    margin-top: 30px;
+    padding: 10px 10px;
+    transition: height 0.3s;
+    justify-content: space-between;
+
+} 
+.reserva .orden > div{
+	display: flex;
+}
+.orden {
+	width: 60%;
+	margin-top: 30px;
+    padding: 10px 10px;
+    background-color: var(--primary-greylight);
+} 
+.orden  div > div{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.horario{
+	width: 35%;
+	margin-top: 30px;
+    padding: 10px 10px;
+    background-color: var(--primary-greylight);
+}
+.horario > div{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+section .reserva .titleReserce{
+	font-family: helvetica;
+    font-weight: bolder;
+	color:var(--primary-blue);
+	font-size: 16pt;
+}
+section .reserva h4{
+	margin-top: 100pt;
+}
+hr{
+	text-decoration: none;
+	color: var(--primary-greylight);
+	size:10;
+	}
+
+.selectMesa{
+	width: 70%;
+	margin:auto;
+	margin-top: 30px;
+    padding: 10px 10px;
+    background-color: var(--primary-greylight);
+}
+section .selectMesa .escogerMesa h2{
+	font-family: helvetica;
+    font-weight: bolder;
+	color:var(--primary-blue);
+	font-size: 16pt;
+	text-align: center;
+}
+section div div{
+	align-items: center;
+}
+section div div #imgR{
+   width: 70%;
+   height: 40%;
+
+}

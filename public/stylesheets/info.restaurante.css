@@ -1,0 +1,19 @@
+.root{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#info-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#descripcion {
+    text-align: justify;
+    margin-right: 40%;
+}
+
+#imagenes-restaurante, #imagenes-platos {
+    margin-top: 5%;
+}

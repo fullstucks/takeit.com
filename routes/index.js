@@ -38,4 +38,21 @@ router.post('/resultados', function(req, res, next){
   })
 })
 
+
+router.get('/confirmacion', function(req, res, next){
+  res.render('confirmacion')
+})
+router.get('/infoRestaurante',function(req, res, next){
+  res.render('infoRestaurante')
+} )
+router.get('/seleccionarEntradas',function(req, res, next){
+  res.render('seleccionarEntradas')
+} )
+router.get('/seleccionarMesa',function(req, res, next){
+  res.render('seleccionarMesa')
+} )
+router.get('/pago',function(req, res, next){
+  res.render('pago')
+} )
+
 module.exports = router;
