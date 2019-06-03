@@ -8,10 +8,32 @@ router.get('/', function (req, res, next) {
     logged: false
   });
 });
+router.post('/', function (req, res, next) {
+  res.render('resultados', {
+    title: 'Resultados',
+    logged: false
+  })
+})
+
 
 router.get('/nosotros', function (req, res, next) {
   res.render('ondev', {
-    title: 'Takeit.com',
+    title: 'On Dev',
+    logged: false
+  })
+})
+
+
+
+router.get('/resultados', function(req, res, next){
+  res.render('resultados', {
+    title: 'Resultados',
+    logged: false
+  })
+})
+router.post('/resultados', function(req, res, next){
+  res.render('resultados', {
+    title: 'Resultados',
     logged: false
   })
 })

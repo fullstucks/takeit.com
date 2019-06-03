@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start:dev": "forever -w ./bin/www",
     "start": "forever ./bin/www"
   },
   "dependencies": {
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "forever": "^1.0.0",
     "http-errors": "~1.6.3"
   },
-  "devDependencies": {
-    "forever": "^1.0.0"
-  }
+  "devDependencies": {}
 }

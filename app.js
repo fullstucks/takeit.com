@@ -20,7 +20,7 @@ app.use('/', indexRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res) {
   res.status(404)
-  res.render('error', {logged: false, error: createError(404)})
+  res.render('error', {title: 'Not Found',logged: false, error: createError(404)})
 });
 
 // error handler
@@ -31,7 +31,6 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
 module.exports = app;

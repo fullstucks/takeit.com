@@ -1,13 +1,38 @@
+@import '/stylesheets/fontfaces.css';
+
+/* ------------ fonts -------------- */
+h1, h3, p{
+  font-family: "Brandon";
+}
+h1{
+  font-weight: bold;
+}
+h3{
+  font-weight: 500;
+  color: var(--dark)
+}
+
+p{
+  text-align: justify;  
+}
+
+hr {
+  height: 1px;
+  color: var(--primary-indigo);
+  background-color: var(--primary-indigo);
+}
+
 
 
 /* ----------- buttons ------------ */
 .btn {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 5px;
   padding: 7px;
   border-radius: 5px;
-  border: 1px solid;
+  border: 1px solid;  
   height: 30%;
   cursor: pointer;
 }
@@ -84,5 +109,5 @@
 }
 
 .t-title-small{
-  font-size: 14pt;
+  font-size: 15pt;
 }

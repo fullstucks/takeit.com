@@ -8,7 +8,7 @@ header {
 }
 
 header .container {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     width: 97%;
     padding: 8px 8px;
@@ -48,6 +48,18 @@ nav #info {
 
 nav #session {
     display: flex;
+    align-items: center;
+}
+
+#login,
+#logup {
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+#login span ,
+#logup span {
+    font: 11pt "Helvetica", Arial, sans-serif;
 }
 
 
