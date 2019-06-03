@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 700px){
+@media screen and (max-device-width: 600px){
     #message-large span{
         font-size: 45pt;
         font-weight: bold;
@@ -49,6 +49,61 @@
         height: 300px;
     }
 }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+   
+
+    .t-title-small{
+        font-size: 20pt;
+    }
+
+    #search-section form {
+        width: 100%;
+    }
+    #search-input, #search-btn {
+        height: 40px;
+        font-size: 10pt;
+    }
+    #search-btn{
+        width: 20%;
+    }
+
+    .cards-container{
+        flex-direction: row;
+        align-content: center;
+        overflow: auto;
+    }
+
+    .card{
+        margin: 30px;
+        width: 40%;
+    }
+
+    .card:hover{
+        margin-bottom: 60px;
+    }
+
+    .card-details h1{
+        font-size: 20pt;
+    }
+    .card-details h3{
+        font-size: 16pt;
+    }
+
+    iframe{
+        width: 500px;
+        height: 400px
+    }
+
+    .image-wrapper{
+        height: 250px;
+    }
+
+    #mapa{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 920px){
     #message-large{
