@@ -1,0 +1,75 @@
+
+/* GENERAL */
+* {
+	font-family: Calibri, sans-serif;
+}
+
+
+/* HEADER */
+.navbarHeader {
+	background-color: #e5fcc2; 
+	font-size: 20px;
+}
+
+.brand {
+	font-size: 25px;
+	margin: 5px;
+}
+
+.labelNosotros {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+.btnRegistro {
+	margin: 10px; 
+	background-color: #547980; 
+	font-size: 15px; 
+}
+
+.btnLogin {
+	margin: 10px; 
+	font-size: 15px;
+}
+
+
+/* NAVBAR */
+
+
+
+
+/* BODY */
+.imgJumbotron {	
+	background-image: url(/images/search-bg2.png) ;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+
+.card {
+	max-width: 100%;
+	max-height: 80%;
+}
+
+.row {
+	font-size: 17px;
+}
+
+.card-title {
+	font-size: 22px;
+}
+
+
+/* ASIDE */
+
+
+
+
+/* FOOTER*/
+
+
+
+

@@ -24,6 +24,14 @@ router.get('/nosotros', function (req, res, next) {
 })
 
 
+router.get('/reservasRealizadas', function (req, res, next) {
+  res.render('reservasRealizadas', {
+    title: 'On Dev',
+    logged: false
+  })
+})
+
+
 
 router.get('/resultados', function(req, res, next){
   res.render('resultados', {
@@ -37,5 +45,22 @@ router.post('/resultados', function(req, res, next){
     logged: false
   })
 })
+
+
+router.get('/confirmacion', function(req, res, next){
+  res.render('confirmacion')
+})
+router.get('/infoRestaurante',function(req, res, next){
+  res.render('infoRestaurante')
+} )
+router.get('/seleccionarEntradas',function(req, res, next){
+  res.render('seleccionarEntradas')
+} )
+router.get('/seleccionarMesa',function(req, res, next){
+  res.render('seleccionarMesa')
+} )
+router.get('/pago',function(req, res, next){
+  res.render('pago')
+} )
 
 module.exports = router;
