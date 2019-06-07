@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Takeit.com - Tus Reservas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/estilosFH.css">
+</head>
+
+<body>
+    <header class="navbar sticky-top navbar-expand-lg navbar-light navbarHeader">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" width="55" height="55" class="d-inline-block align-top" alt="logo">
+                <span class="navbar-brand mb-0 h1 brand"><strong>Takeit.com</strong></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link labelNosotros" href="#"><strong>¿Quiénes somos?</strong>
+                    </li>
+                    <!-- Este nav-item de abajo desordena el siguiente botón, por eso lo agrego y escondo -->
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="#" role="button" style="display: none;"><strong>Registrarse</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary btnRegistro" href="#" role="button"><strong>Registrarse</strong></a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary btnLogin" href="#" role="button"><strong>Iniciar sesión</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="container-fluid jumbotron imgJumbotron text-white">
+        <br />
+        <h1 class="display-1"><strong>Tus Reservas</strong></h1>
+        <br /><br />
+        <h5>Aquí podrás visualizar todas tus reservas disponibles</h5>
+        <br /><br />
+        <h4>¡Recuerda que puedes cancelar tus reservaciones hasta 12 horas antes de la fecha reservada!</h4>
+        <br />
+    </section>
+
+    <section class="container-fluid">
+        <br />
+        <h5>Tengo reservaciones disponibles en:</h5>
+        <hr width="100%" noshade>
+    </section>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="card">
+                    <img src="images/restaurants/1.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante1">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong><u>Miskay Restaurant</u></strong></h5>
+                        <div class="card-text">
+                            <table class="table table-borderless table-sm">
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><strong>Reserva para:</strong></td>
+                                        <td>8 personas</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Fecha de reserva:</strong></td>
+                                        <td>30 de junio de 2019</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Dirección:</strong></td>
+                                        <td>Urdesa</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Información extra:</strong></td>
+                                        <td>1 silla para bebés</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-secondary btnRegistro"><strong>Cancelar Reservación</strong></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-lg-4">
+                <div class="card">
+                    <img src="images/restaurants/2.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante2">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong><u>Avocaditos</u></strong></h5>
+                        <div class="card-text">
+                            <table class="table table-borderless table-sm">
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><strong>Reserva para:</strong></td>
+                                        <td>4 personas</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Fecha de reserva:</strong></td>
+                                        <td>14 de julio de 2019</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Dirección:</strong></td>
+                                        <td>Urdesa</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Información extra:</strong></td>
+                                        <td>---</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-secondary btnRegistro"><strong>Cancelar Reservación</strong></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-lg-4">
+                <div class="card">
+                    <img src="images/restaurants/3.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante3">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong><u>Lo Nuestro</u></strong></h5>
+                        <div class="card-text">
+                            <table class="table table-borderless table-sm">
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><strong>Reserva para:</strong></td>
+                                        <td>6 personas</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Fecha de reserva:</strong></td>
+                                        <td>12 de junio de 2019</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Dirección:</strong></td>
+                                        <td>Urdesa</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><strong>Información extra:</strong></td>
+                                        <td>---</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-secondary btnRegistro"><strong>Cancelar Reservación</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer class="container-fluid">
+        <h6>Todos los derechos reservados ®</h6>
+    </footer-->
+
+    <!-- Optional JavaScript -- >
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

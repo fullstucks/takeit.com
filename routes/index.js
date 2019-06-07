@@ -24,6 +24,14 @@ router.get('/nosotros', function (req, res, next) {
 })
 
 
+router.get('/reservasRealizadas', function (req, res, next) {
+  res.render('reservasRealizadas', {
+    title: 'On Dev',
+    logged: false
+  })
+})
+
+
 
 router.get('/resultados', function(req, res, next){
   res.render('resultados', {
