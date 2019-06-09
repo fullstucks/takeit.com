@@ -2,7 +2,6 @@
 header {
     position: sticky;
     width: 100%;
-    transition: height 0.3s;
     background: var(--primary-light);
     top: 0;
 }
@@ -12,7 +11,7 @@ header .container {
     justify-content: space-between;
     width: 97%;
     padding: 8px 8px;
-    margin: 0 auto;
+    margin: auto auto;
 }
 
 .home {
@@ -20,12 +19,12 @@ header .container {
 }
 
 .home img {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
 }
 
 .home span {
-    font: 11pt "Ubuntu";
+    font: 13pt "Ubuntu";
 }
 
 .home a {
@@ -53,13 +52,13 @@ nav #session {
 
 #login,
 #logup {
-        padding: 8px;
+        padding: 10px;
         border-radius: 6px;
     }
 
 #login span ,
 #logup span {
-    font: 11pt "Helvetica", Arial, sans-serif;
+    font: 12pt "Helvetica", Arial, sans-serif;
 }
 
 

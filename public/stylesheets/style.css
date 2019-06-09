@@ -1,5 +1,9 @@
 @import '/stylesheets/fontfaces.css';
 
+body{
+  margin: 0;
+}
+
 /* ------------ fonts -------------- */
 h1, h3, p{
   font-family: "Brandon";

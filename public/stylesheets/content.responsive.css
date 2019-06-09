@@ -1,157 +1,92 @@
-@media screen and (max-device-width: 600px){
-    #message-large span{
+@media only screen and (max-device-width: 760px) {
+    #mapa {
+        display: none;
+    }
+
+    .summary-section span {
+        font-size: 38pt;
+    }
+
+    .image-wrapper img {
+        width: auto;
+        height: 380px;
+    }
+
+    .card-details h1 {
+        font-size: 37pt;
+    }
+}
+
+
+@media only screen and (max-device-width: 760px) {
+
+    #message-large span {
         font-size: 45pt;
         font-weight: bold;
     }
 
-    .t-title-small{
+    .t-title-small {
         font-size: 30pt;
     }
 
     #search-section form {
         width: 90%;
     }
-    #search-input, #search-btn {
+
+    #search-input,
+    #search-btn {
         height: 60px;
         font-size: 25pt;
     }
-    #search-btn{
+
+    #search-btn {
         width: 200px;
     }
 
-    #mapa{
+    #mapa {
         display: none;
     }
 
-    .summary-section{
+    .summary-section {
         margin: 40px;
     }
-    .summary-section span{
-        font-size: 30pt;
+
+    .summary-section span {
+        font-size: 40pt;
     }
-    .cards-container{
+
+    .cards-container {
         flex-direction: column;
         align-content: center;
     }
 
-    .card{
-        margin: 30px;
-        width: 60%;
+    .card {
+        margin: 10px;
     }
 
-    .card-details h1{
+    .card-details h1 {
         font-size: 35pt;
     }
-    .card-details h3{
+
+    .card-details h3 {
         font-size: 30pt;
     }
-    .image-wrapper{
-        height: 300px;
+
+    .image-wrapper {
+        background: center center;
+    }
+
+    .image-wrapper img {
+        width: auto;
+        height: 620px;
     }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-   
 
-    .t-title-small{
-        font-size: 20pt;
-    }
+@media screen and (max-device-width: 1024px) {
 
-    #search-section form {
-        width: 100%;
-    }
-    #search-input, #search-btn {
-        height: 40px;
-        font-size: 10pt;
-    }
-    #search-btn{
-        width: 20%;
-    }
-
-    .cards-container{
-        flex-direction: row;
-        align-content: center;
-        overflow: auto;
-    }
-
-    .card{
-        margin: 30px;
-        width: 40%;
-    }
-
-    .card:hover{
-        margin-bottom: 60px;
-    }
-
-    .card-details h1{
-        font-size: 20pt;
-    }
-    .card-details h3{
-        font-size: 16pt;
-    }
-
-    iframe{
-        width: 500px;
-        height: 400px
-    }
-
-    .image-wrapper{
-        height: 250px;
-    }
-
-    #mapa{
+    #mapa {
         display: none;
     }
-}
 
-
-@media screen and (max-width: 920px){
-    #message-large{
-        width: 80%;
-    }
-    #message-large span{
-        width: 90%;
-        font-size: 28pt;
-        font-weight: bold;
-    }
-
-    #message-large-left span{
-        font-size: 40pt;
-        font-weight: bold;
-    }
-
-    .t-title-small{
-        font-size: 20pt;
-    }
-
-    #search-section form {
-        width: 100%;
-    }
-    #search-input, #search-btn {
-        height: 40px;
-        font-size: 10pt;
-    }
-    #search-btn{
-        width: 20%;
-    }
-
-    .cards-container{
-        flex-direction: column;
-        align-content: center;
-        overflow: auto;
-    }
-
-    .card{
-        margin: 30px;
-        width: 60%;
-    }
-
-    .card:hover{
-        margin-bottom: 60px;
-    }
-
-    iframe{
-        width: 500px;
-        height: 400px
-    }
 }
