@@ -2,33 +2,37 @@
     margin: 5px;
     padding: 10px;
 }
-.result_container{
+/*.result_container{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px auto;
     width: 90%;
+}*/
+.result_container{
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .result-box{
     margin: 5px;
     display: flex;
     flex-direction: row;
-    width: 80%;
+    padding: 10px;
+    border: 2px solid #f7f7f7;
+    border-radius: 5px;
 }
 .result-box img{
-    padding: 20px;
     border-radius: 5px;
+    height: 210px;
+    width: auto;
 }
 .star-rating .checked {
     color: #9bb95f;
 }
 .result-box .description{
-    padding: 20px;
-}
-
-.result-box .options{
-    margin: auto auto;
+    margin-left: 20px;
+    width: 50%;
 }
 
 .result-box p {
@@ -38,8 +42,9 @@
     margin: 0px;
 }
 
+
 .result-box .options{
-    width: 20%;
+    margin: auto 0px;
 }
 
 .result-box .options button{
@@ -50,6 +55,7 @@
     padding: 8px;
     color: white;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 

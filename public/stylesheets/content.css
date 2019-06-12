@@ -104,13 +104,13 @@ iframe {
 .cards-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px;
 }
 
 .card {
     margin: 5px;
-    width: 19%;
+    
     box-shadow: 0px 0px 5px 0px #b2bfc2;
     cursor: pointer;
     transition-duration: 0.2s;
@@ -131,14 +131,14 @@ iframe {
     font-weight: bold;
 }
 
-.card img {
-    width: 100%;
-    background: center center;
-}
-
 .image-wrapper {
     display: flex;
     overflow: hidden;
     width: 100%;
-    height: 150px;
+    background: center center;
+}
+
+.image-wrapper img {
+    width: 228px;
+    height: 208px;
 }

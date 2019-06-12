@@ -1,35 +1,11 @@
+@media only screen and (max-device-width: 590px) {
 
-@media screen and (max-width: 960px) {
-
-    #info {
-        display: none;
-    }
-}
-
-
-
-/* styles for browsers larger than 1440px; */
-@media only screen and (min-width: 1440px) {
-
-}
-
-
-
-/* for sumo sized (mac) screens */
-@media only screen and (min-width: 2000px) {
-
-}
-
-
-
-
-
-@media only screen and (max-device-width: 480px) {
     .home img {
         width: 75px;
         height: 75px;
     }
-    .home span{
+
+    .home span {
         font: 28pt "Ubuntu";
     }
 
@@ -44,7 +20,7 @@
         border-radius: 10px;
     }
 
-    #login span ,
+    #login span,
     #logup span {
         font: 25pt "Helvetica", Arial, sans-serif;
     }
@@ -53,14 +29,11 @@
         display: none;
     }
 }
-@media only screen and (device-width: 768px) {
-   /* default iPad screens */
-}
-/* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-  
-}
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-  /* For landscape layouts only */
+@media screen and (max-width: 960px) {
+
+    #info {
+        display: none;
+    }
+
 }
