@@ -14,7 +14,7 @@ Source code for the takeit.com website
     * npm run start
 
 * **Integrantes:**
-   * Daniel Arroyo
-   * Fabricio Herrera
-   * Neythan León
-   * Miguel Patiño
+   * Daniel Arroyo Yanez
+   * Fabricio Herrera Cedeño
+   * Neythan León Vasquez
+   * Miguel Patiño San-yeng
