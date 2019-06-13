@@ -1,0 +1,19 @@
+
+h1 {
+	font-family: "Ubuntu", sans-serif;
+	color: var(--dark);
+}
+
+.display-3 {
+	font-family: "Ubuntu", sans-serif;
+	color: var(--white);
+}
+
+h2, h3 {
+	font-family: "Brandon", sans-serif;
+	color: var(--primary-indigo);
+}
+
+p {
+
+}

@@ -1,7 +1,7 @@
 
 /* GENERAL */
 * {
-	font-family: Calibri, sans-serif;
+	font-family: "Ubuntu", sans-serif;
 }
 
 
@@ -9,6 +9,7 @@
 .navbarHeader {
 	background-color: #e5fcc2; 
 	font-size: 20px;
+	justify-content: space-around;
 }
 
 .brand {
@@ -39,6 +40,10 @@
 
 
 /* BODY */
+.display-3 {
+	font-family: "Brandon";
+}
+
 .imgJumbotron {	
 	background-image: url(/images/search-bg2.png) ;
 	width: 100%;
@@ -49,25 +54,45 @@
 	overflow: hidden;
 }
 
-.card {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-top-left-radius: 2%;
-	border-top-right-radius: 2%;
-	margin: 5px;
-    width: 19%;
-    box-shadow: 0px 0px 5px 0px #b2bfc2;
-    cursor: pointer;
-    transition-duration: 0.2s;
+.cardContainer {
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 .row {
 	font-size: 17px;
 }
 
+.image-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    background: center center;
+}
+
+.card-img-top {
+	width: 228px;
+    height: 208px;
+}
+
+.card {
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    margin: 5px;
+    box-shadow: 0px 0px 5px 0px #b2bfc2;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    width:228px;
+}
+
 .card-title {
 	font-size: 22px;
+	height: 45px;
 }
 
 
