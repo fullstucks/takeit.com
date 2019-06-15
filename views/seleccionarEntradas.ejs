@@ -12,7 +12,9 @@
         <link rel="stylesheet" href="/stylesheets/footer.css">
         <link rel="stylesheet" href="/stylesheets/content.css">
         <link rel="stylesheet" href="/stylesheets/content.responsive.css">
-        <link rel="stylesheet" href="/stylesheets/sectionSubMenu.css"/>
+        <link rel="stylesheet" href="/stylesheets/reserve-restaurant.css"/>
+        <link rel="stylesheet" href="/stylesheets/reserve-restaurant-responsive.css"/>
+
 
     </head>
 
@@ -41,39 +43,56 @@
             </div>
         </header>
         <section id=barraNav>
-             <div class="selection">
+             <div class="reserve-selection">
                 <nav>
                     <ul>
-                    <li><a class="submenu" href="/seleccionarEntradas">Seleccionar tus entradas</a></li>
-                    <li><a class="submenu" href="/seleccionarMesa">Seleciona tu mesa</a></li>
-                    <li><a class="submenu" href="/pago">Pago</a></li>
-                    <li><a class="submenu" href="/confirmacion">Confirmacion</a></li>
+                    <li><a class="reserve-menu" href="/seleccionarEntradas">Seleccionar tus entradas</a></li>
+                    <li><a class="reserve-menu" href="/seleccionarMesa">Seleciona tu mesa</a></li>
+                    <li><a class="reserve-menu" href="/pago">Pago</a></li>
+                    <li><a class="reserve-menu" href="/confirmacion">Confirmacion</a></li>
                 </ul>
                 </nav>
             </div>
         </section>
         <section>
-            <div class="reserva">
-                <div class="orden">
-                    <h2 class = "titleReserce">Datos de la Reserva</h2><hr>
+            <div class="reserva-section">
+                <div class="orden-section">
+                    <h2 class = "title-reserve-section">Datos de la Reserva</h2>
 
                     <div>
                         <div>
-                        <img src="public/images/restaurants/1.jpg" alt="main page" srcset="">
+                        <img src="/images/restaurants/1.jpg" alt="main page" srcset="">
                         </div>
                         <div>
-                             <h3 class = "titleReserce">Parrillada del Ñato</h3>
+                             <h3 class = "title-reserve-section">Parrillada del Ñato</h3>
                              <h4>Sucursal Norte</h4>
-                             <h3 class = "titleReserce">Valor: $0,00</h3>
+                             <h3 class = "title-reserve-section">Valor: $0,00</h3>
                         </div>
                     </div>
                 </div>
-                <div class="horario">
-                    <h2 class = "titleReserce">Selección de Horario</h2><hr />
+                <div class="horario-section">
+                    <h2 class = "title-reserve-section">Selección de Horario</h2>
                     <div>
-                    <h3 class = "titleReserce">Fecha:</h3>
+                    <h3 class = "title-reserve-section">Fecha:</h3>
                     <h4>Jueves. 6 de junio</h4>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="tickect-section">
+                <div class="tickets-section-titlte">
+                    <h2 class = "title-reserve-section">Selecciona tus entradas</h2>
+                    <h2 class="title-reserve-section">Asientos disponibles: 000</h2>
+                 </div>
+                 <form action="processEntradas" method="post" name="seleccionarEntradas">
+                    <div class="item-entradas">
+                        <h4>Número de personas: </h4>
+                        <input id="num-entradas"type="number" name="num-entradas" size="10">
+                        <h4>x $0.00</h4>
+                        <h4>$0.00</h4>
+                    </div>
+                </form>
             </div>
         </section>
         <footer>

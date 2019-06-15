@@ -1,0 +1,51 @@
+@media screen and (max-device-width: 600px){
+	img {
+		height: auto;
+	}
+
+	section nav ul li a{
+		font-size: 200%;
+
+	}
+	.reserve-selection{
+		flex-direction: column;
+        align-content: center;
+        width: 90%;
+        size: 50%;
+	}
+	.reserva-section{
+		flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin:auto;
+        padding: 10px 10px
+	}
+
+	.orden-section{
+	width: 100%;
+	margin-top: 30px;
+    padding: 10px 10px;
+    background-color: var(--primary-greylight);
+    align-content: center;
+
+    } 
+    .orden-section h2{
+    	display: none;
+    }
+
+    .orden-section  div > div{
+	margin-left: 10px;
+	margin-top: 10px;
+    }
+    .horario-section{
+	width: 100%;
+	margin-top: 30px;
+    padding: 10px 10px;
+    background-color: var(--primary-greylight);
+    align-content: center;
+    }
+    .horario-section > div{
+	margin-left: 10px;
+	margin-top: 10px;
+    }
+}
