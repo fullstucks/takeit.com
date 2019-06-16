@@ -1,6 +1,6 @@
 {
-  "name": "takeit",
-  "version": "0.0.0",
+  "name": "localhost",
+  "version": "yarn",
   "private": true,
   "scripts": {
     "start:dev": "forever -w ./bin/www",
@@ -13,5 +13,10 @@
     "forever": "^1.0.0",
     "http-errors": "~1.6.3"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "description": "yarn",
+  "main": "yarn init",
+  "repository": "https://github.com/fullstucks/takeit.com.git",
+  "author": "Neythan León <neythan.astro@gmail.com>",
+  "license": "MIT"
 }

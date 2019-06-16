@@ -2,7 +2,8 @@
     align-content: center;
 
 }
-.reserve-selection {
+.nav-reserve-selection {
+	align-content: center;
 	display: flex;
  	width: 70%;
     margin:auto;
@@ -11,15 +12,21 @@
     background-color:  #ffffff;
     border-bottom:solid;
     border-color: grey;
-    align-content: center;
-    
+       
 } 
+.nav-bar-reserve{
+	width: 100%
+	padding:auto;
+}
 
-section nav ul{
+.list-nav-bar{
+	list-style-type:none;
  	list-style:none;
  	overflow: hidden;
  	text-align: center;
- 	justify-content: space-between;
+ 	display: flex;
+ 	justify-content: space-around;
+ 	
 } 
 section nav ul li{
  	float:left;

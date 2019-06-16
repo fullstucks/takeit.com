@@ -7,12 +7,20 @@
 		font-size: 200%;
 
 	}
-	.reserve-selection{
+	.nav-reserve-selection{
 		flex-direction: column;
         align-content: center;
         width: 90%;
         size: 50%;
-	}
+    }
+    section .reserva-section .title-reserve-section{
+		font-size: 20pt;
+    }
+    .list-nav-bar{
+    	font-size: 8pt;
+    	align-items: center;
+    	align-content: center;
+    }
 	.reserva-section{
 		flex-direction: column;
         align-items: center;
@@ -20,7 +28,11 @@
         margin:auto;
         padding: 10px 10px
 	}
-
+    
+    .reserve-section-img{
+    	width: 150%;
+    	height:150%;
+    }
 	.orden-section{
 	width: 100%;
 	margin-top: 30px;
@@ -29,6 +41,9 @@
     align-content: center;
 
     } 
+    .orden-section{
+    	width: 100%;
+    }
     .orden-section h2{
     	display: none;
     }
