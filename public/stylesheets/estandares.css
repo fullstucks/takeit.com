@@ -17,3 +17,42 @@ h2, h3 {
 p {
 
 }
+
+/* HEADER */
+.navbarHeader {
+	background-color: #e5fcc2; 
+	font-size: 20px;
+	justify-content: space-around;
+}
+
+.brand {
+	font-size: 25px;
+	margin: 5px;
+}
+
+.btnRegistro {
+	margin: 10px; 
+	background-color: #547980; 
+	font-size: 15px; 
+}
+
+.btnLogin {
+	margin: 10px; 
+	font-size: 15px;
+}
+
+
+/* FOOTER */
+.navbarFooter {
+	background-color: var(--primary-blue); 
+	font-size: 15px;
+	justify-content: space-around;
+}
+
+.labelFooter {
+	margin-top: 5px;
+	font-size: 18px;
+	font-family: "Brandon", sans-serif;
+	color: var(--white);
+}
+
