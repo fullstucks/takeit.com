@@ -2,42 +2,12 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <title>Takeit.com</title>
-    <link rel="stylesheet" type="text/css"
-        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-
+    <% include partials/helmet.ejs %>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-
-            <div class="home">
-                <a href="/">
-                    <img src="/images/logo.png" alt="main page" srcset="">
-                    <span>Takeit</span>
-                </a>
-            </div>
-
-            <nav>
-                <div id="info">
-                    <a class="t-link t-dark" href="/nosotros">¿Quienes somos?</a>
-                </div>
-                <div id="session">
-
-                    <div id="logup" class="btn bg-indigo border-indigo t-white">
-                        <span>Registrarse</span>
-                    </div>
-                    <div id="login" class="btn border-black t-black">
-                        <span>Iniciar sesión</span>
-                    </div>
-
-                </div>
-            </nav>
-
-        </div>
-    </header>
+    <% include partials/header.ejs %>
 
     <div class="root">
         <section class="summary-section">
