@@ -1,0 +1,23 @@
+{
+    "restaurant":[
+        {
+            "id":"as876f5a8",
+            "nombre":"miskay",
+            "ubicación": "Los ceibos",
+            "mesas_disponibles": 10,
+            "img_path_sm": "miskay.sm.png",
+            "img_path_lg": "miskay.lg.png"
+            
+        },
+        {
+            "id":"sx872f5b8",
+            "nombre":"Avocaditos",
+            "ubicación": "Urdesa",
+            "mesas_disponibles": 5,
+            "reseñas":1234,
+            "img_path_sm": "avocaditos.sm.png",
+            "img_path_lg": "avocaditos.lg.png"
+            
+        }
+    ]
+}

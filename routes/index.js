@@ -8,6 +8,8 @@ router.get('/', function (req, res, next) {
     logged: false
   });
 });
+
+
 router.post('/', function (req, res, next) {
   res.render('resultados', {
     title: 'Resultados',

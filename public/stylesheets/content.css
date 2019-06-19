@@ -55,11 +55,12 @@
 
 #search-input {
     margin: 15px;
-    width: 75%;
-    height: 35px;
+    width: 77%;
+    height: 45px;
     border-radius: 5px;
     border: transparent;
     background-color: white;
+    font-size: 14pt;
 }
 
 #search-btn {
@@ -70,6 +71,7 @@
     width: 15%;
     color: white;
     font-weight: bold;
+    font-size: 14pt;
 }
 
 .form-group {
@@ -92,11 +94,12 @@ iframe {
 
 
 .summary-section {
-    margin: 25px;
+    width: 98%;
+    margin: 25px auto;
 }
 
 .summary-section span {
-    font-size: 16pt;
+    font-size: 18pt;
     font-weight: bold;
     color: var(--primary-indigo)
 }
@@ -139,6 +142,54 @@ iframe {
 }
 
 .image-wrapper img {
-    width: 228px;
+    width: 250px;
     height: 208px;
+}
+
+
+#topzones {
+    margin: 5px auto;
+    padding: 15px;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+#topzones a{
+    margin: 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+#topzones a img{
+    width: 360px;
+    height: 250px;
+}
+
+
+
+
+#topzones a div h4 {
+    color: white;
+}
+#topzones a div h5 {
+    color: white;
+    font-size: 16pt;
+    margin-bottom: 7px;
+}
+
+.shadower{
+    background: black;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.in-center-image{
+    position: absolute;
+    top: 40%;
+    left: 20%;
 }

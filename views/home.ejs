@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <% include partials/helmet.ejs %>
-    </head>
+
+<head>
+  <% include partials/helmet.ejs %>
+</head>
+
 <body>
   <% include partials/header.ejs %>
   <div class="root">
@@ -21,138 +23,42 @@
       </script>
     </section>
 
-    <section>
+    <section class="display: none;" >
       <div id="mapa" class="summary-section">
         <span>Explora</span>
         <hr>
         <div class="map-wrapper">
-          <iframe
+          <!--iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.219953782379!2d-79.9175353546898!3d-2.161657277957368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6e14a839ec67%3A0xaa9499d33456f22a!2sLa+Parrilla+Del+%C3%91ato!5e0!3m2!1sen!2sec!4v1559439868238!5m2!1sen!2sec"
-            width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-    .
-    <section>
-      <div id="recomendaciones" class="summary-section">
-        <span>Restaurantes recomendados</span>
-        <hr>
-        <div class="cards-container">
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/1.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Miskay Restaurant</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/2.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Zinc</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/3.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Avocadictos</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/4.jpg">
-            </div>
-            <div class="card-details">
-              <h1>El caifán</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/5.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Casa Julián</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
+            width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe-->
         </div>
       </div>
     </section>
 
     <section>
-      <div id="tops" class="summary-section">
-        <span>Mejores lugares en Guayaquil</span>
+      <div class="summary-section">
+        <span>Restaurantes recomendados</span>
         <hr>
-        <div class="cards-container">
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/1.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Miskay Restaurant</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/2.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Zinc</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/3.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Avocadictos</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/4.jpg">
-            </div>
-            <div class="card-details">
-              <h1>El caifán</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
-          <div class="card open-details">
-            <div class="image-wrapper">
-              <img src="/images/restaurants/5.jpg">
-            </div>
-            <div class="card-details">
-              <h1>Casa Julián</h1>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-            </div>
-          </div>
+        <div id="topgye" class="cards-container">
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="summary-section">
+        <span>Zonas detacadas</span>
+        <hr>
+        <div id="topzones">
+            
         </div>
       </div>
     </section>
 
   </div>
   <% include partials/scripts.bundles.ejs %>
+  <script src="bootstrap/jquery-3.4.1.min.js"></script>
+  <script src="js/recommendations.js"></script>
 </body>
 
 </html>
