@@ -5,7 +5,10 @@
       <link rel="stylesheet" href="/stylesheets/result.css">
       <link rel="stylesheet" href="/stylesheets/result.responsive.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+</head>
 
 <body>
   <% include partials/header.ejs%>
@@ -17,135 +20,69 @@
     </form>
   </section>
 
-  <div class="resultados summary-section" >
-    <span>Resultados</span>
+  <div class="wrapper">
+    <div class="resultados summary-section" >
+        <span style="margin: 20px">Resultados</span>
+        
+        <div class="result_container">
+          <div class="result-box">
+              <img src="/images/restaurants/1.jpg">
+              <div class="description">
+                  <h1>Miskay Restaurant</h1>
+                  <div class="star-rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
     
-    <div class="result_container">
-      <div class="result-box">
-          <img src="/images/restaurants/1.jpg">
-          <div class="description">
-              <h1>Miskay Restaurant</h1>
-              <div class="star-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                  <h3>15 reviews</h3>
+                  <h3>20 mesas disponibles</h3>
               </div>
+              <div class="options">
+                  <button class="takeit">take it!</button>
+              </div>
+          </div>
+    
+          <div class="result-box">
+            <img src="/images/restaurants/1.jpg">
+            <div class="description">
+                <h1>Miskay Restaurant</h1>
+                <div class="star-rating">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                </div>
+    
+                <h3>15 reviews</h3>
+                <h3>20 mesas disponibles</h3>
+            </div>
+            <div class="options">
+                <button class="takeit">take it!</button>
+            </div>
+        </div>
+    
+          
+       
+        </div>
+      </div>
+      <div class="map_container">
+          <div id="id_map">
 
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-              <p>
-                  It's a fine dining restaurant, associated to RELAIS&CHATEAUX, 
-                  which offers an unrivaled gastronomic experience.
-                  Influenced by Ecuadorian culture and tradition, unveils the best quality standards.
-              </p>
           </div>
-          <div class="options">
-              <button class="takeit">take it!</button>
-          </div>
-      </div>
-      
-      <div class="result-box">
-          <img src="/images/restaurants/2.jpg">
-          <div class="description">
-              <h1>Miskay Restaurant</h1>
-              <div class="star-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-              </div>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-              <p>
-                  It's a fine dining restaurant, associated to RELAIS&CHATEAUX, 
-                  which offers an unrivaled gastronomic experience.
-                  Influenced by Ecuadorian culture and tradition, unveils the best quality standards.
-              </p>
-          </div>
-          <div class="options">
-              <button class="takeit">take it!</button>
-          </div>
-      </div>
-   
-      <div class="result-box">
-          <img src="/images/restaurants/3.jpg">
-          <div class="description">
-              <h1>Miskay Restaurant</h1>
-              <div class="star-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-              </div>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-              <p>
-                  It's a fine dining restaurant, associated to RELAIS&CHATEAUX, 
-                  which offers an unrivaled gastronomic experience.
-                  Influenced by Ecuadorian culture and tradition, unveils the best quality standards.
-              </p>
-          </div>
-          <div class="options">
-              <button class="takeit">take it!</button>
-          </div>
-      </div>
-    
-      <div class="result-box">
-          <img src="/images/restaurants/1.jpg">
-          <div class="description">
-              <h1>Miskay Restaurant</h1>
-              <div class="star-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-              </div>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-              <p>
-                  It's a fine dining restaurant, associated to RELAIS&CHATEAUX, 
-                  which offers an unrivaled gastronomic experience.
-                  Influenced by Ecuadorian culture and tradition, unveils the best quality standards.
-              </p>
-          </div>
-          <div class="options">
-              <button class="takeit">take it!</button>
-          </div>
-      </div>
-      
-      <div class="result-box">
-          <img src="/images/restaurants/2.jpg">
-          <div class="description">
-              <h1>Miskay Restaurant</h1>
-              <div class="star-rating">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-              </div>
-              <h3>15 reviews</h3>
-              <h3>20 mesas disponibles</h3>
-              <p>
-                  It's a fine dining restaurant, associated to RELAIS&CHATEAUX, 
-                  which offers an unrivaled gastronomic experience.
-                  Influenced by Ecuadorian culture and tradition, unveils the best quality standards.
-              </p>
-          </div>
-          <div class="options">
-              <button class="takeit">take it!</button>
-          </div>
-      </div>
+          <div>zxcvzxcvzxcv</div>
     </div>
   </div>
 
+
   </div>
   <script src="js/home.js"></script>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
 </body>
 
 </html>

@@ -65,19 +65,3 @@ function parse_top_zones_html(data){
 
     }
 }
-
-
-/*
-<div>
-    <a>
-        <img>
-        <div>
-            <h4>New York Area</h4>
-            <h5 class="app__LocationBoxMeta-fosldn-7 jEaeTX">
-                <span>32,195</span> 
-                <span>restaurants</span>
-            </h5>
-        </div>
-    </a>
-</div>
-          */
