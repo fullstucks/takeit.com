@@ -89,6 +89,13 @@ hr {
   background-color: var(--primary-blue);
 }
 
+.bg-green {
+  background-color: var(--primary-light);
+}
+
+.bg-dark {
+  background-color: var(--dark)
+}
 
 
 /* ----------- text ------------ */
@@ -106,6 +113,10 @@ hr {
 
 .t-dark {
   color: var(--dark);
+}
+
+.t-bold {
+  font-weight: bold;
 }
 
 .t-link {
