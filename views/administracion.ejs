@@ -2,30 +2,57 @@
 <html lang="es">
 
 <head>
-    <% include partials/helmet-bootstrap.ejs %>
+    <title>Takeit.com - Panel Administrativo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/estilosFH.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" href="/stylesheets/colors.css">
+    <link rel='stylesheet' href="/stylesheets/estandares.css">
 </head>
 
 <body>
-    <% include partials/header-bootstrap-in.ejs %>
+    <header class="navbar sticky-top navbar-expand-lg navbar-light navbarHeader">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="images/logo.png" width="55" height="55" class="d-inline-block align-top" alt="logo">
+                <span class="navbar-brand mb-0 h1 brand"><strong>Takeit.com</strong></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group">
+                            <img src="images/user.png" width="50" height="50" class="d-inline-block align-top" alt="perfil">
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </header>
 
-    <!--section class="container-fluid jumbotron imgJumbotron text-white">
+    <section class="container-fluid jumbotron imgJumbotron text-white">
         <br />
         <h1 class="display-3"><strong>Tus Reservas</strong></h1>
         <br /><br />
         <br /><br />
         <h4>¡Recuerda que puedes cancelar tus reservaciones hasta 12 horas antes de la fecha reservada!</h4>
         <br />
-    </section-->
+    </section>
 
     <section class="container-fluid" style="margin-left: 10px">
         <br />
-        <h2>Reservaciones disponibles:</h2>
+        <h5>Reservaciones disponibles:</h5>
         <hr width="100%" noshade>
     </section>
 
     <section class="container-fluid">
         <div class="cardContainer row">
-            <div class="d-flex align-items-stretch">
+            <div class="d-flex align-items-stretch">  <!-- col-md-10 col-lg-4 -->
                 <div class="card">
                     <img src="images/restaurants/1.jpg" class="image-wrapper card-img-top img-fluid imgResponsive" alt="Restaurante1">
                     <div class="card-body">
@@ -43,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex align-items-stretch">
+            <div class="d-flex align-items-stretch">  <!-- col-md-10 col-lg-4 -->
                 <div class="card">
                     <img src="images/restaurants/2.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante2">
                     <div class="card-body">
@@ -61,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex align-items-stretch">
+            <div class="d-flex align-items-stretch">  <!-- col-md-10 col-lg-4 -->
                 <div class="card">
                     <img src="images/restaurants/3.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante3">
                     <div class="card-body">
@@ -82,7 +109,14 @@
         </div>
     </section>
 
-    <% include partials/footer.ejs %>
+    <footer class="container-fluid navbar sticky-top navbar-expand-lg navbar-light navbarFooter">
+        <div class="btn-group">
+            <h5 class="labelFooter"><strong>¿Quiénes somos?</strong></button>
+        </div>
+        <div class="btn-group">
+            <h5 class="labelFooter"><strong>Todos los derechos reservados ®</strong></button>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -- >
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
