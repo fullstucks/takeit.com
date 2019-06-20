@@ -2,38 +2,11 @@
 <html lang="es">
 
 <head>
-    <title>Takeit.com - Tus Reservas</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/estilosFH.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-    <link rel="stylesheet" href="/stylesheets/colors.css">
-    <link rel='stylesheet' href="/stylesheets/estandares.css">
+    <% include partials/helmet-bootstrap.ejs %>
 </head>
 
 <body>
-    <header class="navbar sticky-top navbar-expand-lg navbar-light navbarHeader">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="images/logo.png" width="55" height="55" class="d-inline-block align-top" alt="logo">
-                <span class="navbar-brand mb-0 h1 brand"><strong>Takeit.com</strong></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <div class="btn-toolbar" role="toolbar">
-                        <div class="btn-group">
-                            <img src="images/user.png" width="50" height="50" class="d-inline-block align-top" alt="perfil">
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <% include partials/header-bootstrap.ejs %>
 
     <section class="container-fluid jumbotron imgJumbotron text-white">
         <br />
