@@ -1,11 +1,12 @@
 :root {
-    /*--primary-light:black; */
-    --primary-light:#e5fcc2;
+    --primary-light: #e5fcc2;
+    /*--primary-light: black;*/
     --secondary-light: #9de0ad;
     --primary-blue: #45ada8;
     --primary-indigo: #547980;
     --dark: #594f4f;
     --white: #FFFFFF;
+    --gray: #E6E6E6;
 
 
     --breakpoint-xs: 0;
