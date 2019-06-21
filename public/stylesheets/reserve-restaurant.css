@@ -2,11 +2,29 @@
     align-content: center;
 
 }
+.title-form {
+	font-family: "helvetica, Century Gothic"
+	font-size: 14pt;
+	font-weight: bolder;
+    color: var(--primary-blue);
+}
+.subtitle-form{
+	font-family: "helvetica, Century Gothic"
+	font-size: 12pt;
+	font-weight: bolder;
+    color: var(--primary-blue);
+}
+.text-form{
+	margin-top: 15px;
+	font-family: Century Gothic, Century;
+	font-weight: cursive;
+	color: grey;
+}
 .nav-reserve-selection {
 	align-content: center;
 	display: flex;
 	flex-direction: column;
- 	width: 70%;
+ 	width: 60%;
     margin:auto;
     margin-top: 30px;
     transition: height 0.3s;
@@ -39,9 +57,9 @@ section ul li a:hover{
  	background: var(--primary-blue);
  	color:#ffffff;
 } 
-.reserva-section{
+#reserva-section{
 	display: flex;
-	width: 70%;
+	width: 60%;
 	margin:auto;
     margin-top: 30px;
     padding: 10px 10px;
@@ -54,43 +72,43 @@ section ul li a:hover{
 	width: 300px;
 	height: 300px;
 } 
-.orden-section > div{
+#orden-section > div{
 	display: flex;
 }
-.orden-section {
+#orden-section {
 	width: 60%;
 	margin-top: 30px;
     padding: 10px 10px;
     background-color: var(--primary-greylight);
 } 
-.orden-section h2{
+#orden-section h2{
 	 border-bottom:solid 2px;
     border-color: grey;
 }
-.orden-section  div > div{
+#orden-section  div > div{
 	margin-left: 10px;
 	margin-top: 10px;
 }
-.horario-section{
+#horario-section{
 	margin-top: 30px;
     padding: 10px 10px;
     background-color: var(--primary-greylight);
 }
-.horario-section h2{
+#horario-section h2{
 	border-bottom:solid 2px;
     border-color: grey;
 }
-.horario-section > div{
+#horario-section > div{
 	margin-left: 10px;
 	margin-top: 10px;
 }
-.fecha-reservables #fecha-disponible{
+#fecha-reservables #fecha-disponible{
 	display: flex;
     margin-top: 30px;
     padding: 10px 10px;
     transition: height 0.3s;
 }
-.fecha-reservables #fecha-disponible > #horario-disponible{
+#horario-disponible{
 	list-style: none;
 	text-decoration: none;
 	border: solid 1px;
@@ -100,20 +118,20 @@ section ul li a:hover{
 	font-size: 10pt;
 	margin-left: 5px;
 }
-.fecha-reservables #fecha-disponible > #horario-disponible:hover{
+#fecha-reservables #fecha-disponible > #horario-disponible:hover{
 	background: var(--primary-blue);
  	color:#ffffff;
 }
 
 
 
-section .reserva-section .title-reserve-section{
+section #reserva-section .title-reserve-section{
 	font-family: helvetica;
     font-weight: bolder;
 	color:var(--primary-blue);
 	font-size: 16pt;
 }
-section .reserva-section h4{
+section #reserva-section h4{
 	margin-top: 100pt;
 }
 p {
