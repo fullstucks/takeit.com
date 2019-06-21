@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <% include partials/helmet.ejs%>
+      <link rel="stylesheet" href="/stylesheets/results.css">
+      <link rel="stylesheet" href="/stylesheets/results.responsive.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin="">
+</head>
+
+<body>
+  <% include partials/header.ejs%>
+  <section id="search-section">
+    <span class="t-white t-title-small">Busca tu restaurante favorito</span>
+    <form method="post">
+      <input id="search-input" class="" name="text-input" placeholder="  Ubicación, restaurante, o menú" type="text">
+      <input id="search-btn" type="submit" value="buscar">
+    </form>
+  </section>
+
+  <div class="wrapper">  
+    
+        <div id="results" class="result_container">
+       
+        </div>
+        <div class="map_container">
+          <div id="id_map">
+
+          </div>
+      </div>
+    
+  </div>
+
+  </div>
+  <script src="js/home.js"></script>
+  <script src="bootstrap/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+  <script src="js/results.js"></script>
+</body>
+
+</html>

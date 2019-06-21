@@ -1,23 +1,74 @@
 {
-    "restaurant":[
+    "restaurants":[
         {
-            "id":"as876f5a8",
-            "nombre":"miskay",
-            "ubicación": "Los ceibos",
-            "mesas_disponibles": 10,
-            "img_path_sm": "miskay.sm.png",
-            "img_path_lg": "miskay.lg.png"
-            
+            "img_url": "1.jpg",
+            "nombre": "Miskay Restaurant",
+            "resenas": 200,
+            "mesas_disponibles":11,
+            "ubicación": "Los ceibos"
         },
         {
-            "id":"sx872f5b8",
-            "nombre":"Avocaditos",
-            "ubicación": "Urdesa",
-            "mesas_disponibles": 5,
-            "reseñas":1234,
-            "img_path_sm": "avocaditos.sm.png",
-            "img_path_lg": "avocaditos.lg.png"
-            
+            "img_url": "2.jpg",
+            "nombre": "Zinc",
+            "resenas": 534,
+            "mesas_disponibles":20,
+            "ubicación": "Las Peñas"
+        },
+        {
+            "img_url": "3.jpg",
+            "nombre": "Avocadictos",
+            "resenas": 345,
+            "mesas_disponibles":7,
+            "ubicación": "Urdesa"
+        },
+        {
+            "img_url": "4.jpg",
+            "nombre": "El caifán",
+            "resenas": 101,
+            "mesas_disponibles":5,
+            "ubicación":"Kennedy Norte"
+        },
+        {
+            "img_url": "5.jpg",
+            "nombre": "Casa Julián",
+            "resenas": 10,
+            "mesas_disponibles":2,
+            "ubicación":"La puntilla"
+        },
+        {
+            "img_url": "1.jpg",
+            "nombre": "Parrilladas del ñato",
+            "resenas": 200,
+            "mesas_disponibles":11,
+            "ubicación": "Los ceibos"
+        },
+        {
+            "img_url": "2.jpg",
+            "nombre": "Menestras del negro",
+            "resenas": 534,
+            "mesas_disponibles":20,
+            "ubicación": "Las Peñas"
+        },
+        {
+            "img_url": "3.jpg",
+            "nombre": "El gran chef",
+            "resenas": 345,
+            "mesas_disponibles":7,
+            "ubicación": "Urdesa"
+        },
+        {
+            "img_url": "4.jpg",
+            "nombre": "Sal & Pimienta",
+            "resenas": 101,
+            "mesas_disponibles":5,
+            "ubicación":"Kennedy Norte"
+        },
+        {
+            "img_url": "5.jpg",
+            "nombre": "Pyros parrilla y arroces",
+            "resenas": 10,
+            "mesas_disponibles":2,
+            "ubicación":"La puntilla"
         }
     ]
 }
