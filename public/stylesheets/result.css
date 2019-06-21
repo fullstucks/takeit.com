@@ -1,3 +1,8 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
 .resultados{
     margin: 5px;
     padding: 10px;
@@ -9,9 +14,10 @@
     margin: 10px auto;
     width: 90%;
 }*/
+
 .result_container{
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .result-box{
@@ -24,7 +30,7 @@
 }
 .result-box img{
     border-radius: 5px;
-    height: 210px;
+    height: 110px;
     width: auto;
 }
 .star-rating .checked {

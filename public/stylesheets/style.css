@@ -8,9 +8,11 @@ body{
 h2, h3 {
   font-family: "Brandon";
 }
+
 h1{
   font-weight: bold;
 }
+
 h3{
   font-weight: 500;
   color: var(--dark)
@@ -22,8 +24,7 @@ p{
 
 hr {
   height: 1px;
-  color: var(--primary-indigo);
-  background-color: var(--primary-indigo);
+  background-color: var(--dark);
 }
 
 

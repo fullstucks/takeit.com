@@ -99,9 +99,9 @@ iframe {
 }
 
 .summary-section span {
-    font-size: 18pt;
+    font-size: 20pt;
     font-weight: bold;
-    color: var(--primary-indigo)
+    color: var(--dark)
 }
 
 .cards-container {
@@ -156,14 +156,14 @@ iframe {
     flex-flow: row wrap;
 }
 
-#topzones a{
+#topzones a {
     margin: 0px;
     position: relative;
     cursor: pointer;
 }
 
 
-#topzones a img{
+#topzones a img {
     width: 360px;
     height: 250px;
 }
@@ -180,7 +180,7 @@ iframe {
     margin-bottom: 7px;
 }
 
-.shadower{
+.shadower {
     background: black;
     opacity: 0.4;
     width: 100%;
