@@ -1,47 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+
     <head>
-    	<meta charset="utf-8">
-    	<title>Takeit.com</title>
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-        <link rel="stylesheet" href="/stylesheets/colors.css">
-        <link rel="stylesheet" href="/stylesheets/header.css">
-        <link rel="stylesheet" href="/stylesheets/header.responsive.css">
-        <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link rel='stylesheet' href='/stylesheets/style.responsive.css' />
-        <link rel="stylesheet" href="/stylesheets/footer.css">
-        <link rel="stylesheet" href="/stylesheets/content.css">
-        <link rel="stylesheet" href="/stylesheets/content.responsive.css">
-        <link rel="stylesheet" href="/stylesheets/reserve-restaurant.css"/>
+        <% include partials/helmet.ejs %>
+    	<link rel="stylesheet" href="/stylesheets/reserve-restaurant.css"/>
         <link rel="stylesheet" href="/stylesheets/reserve-restaurant-responsive.css"/>
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
        
     </head>
 
     <body>
-        <header>
-            <div class='container'>
-                <div class='home'>
-                    <a href="/">
-                    <img src="/images/logo.png" alt="main page" srcset="">
-                    <span>Takeit</span>
-                    </a>
-                </div>
-                <nav> 
-                    <div id="info">
-                        <a class="t-link t-dark" href="/nosotros">¿Quienes somos?</a>
-                    </div>
-                    <div id="session">
-                        <div id="logup" class="btn bg-indigo border-indigo t-white">
-                           <span>Registrarse</span>
-                        </div>
-                        <div id="login" class="btn border-black t-black">
-                           <span>Iniciar sesión</span>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        <% include partials/header.ejs %>
         <section id=barraNav>
              <div class="nav-reserve-selection">
                 <nav class="nav-bar-reserve">
@@ -98,8 +66,12 @@
         <footer>
             <h2>@Copyrigth</h2>
         </footer>
+
+        <% include partials/scripts.bundles.ejs %>
+        <script src="bootstrap/jquery-3.4.1.min.js"></script>
+        <script src="js/recommendations.js"></script>
     </body>
-    </html>
+</html>
         
         
 
