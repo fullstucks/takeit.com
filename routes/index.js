@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/', function (req, res, next) {
-  res.render('results', {
-    title: 'Resultados',
-    logged: false
-  })
+router.post('/', function(req, res, next) {
+    res.render('results', {
+        title: 'Resultados',
+        logged: false
+    })
 })
 
 
@@ -33,21 +33,11 @@ router.get('/reservasRealizadas', function(req, res, next) {
     })
 })
 
-
-
-<<<<<<< HEAD
-router.get('/results', function(req, res, next){
-  res.render('results', {
-    title: 'Resultados',
-    logged: false
-  })
-=======
 router.get('/resultados', function(req, res, next) {
     res.render('resultados', {
         title: 'Takeit.com - Resultados',
         logged: false
     })
->>>>>>> 31cf693fe13761270c94ce65eba9d4a9a234292c
 })
 router.post('/resultados', function(req, res, next) {
     res.render('resultados', {
