@@ -20,15 +20,6 @@
     margin-bottom: 150px;
 }
 
-#message-large-left {
-    text-align: left;
-}
-
-#message-large-left span {
-    font-size:  70pt;
-    font-weight: bold;
-}
-
 #message-large span {
     font-size: 40pt;
     font-weight: bold;
