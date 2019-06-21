@@ -11,8 +11,8 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-    res.render('resultados', {
-        title: 'Takeit.com - Resultados',
+    res.render('results', {
+        title: 'Resultados',
         logged: false
     })
 })
@@ -32,8 +32,6 @@ router.get('/reservasRealizadas', function(req, res, next) {
         logged: true
     })
 })
-
-
 
 router.get('/resultados', function(req, res, next) {
     res.render('resultados', {

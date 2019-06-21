@@ -1,24 +1,4 @@
 @media only screen and (max-device-width: 760px) {
-    #mapa {
-        display: none;
-    }
-
-    .summary-section span {
-        font-size: 38pt;
-    }
-
-    .image-wrapper img {
-        width: auto;
-        height: 380px;
-    }
-
-    .card-details h1 {
-        font-size: 37pt;
-    }
-}
-
-
-@media only screen and (max-device-width: 760px) {
 
     #message-large span {
         font-size: 45pt;
@@ -83,7 +63,7 @@
 }
 
 
-@media screen and (max-device-width: 1024px) {
+@media only screen and (max-device-width: 1024px) {
 
     #mapa {
         display: none;

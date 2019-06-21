@@ -1,197 +1,210 @@
  section {
-    align-content: center;
-
-}
-.title-form {
-	font-family: "helvetica, Century Gothic"
-	font-size: 14pt;
-	font-weight: bolder;
-    color: var(--primary-blue);
-}
-.subtitle-form{
-	font-family: "helvetica, Century Gothic"
-	font-size: 12pt;
-	font-weight: bolder;
-    color: var(--primary-blue);
-}
-.text-form{
-	margin-top: 15px;
-	font-family: Century Gothic, Century;
-	font-weight: cursive;
-	color: grey;
-}
-.nav-reserve-selection {
-	align-content: center;
-	display: flex;
-	flex-direction: column;
- 	width: 60%;
-    margin:auto;
-    margin-top: 30px;
-    transition: height 0.3s;
-    background-color:  #ffffff;
-    border-bottom:solid;
-    border-color: grey;
-       
-} 
-
-.list-nav-bar{
-	list-style:none;
-  	text-align: center;
- 	display: flex;
- 	justify-content: space-between;
- 	
-} 
-section nav ul li{
- 	float:left;
-
- } 
-section ul li a{
- 	display: inline-block;
- 	padding: 20px;
- 	color:grey;
- 	text-decoration: none;
- 	justify-content: space-between;
-
-} 
-section ul li a:hover{
- 	background: var(--primary-blue);
- 	color:#ffffff;
-} 
-#reserva-section{
-	display: flex;
-	width: 60%;
-	margin:auto;
-    margin-top: 30px;
-    padding: 10px 10px;
-    transition: height 0.3s;
-    justify-content: space-between;
-    background-color: #F3F3F3;
-
-}
-.reserve-section-img{
-	width: 300px;
-	height: 300px;
-} 
-#orden-section > div{
-	display: flex;
-}
-#orden-section {
-	width: 60%;
-	margin-top: 30px;
-    padding: 10px 10px;
-    background-color: var(--primary-greylight);
-} 
-#orden-section h2{
-	 border-bottom:solid 2px;
-    border-color: grey;
-}
-#orden-section  div > div{
-	margin-left: 10px;
-	margin-top: 10px;
-}
-#horario-section{
-	margin-top: 30px;
-    padding: 10px 10px;
-    background-color: var(--primary-greylight);
-}
-#horario-section h2{
-	border-bottom:solid 2px;
-    border-color: grey;
-}
-#horario-section > div{
-	margin-left: 10px;
-	margin-top: 10px;
-}
-#fecha-reservables #fecha-disponible{
-	display: flex;
-    margin-top: 30px;
-    padding: 10px 10px;
-    transition: height 0.3s;
-}
-#horario-disponible{
-	list-style: none;
-	text-decoration: none;
-	border: solid 1px;
-	border-color: grey;
-	border-radius: 5px;
-	padding: 10px 5px 10px 5px;
-	font-size: 10pt;
-	margin-left: 5px;
-}
-#fecha-reservables #fecha-disponible > #horario-disponible:hover{
-	background: var(--primary-blue);
- 	color:#ffffff;
-}
-
-
-
-section #reserva-section .title-reserve-section{
-	font-family: helvetica;
-    font-weight: bolder;
-	color:var(--primary-blue);
-	font-size: 16pt;
-}
-section #reserva-section h4{
-	margin-top: 100pt;
-}
-p {
-    margin-top: 15px;
-	font-family: Century Gothic;
-}
-hr{
-	text-decoration: none;
-	color: var(--primary-greylight);
-	size:10;
-	}
-.tickect-section{
-	width: 70%;
-	font-family: helvetica;
-    font-weight: bolder;
-	color:var(--primary-blue);
-	margin:auto;
-	justify-content: space-between;
-
-}
-.tickets-section-titlte{
-	display: flex;
-	justify-content: space-between;
-	margin:auto;
-	padding: 10px 10px;
-	border-bottom:solid 2px;
-    border-color: grey;
-    align-content: center;
-    
-
-}
-.item-entradas{
-	display: flex;
-	justify-content: space-between;
-	margin:auto;
-	padding:10px 10px;
-	color:black;
-	margin-top: 10px;
-
-}
-
-.selectMesa{
-	width: 70%;
-	margin:auto;
-	margin-top: 30px;
-    padding: 10px 10px;
-    background-color: var(--primary-greylight);
-}
-section .selectMesa .escogerMesa h2{
-	font-family: helvetica;
-    font-weight: bolder;
-	color:var(--primary-blue);
-	font-size: 16pt;
-	text-align: center;
-}
-section div div{
-	align-items: center;
-}
-section div div #imgR{
-   width: 100%;
-   height: 40%;
-
-}
+     align-content: center;
+ }
+ 
+ .title-form {
+     font-family: "helvetica, Century Gothic" font-size: 14pt;
+     font-weight: bolder;
+     color: var(--primary-blue);
+ }
+ 
+ .subtitle-form {
+     font-family: "helvetica, Century Gothic" font-size: 12pt;
+     font-weight: bolder;
+     color: var(--primary-blue);
+ }
+ 
+ .text-form {
+     margin-top: 15px;
+     font-family: Century Gothic, Century;
+     font-weight: cursive;
+     color: grey;
+ }
+ 
+ .nav-reserve-selection {
+     align-content: center;
+     display: flex;
+     flex-direction: column;
+     width: 60%;
+     margin: auto;
+     margin-top: 30px;
+     transition: height 0.3s;
+     background-color: #ffffff;
+     border-bottom: solid;
+     border-color: grey;
+ }
+ 
+ .list-nav-bar {
+     list-style: none;
+     text-align: center;
+     display: flex;
+     justify-content: space-between;
+ }
+ 
+ section nav ul li {
+     float: left;
+ }
+ 
+ section ul li a {
+     display: inline-block;
+     padding: 20px;
+     color: grey;
+     text-decoration: none;
+     justify-content: space-between;
+ }
+ 
+ section ul li a:hover {
+     background: var(--primary-blue);
+     color: #ffffff;
+ }
+ 
+ #reserva-section {
+     display: flex;
+     width: 60%;
+     margin: auto;
+     margin-top: 30px;
+     padding: 10px 10px;
+     transition: height 0.3s;
+     justify-content: space-between;
+     background-color: #F3F3F3;
+ }
+ 
+ .reserve-section-img {
+     width: 300px;
+     height: 300px;
+ }
+ 
+ #orden-section>div {
+     display: flex;
+ }
+ 
+ #orden-section {
+     width: 60%;
+     margin-top: 30px;
+     padding: 10px 10px;
+     background-color: var(--primary-greylight);
+ }
+ 
+ #orden-section h2 {
+     border-bottom: solid 2px;
+     border-color: grey;
+ }
+ 
+ #orden-section div>div {
+     margin-left: 10px;
+     margin-top: 10px;
+ }
+ 
+ #horario-section {
+     margin-top: 30px;
+     padding: 10px 10px;
+     background-color: var(--primary-greylight);
+ }
+ 
+ #horario-section h2 {
+     border-bottom: solid 2px;
+     border-color: grey;
+ }
+ 
+ #horario-section>div {
+     margin-left: 10px;
+     margin-top: 10px;
+ }
+ 
+ #fecha-reservables #fecha-disponible {
+     display: flex;
+     margin-top: 30px;
+     padding: 10px 10px;
+     transition: height 0.3s;
+ }
+ 
+ #horario-disponible {
+     list-style: none;
+     text-decoration: none;
+     border: solid 1px;
+     border-color: grey;
+     border-radius: 5px;
+     padding: 10px 5px 10px 5px;
+     font-size: 10pt;
+     margin-left: 5px;
+ }
+ 
+ #fecha-reservables #fecha-disponible>#horario-disponible:hover {
+     background: var(--primary-blue);
+     color: #ffffff;
+ }
+ 
+ section #reserva-section .title-reserve-section {
+     font-family: helvetica;
+     font-weight: bolder;
+     color: var(--primary-blue);
+     font-size: 16pt;
+ }
+ 
+ section #reserva-section h4 {
+     margin-top: 100pt;
+ }
+ 
+ p {
+     margin-top: 15px;
+     font-family: Century Gothic;
+ }
+ 
+ hr {
+     text-decoration: none;
+     color: var(--primary-greylight);
+     size: 10;
+ }
+ 
+ .tickect-section {
+     width: 60%;
+     font-family: helvetica;
+     font-weight: bolder;
+     color: var(--primary-blue);
+     margin: auto;
+     justify-content: space-between;
+ }
+ 
+ .tickets-section-titlte {
+     display: flex;
+     justify-content: space-between;
+     margin: auto;
+     padding: 10px 10px;
+     border-bottom: solid 2px;
+     border-color: grey;
+     align-content: center;
+ }
+ 
+ .item-entradas {
+     display: flex;
+     justify-content: space-between;
+     margin: auto;
+     padding: 10px 10px;
+     color: black;
+     margin-top: 10px;
+ }
+ 
+ .selectMesa {
+     width: 60%;
+     margin: auto;
+     margin-top: 30px;
+     padding: 10px 10px;
+     background-color: var(--primary-greylight);
+ }
+ 
+ section .selectMesa .escogerMesa h2 {
+     font-family: helvetica;
+     font-weight: bolder;
+     color: var(--primary-blue);
+     font-size: 16pt;
+     text-align: center;
+ }
+ 
+ section div div {
+     align-items: center;
+ }
+ 
+ section div div #imgR {
+     width: 100%;
+     height: 40%;
+ }
