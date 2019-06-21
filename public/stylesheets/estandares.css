@@ -10,7 +10,11 @@ h1 {
     color: var(--white);
 }
 
-h2,
+h2 {
+    font-family: "Ubuntu", sans-serif;
+    color: var(--dark);
+}
+
 h3 {
     font-family: "Brandon", sans-serif;
     color: var(--primary-indigo);
@@ -30,7 +34,7 @@ p {}
 .brand {
     font-size: 25px;
     margin: 5px;
-    color: var(--white);
+    margin-left: 25px;
 }
 
 .btnRegistro {
@@ -42,6 +46,14 @@ p {}
 .btnLogin {
     margin: 10px;
     font-size: 15px;
+}
+
+.container-nav {
+    margin: 10px;
+}
+
+.container-nav-profile {
+    margin-left: 50px;
 }
 
 
@@ -70,6 +82,18 @@ p {}
 
 .row {
     font-size: 17px;
+}
+
+.btnAgregar {
+    background-color: var(--primary-indigo);
+    font-size: 16px;
+}
+
+.btnAdministrar {
+    margin: 10px;
+    background-color: #547980;
+    font-size: 15px;
+    align-content: center;
 }
 
 .image-wrapper {
@@ -104,6 +128,27 @@ p {}
     height: 30px;
 }
 
+.btn-icon-split {
+    padding: 0;
+    overflow: hidden;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 225px;
+    height: 30px;
+}
+
+.btn-icon {
+    width: 30px;
+    height: 30px;
+}
+
 
 /* FOOTER */
 
@@ -111,7 +156,7 @@ p {}
     background-color: var(--dark);
     font-size: 15px;
     padding-right: 20px;
-    position: fixed;
+    position: static;
     bottom: 0;
     justify-content: flex-end;
 }

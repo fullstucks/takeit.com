@@ -2,10 +2,29 @@
     align-content: center;
 
 }
+.title-form {
+	font-family: "helvetica, Century Gothic"
+	font-size: 14pt;
+	font-weight: bolder;
+    color: var(--primary-blue);
+}
+.subtitle-form{
+	font-family: "helvetica, Century Gothic"
+	font-size: 12pt;
+	font-weight: bolder;
+    color: var(--primary-blue);
+}
+.text-form{
+	margin-top: 15px;
+	font-family: Century Gothic, Century;
+	font-weight: cursive;
+	color: grey;
+}
 .nav-reserve-selection {
 	align-content: center;
 	display: flex;
- 	width: 70%;
+	flex-direction: column;
+ 	width: 60%;
     margin:auto;
     margin-top: 30px;
     transition: height 0.3s;
@@ -14,25 +33,19 @@
     border-color: grey;
        
 } 
-.nav-bar-reserve{
-	width: 100%
-	padding:auto;
-}
 
 .list-nav-bar{
-	list-style-type:none;
- 	list-style:none;
- 	overflow: hidden;
- 	text-align: center;
+	list-style:none;
+  	text-align: center;
  	display: flex;
- 	justify-content: space-around;
+ 	justify-content: space-between;
  	
 } 
 section nav ul li{
  	float:left;
 
  } 
-section nav ul li a{
+section ul li a{
  	display: inline-block;
  	padding: 20px;
  	color:grey;
@@ -40,59 +53,90 @@ section nav ul li a{
  	justify-content: space-between;
 
 } 
-section nav ul li a:hover{
+section ul li a:hover{
  	background: var(--primary-blue);
  	color:#ffffff;
 } 
-.reserva-section{
+#reserva-section{
 	display: flex;
-	width: 70%;
+	width: 60%;
 	margin:auto;
     margin-top: 30px;
     padding: 10px 10px;
     transition: height 0.3s;
     justify-content: space-between;
+    background-color: #F3F3F3;
 
+}
+.reserve-section-img{
+	width: 300px;
+	height: 300px;
 } 
-.orden-section > div{
+#orden-section > div{
 	display: flex;
 }
-.orden-section {
+#orden-section {
 	width: 60%;
 	margin-top: 30px;
     padding: 10px 10px;
     background-color: var(--primary-greylight);
 } 
-.orden-section h2{
+#orden-section h2{
 	 border-bottom:solid 2px;
     border-color: grey;
 }
-.orden-section  div > div{
+#orden-section  div > div{
 	margin-left: 10px;
 	margin-top: 10px;
 }
-.horario-section{
-	width: 35%;
+#horario-section{
 	margin-top: 30px;
     padding: 10px 10px;
     background-color: var(--primary-greylight);
 }
-.horario-section h2{
+#horario-section h2{
 	border-bottom:solid 2px;
     border-color: grey;
 }
-.horario-section > div{
+#horario-section > div{
 	margin-left: 10px;
 	margin-top: 10px;
 }
-section .reserva-section .title-reserve-section{
+#fecha-reservables #fecha-disponible{
+	display: flex;
+    margin-top: 30px;
+    padding: 10px 10px;
+    transition: height 0.3s;
+}
+#horario-disponible{
+	list-style: none;
+	text-decoration: none;
+	border: solid 1px;
+	border-color: grey;
+	border-radius: 5px;
+	padding: 10px 5px 10px 5px;
+	font-size: 10pt;
+	margin-left: 5px;
+}
+#fecha-reservables #fecha-disponible > #horario-disponible:hover{
+	background: var(--primary-blue);
+ 	color:#ffffff;
+}
+
+
+
+section #reserva-section .title-reserve-section{
 	font-family: helvetica;
     font-weight: bolder;
 	color:var(--primary-blue);
 	font-size: 16pt;
 }
-section .reserva-section h4{
+section #reserva-section h4{
 	margin-top: 100pt;
+}
+p {
+    margin-top: 15px;
+	font-family: Century Gothic;
 }
 hr{
 	text-decoration: none;
