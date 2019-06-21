@@ -13,7 +13,9 @@
     "forever": "^1.0.0",
     "http-errors": "~1.6.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0"
+  },
   "description": "yarn",
   "main": "yarn init",
   "repository": "https://github.com/fullstucks/takeit.com.git",

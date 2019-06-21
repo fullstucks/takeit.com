@@ -2,63 +2,67 @@
 <html>
 
 <head>
-  <% include partials/helmet.ejs %>
+    <% include partials/helmet.ejs %>
 </head>
 
 <body>
-  <% include partials/header.ejs %>
-  <div class="root">
+    <% include partials/header.ejs %>
+        <div class="root">
 
-    
-    <section id="search-section">
-      <div id="message-large" class="t-white">
-        <span>Reserva tu mesa sin preocupaciones</span>
-      </div>
-      <span class="t-white t-title-small">Busca tu restaurante favorito</span>
-      <form method="post">
-        <input id="search-input" class="" name="text-input" placeholder="  Ubicación, restaurante, o menú" type="text">
-        <input id="search-btn" type="submit" value="buscar">
-      </form>
-      <script>
+            <section id="search-section">
+                <div id="message-large" class="t-white">
+                    <span>Reserva tu mesa sin preocupaciones</span>
+                </div>
+                <span class="t-white t-title-small">Busca tu restaurante favorito</span>
+                <form method="post">
+                    <input id="search-input" class="" name="text-input" placeholder="  Ubicación, restaurante, o menú" type="text">
+                    <input id="search-btn" type="submit" value="buscar">
+                </form>
+                <script>
+                </script>
+            </section>
 
-      </script>
-    </section>
+            <section style="visibility: hidden;">
+                <div id="mapa" class="summary-section">
+                    <hr>
+                </div>
+            </section>
 
-    <section style="visibility: hidden;" >
-      <div id="mapa" class="summary-section">
-        <hr>
-      </div>
-    </section>
+            <section>
+                <div class="summary-section">
+                    <div style="width: 90%;">
+                        <span>Restaurantes recomendados</span>
+                        <hr>
+                    </div>
 
-    <section>
-      <div class="summary-section">
-        <div style="width: 90%;">
-            <span>Restaurantes recomendados</span>
-            <hr>
+                    <div id="topgye" class="cards-container">
+
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="summary-section">
+                    <div style="width: 90%;">
+                        <span>Zonas destacadas</span>
+                        <hr>
+                    </div>
+                    <div id="topzones">
+
+                    </div>
+                </div>
+            </section>
+
         </div>
-        
-        <div id="topgye" class="cards-container">
+        </div>
+        </section>
+
+        <!--% include partials/footer.ejs %-->
 
         </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="summary-section">
-        <div style="width: 90%;">
-            <span>Zonas detacadas</span>
-            <hr>
-        </div>
-        <div id="topzones">
-          
-        </div>
-      </div>
-    </section>
-
-  </div>
-  <% include partials/scripts.bundles.ejs %>
-  <script src="bootstrap/jquery-3.4.1.min.js"></script>
-  <script src="js/recommendations.js"></script>
+        <% include partials/scripts.bundles.ejs %>
+            <script src="bootstrap/jquery-3.4.1.min.js"></script>
+            <script src="js/recommendations.js"></script>
 </body>
 
 </html>
