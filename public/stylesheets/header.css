@@ -73,3 +73,7 @@ nav #session {
     width: 40px;
     height: 40px;
 }
+
+.navbar {
+    background-color: var(--primary-light);
+}

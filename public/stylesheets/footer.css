@@ -1,6 +1,4 @@
 footer {
-  border-top: #c4e28c;
-  border-width: 20px;
   text-align: center;
   padding: 30px;
   background-color: var(--dark);
@@ -10,4 +8,13 @@ footer {
 
 footer>p {
   text-align: center;
+}
+
+.labelFooter {
+  margin-top: 5px;
+  font-size: 15px;
+  font-family: "Brandon", sans-serif;
+  color: var(--gray);
+  padding-right: 15px;
+  padding-left: 15px;
 }

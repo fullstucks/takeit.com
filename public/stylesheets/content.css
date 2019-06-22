@@ -3,7 +3,6 @@
     font-family:"Ubuntu", sans-serif;
 }
 
-
 .root {
     margin: 0
 }
@@ -95,6 +94,13 @@ iframe {
     color: var(--dark)
 }
 
+.card-container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    padding: 10px;
+}
+
 .cards-container {
     display: flex;
     flex-flow: row wrap;
@@ -123,6 +129,11 @@ iframe {
 .card-details h1 {
     color: black;
     font-weight: bold;
+}
+
+.card-img-top {
+    width: 300px;
+    height: 208px;
 }
 
 .image-wrapper {
