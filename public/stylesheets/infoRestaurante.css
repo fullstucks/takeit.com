@@ -1,12 +1,12 @@
-.root{
-    padding-left: 5%;
-    padding-right: 5%;
-}
 #info-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+h1#restaurant-name{
+    font-size: 8vw;
 }
 
 #descripcion {

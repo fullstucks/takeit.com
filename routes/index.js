@@ -18,11 +18,11 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/', function (req, res, next) {
-  res.render('results', {
-    title: 'Resultados',
-    logged: false
-  })
+router.post('/', function(req, res, next) {
+    res.render('results', {
+        title: 'Resultados',
+        logged: false
+    })
 })
 
 

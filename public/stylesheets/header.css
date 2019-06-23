@@ -73,3 +73,65 @@ nav #session {
     width: 40px;
     height: 40px;
 }
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Takeit.com</title>
+    
+    
+    <link rel="stylesheet" href="/stylesheets/generaTuReserva.css"/>
+    
+
+</head>
+
+<body class="content.css">
+    <header>
+        <div class="container">
+            <div class="home">
+                <a href="/">
+                    <img src="/images/logo2.png" alt="main page" srcset="" span="Takeit">
+                </a>
+            </div>
+
+            <nav>
+                <div id="info">
+                    <a class="t-link t-dark" href="/nosotros">¿Quienes somos?</a>
+                </div>
+                <div id="session">
+                    <div id="logup" class="btn bg-indigo border-indigo t-white">
+                        <span>Registrarse</span>
+                    </div>
+                    <div id="login" class="btn border-black t-black">
+                        <span>Iniciar sesión</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <section>
+        <div id="form-reservation">
+            <div id="img-form-reservation" class="back-img-form format-img-form title-reservation subtitle-reservation">
+                <div id="title-imgform-reservation">
+                    <h1>Parrillada del Ñato</h1>
+                </div>
+                <div id="description-imgform-reservation">
+                    <p>No es un lugar exclusivo, pero de seguro es un lugar donde la mezcla de aromas exquisitos extremecen tu paladar y presionan tus deseos por probar nuestros asados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p> Visita nuestro perfil de <a href="https://github.com/fullstucks">Github</a></p>
+        <hr width="30%">
+        <p><a href="#">Volver al tope</a></p>
+        <div class="btn-group">
+            <h8 class="labelFooter">Copyright © Takeit.com 2019</h8>
+        </div>
+    </footer>
+</body>
+
+</html>
