@@ -1,0 +1,33 @@
+.image-wrapper img{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.image-wrapper {
+    width: 10%;
+    display: inline-block;
+}
+
+.card-body {
+    width: 70%;
+    display: inline-block;
+}
+
+.available-dates button, .available-dates p{
+    display: inline-block;
+}
+
+#tables p, #tables select{
+    width: 20%;
+    display: inline-block;
+}
+
+#next-wrap {
+    display: flex;
+    align-items: center;
+}
+
+#next {
+    align-self: center;
+}
