@@ -1,0 +1,12 @@
+<div class="cards-container">
+  <div *ngFor = "let top of tops" class="card">
+    <div class="image-wrapper">
+      <img src="../../assets/images/restaurants/{{top.img_url}}" alt="">
+    </div>
+    <div class="card-details">
+        <h1>{{top.nombre}}</h1>
+        <h3>{{top.resenas}}</h3>
+        <h3>{{top.mesas_disponibles}}</h3>
+      </div>
+  </div>
+</div>

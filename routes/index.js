@@ -1,5 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
+
+/*
+router.get('/heroes', (req, res, next)=>{
+    console.log(__dirname)
+    res.sendFile(path.join(__dirname, '/../public', '/tapp/index.html'))
+})
+*/
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -35,26 +43,13 @@ router.get('/reservasRealizadas', function(req, res, next) {
 
 
 
-<<<<<<< HEAD
 router.get('/results', function(req, res, next){
   res.render('results', {
     title: 'Resultados',
     logged: false
   })
-=======
-router.get('/resultados', function(req, res, next) {
-    res.render('resultados', {
-        title: 'Takeit.com - Resultados',
-        logged: false
-    })
->>>>>>> 31cf693fe13761270c94ce65eba9d4a9a234292c
 })
-router.post('/resultados', function(req, res, next) {
-    res.render('resultados', {
-        title: 'Takeit.com - Resultados',
-        logged: false
-    })
-})
+
 
 router.get('/administracion', function(req, res, next) {
     res.render('administracion', {
