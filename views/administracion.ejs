@@ -8,101 +8,95 @@
 <body>
     <% include partials/header-bootstrap-admin-in.ejs %>
 
-    <section class="container-fluid">
-        <br />
-        <h2><strong>Administrar Restaurantes</strong></h2>
-        <hr width="100%" noshade>
-    </section>
+    <div class="jumbotron bg-dark bg-image">
+        <h1 class="t-bold t-white">Panel Administrativo</h1>
+        <p class="lead t-white">Opciones de administrador</p>
+    </div>
 
-    <section class="container-fluid">
+    <div class="container">
+
+        <h3 class="t-bold">Restaurantes</h3>
+        <hr class="my-4">
+
         <button class="btn btn-primary bg-blue">+ Nuevo Restaurante</button>
         <br />
-    </section>
 
-    <section class="container-fluid">
-        <div class="card-container row">
-            <div class="d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/restaurants/1.jpg" class="card-img-top img-fluid imgResponsive"
-                        alt="Restaurante1">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>Miskay Restaurant</strong></h5>
-                        <hr>
-                        </hr>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Ingresado al sistema el:</strong></h6>
-                        <p class="card-text">8 de junio del 2019</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Tipo de comida:</strong></h6>
-                        <p class="card-text">Mediterránea</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Dirección:</strong></h6>
-                        <p class="card-text">Urdesa</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Mesas disponibles:</strong></h6>
-                        <p class="card-text">24 mesas</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Información extra:</strong></h6>
-                        <p class="card-text">Mesas con 4 asientos</p>
-                        <div class="btn-group">
-                            <button class="btn btn-secondary bg-blue">Modificar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </div>
+        <div class="cards-container">
+            <div class="card mb3">
+                <div class="image-wrapper">
+                    <img class="card-img-top img-fluid" src="/images/restaurants/1.jpg"></img>
                 </div>
+                <article class="card-body">
+                    <h5 class="card-title"><strong>Miskay Restaurant</strong></h5>
+                    <hr>
+                    </hr>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Ingresado al sistema el:</strong></h6>
+                    <p class="card-text">8 de junio del 2019</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Tipo de comida:</strong></h6>
+                    <p class="card-text">Mediterránea</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Dirección:</strong></h6>
+                    <p class="card-text">Urdesa</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Mesas disponibles:</strong></h6>
+                    <p class="card-text">24 mesas</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Información extra:</strong></h6>
+                    <p class="card-text">Mesas con 4 asientos</p>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary bg-blue">Modificar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                </article>
             </div>
-            <div class="d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/restaurants/2.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante2">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>Avocaditos</strong></h5>
-                        <hr>
-                        </hr>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Ingresado al sistema el:</strong></h6>
-                        <p class="card-text">18 de junio del 2019</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Tipo de comida:</strong></h6>
-                        <p class="card-text">Comida típica</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Dirección:</strong></h6>
-                        <p class="card-text">Urdesa</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Mesas disponibles:</strong></h6>
-                        <p class="card-text">32 mesas</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Información extra:</strong></h6>
-                        <p class="card-text">Mesas con 4 y 6 asientos</p>
-                        <div class="btn-group">
-                            <button class="btn btn-secondary bg-blue">Modificar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </div>
-
-                    </div>
+            <div class="card mb3">
+                <div class="image-wrapper">
+                    <img class="card-img-top img-fluid" src="/images/restaurants/2.jpg"></img>
                 </div>
+                <article class="card-body">
+                    <h5 class="card-title"><strong>Avocaditos</strong></h5>
+                    <hr>
+                    </hr>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Ingresado al sistema el:</strong></h6>
+                    <p class="card-text">18 de junio del 2019</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Tipo de comida:</strong></h6>
+                    <p class="card-text">Comida típica</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Dirección:</strong></h6>
+                    <p class="card-text">Urdesa</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Mesas disponibles:</strong></h6>
+                    <p class="card-text">32 mesas</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Información extra:</strong></h6>
+                    <p class="card-text">Mesas con 4 y 6 asientos</p>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary bg-blue">Modificar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                </article>
             </div>
-            <div class="d-flex align-items-stretch">
-                <div class="card">
-                    <img src="images/restaurants/3.jpg" class="card-img-top img-fluid imgResponsive" alt="Restaurante3">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>Lo Nuestro</strong></h5>
-                        <hr>
-                        </hr>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Ingresado al sistema el:</strong></h6>
-                        <p class="card-text">5 de mayo del 2019</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Tipo de comida:</strong></h6>
-                        <p class="card-text">Comida típica</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Dirección:</strong></h6>
-                        <p class="card-text">Urdesa</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Mesas disponibles:</strong></h6>
-                        <p class="card-text">12 mesas</p>
-                        <h6 class="card-subtitle mb-2 text-muted"><strong>Información extra:</strong></h6>
-                        <p class="card-text">Mesas con 4 asientos</p>
-                        <div class="btn-group">
-                            <button class="btn btn-secondary bg-blue">Modificar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="image-wrapper">
+                    <img class="card-img-top img-fluid" src="/images/restaurants/3.jpg"></img>
                 </div>
+                <article class="card-body">
+                    <h5 class="card-title"><strong>Lo Nuestro</strong></h5>
+                    <hr>
+                    </hr>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Ingresado al sistema el:</strong></h6>
+                    <p class="card-text">5 de mayo del 2019</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Tipo de comida:</strong></h6>
+                    <p class="card-text">Comida típica</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Dirección:</strong></h6>
+                    <p class="card-text">Urdesa</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Mesas disponibles:</strong></h6>
+                    <p class="card-text">12 mesas</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><strong>Información extra:</strong></h6>
+                    <p class="card-text">Mesas con 4 asientos</p>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary bg-blue">Modificar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                </article>
             </div>
         </div>
-    </section>
-
-
+    </div>
     <% include partials/footer.ejs %>
-
-    <!-- Optional JavaScript -- >
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <% include partials/scripts.bundles.ejs %>
 </body>
 

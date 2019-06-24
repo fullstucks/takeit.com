@@ -1,0 +1,17 @@
+:root {
+    --primary-light: #e5fcc2;
+    /*--primary-light: black;*/
+    --secondary-light: #9de0ad;
+    --primary-blue: #45ada8;
+    --primary-indigo: #547980;
+    --dark: #594f4f;
+    --white: #FFFFFF;
+    --gray: #E6E6E6;
+
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+  }
+  

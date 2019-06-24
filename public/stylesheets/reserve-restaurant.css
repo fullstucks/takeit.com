@@ -2,25 +2,6 @@
      align-content: center;
  }
  
- .title-form {
-     font-family: "helvetica, Century Gothic" font-size: 14pt;
-     font-weight: bolder;
-     color: var(--primary-blue);
- }
- 
- .subtitle-form {
-     font-family: "helvetica, Century Gothic" font-size: 12pt;
-     font-weight: bolder;
-     color: var(--primary-blue);
- }
- 
- .text-form {
-     margin-top: 15px;
-     font-family: Century Gothic, Century;
-     font-weight: cursive;
-     color: grey;
- }
- 
  .nav-reserve-selection {
      align-content: center;
      display: flex;
@@ -70,8 +51,9 @@
  }
  
  .reserve-section-img {
-     width: 300px;
-     height: 300px;
+     width: 250px;
+     height: 250px;
+     margin-right: 20px;
  }
  
  #orden-section>div {
@@ -81,7 +63,7 @@
  #orden-section {
      width: 60%;
      margin-top: 30px;
-     padding: 10px 10px;
+     padding: 10px 0px 10px 0px;
      background-color: var(--primary-greylight);
  }
  
@@ -96,6 +78,7 @@
  }
  
  #horario-section {
+     width: 40%;
      margin-top: 30px;
      padding: 10px 10px;
      background-color: var(--primary-greylight);
@@ -108,10 +91,10 @@
  
  #horario-section>div {
      margin-left: 10px;
-     margin-top: 10px;
+     margin-top: 5px;
  }
- 
- #fecha-reservables #fecha-disponible {
+
+ #fecha-disponible {
      display: flex;
      margin-top: 30px;
      padding: 10px 10px;
@@ -125,29 +108,42 @@
      border-color: grey;
      border-radius: 5px;
      padding: 10px 5px 10px 5px;
-     font-size: 10pt;
      margin-left: 5px;
  }
+ #horario-disponible > h5{
+     font-size: 10pt;
+     font-family: sans-serif;
+     font-weight: bolder;
+ }
+ #fecha-disponible{
+     position: relative;
+     display:block;
+ } 
+ #horas-disponibles{
+     display: flex;
+     float: left;
+ }
  
- #fecha-reservables #fecha-disponible>#horario-disponible:hover {
+ #fecha-reservables #fecha-disponible #horas-disponibles >#horario-disponible:hover {
      background: var(--primary-blue);
      color: #ffffff;
  }
  
- section #reserva-section .title-reserve-section {
-     font-family: helvetica;
+ .title-reserve-section {
+     margin: 0;
+     font-family:"Ubuntu", sans-serif;
      font-weight: bolder;
      color: var(--primary-blue);
-     font-size: 16pt;
+     font-size: 14pt;
  }
  
  section #reserva-section h4 {
-     margin-top: 100pt;
+     margin-top: 30px;
  }
  
  p {
      margin-top: 15px;
-     font-family: Century Gothic;
+     font-family:"Ubuntu", sans-serif;
  }
  
  hr {

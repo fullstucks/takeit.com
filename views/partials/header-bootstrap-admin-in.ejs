@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="images/logo2.png" width="110" height="50" class="d-inline-block align-top" alt="logo">
+            <span class="navbar-brand mb-0 h1 brand"></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -17,13 +18,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Reportes</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/user.png" width="50" height="50" alt="perfil" /></a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Perfil</a>
-                        <a class="dropdown-item" href="#">Configuración</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="btn btn-secondary btnIcons">
+                            <i class="fa fa-user disabled" aria-hidden="true" href="#"></i>
+                            <span class="text text-left"></span>Perfil</span>
+                        </button>
+                        <button class="btn btn-secondary btnIcons">
+                            <i class="fa fa-cog disabled" aria-hidden="true" href="#"></i>
+                            <span class="text"></span>Configuración</span>
+                        </button>
+                        <button class="btn btn-secondary btnIcons">
+                            <i class="fa fa-sign-out disabled" aria-hidden="true" href="#"></i>
+                            <span class="text"></span>Cerrar sesión</span>
+                        </button>
                     </div>
                 </li>
             </ul>

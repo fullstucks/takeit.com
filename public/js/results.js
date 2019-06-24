@@ -56,10 +56,8 @@ function populate_results(restaurants){
         
         markers[restaurant["ubicación"]].addTo(mymap)
 
-        let result_element =  $(template)
-        result_element.click(()=>{
-            mymap.setView(markers[restaurant["ubicación"]].getLatLng(), 15)
-        })
+        //let result_element =  $(template)
+        
 
         $("#results").append(result_element);
 
