@@ -8,38 +8,22 @@
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
       crossorigin="">
+
 </head>
 
 <body>
   <% include partials/header.ejs%>
-  <section id="search-section">
-    <span class="t-white t-title-small">Busca tu restaurante favorito</span>
-    <form method="post">
-      <input id="search-input" class="" name="text-input" placeholder="  Ubicación, restaurante, o menú" type="text">
-      <input id="search-btn" type="submit" value="buscar">
-    </form>
-  </section>
 
-  <div class="wrapper">  
-    
-        <div id="results" class="result_container">
-       
-        </div>
-        <div class="map_container">
-          <div id="id_map">
+  <app-root></app-root>
 
-          </div>
-      </div>
-    
-  </div>
+  <% include partials/footer.ejs%>
 
-  </div>
-  <script src="js/home.js"></script>
-  <script src="bootstrap/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-      crossorigin=""></script>
-  <script src="js/results.js"></script>
+  <script src="js/results/runtime-es2015.858f8dd898b75fe86926.js" type="module"></script>
+  <script src="js/results/polyfills-es2015.5728f680576ca47e99fe.js" type="module"></script>
+  <script src="js/results/runtime-es5.741402d1d47331ce975c.js" nomodule></script>
+  <script src="js/results/polyfills-es5.405730e5ac8f727bd7d7.js" nomodule></script>
+  <script src="js/results/main-es2015.35cc4bbcc5a0eeefa7a5.js" type="module"></script>
+  <script src="js/results/main-es5.28ed45e72e0a1fbfbcd8.js" nomodule></script>
 </body>
 
 </html>

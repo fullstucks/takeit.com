@@ -14,16 +14,14 @@
         font-weight: bold;
         border-radius: 5px;
         padding: 5px;
-        width: 130px;
+        width: 140px;
         height: 40px;
     }
 
     .map_container{
-        padding: 20px;
-        margin: 5px;
-        width: 42%;
-        height: 80%;
+        display: none;
     }
+
 
     #search-section form{
         display: flex;
@@ -44,6 +42,7 @@
 
 }
 
+
 @media only screen and (max-device-width: 760px) {
     .result_container{
         width: 100%;
@@ -54,14 +53,20 @@
     }
 
     .result-box{
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
+        margin: 5px;
+    }
+
+    .wrapper{
+        height: 100%;
     }
 
     .result-box img{
         height: 300px;
         width: auto;
     }
+
 
     .result-box .description{
         padding-top: 20px;
@@ -112,5 +117,9 @@
     #search-input{
         width: 500px;
         height: 70px;
+    }
+
+    .result_container{
+        height: 100%;
     }
 }

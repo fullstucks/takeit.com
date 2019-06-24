@@ -20,6 +20,15 @@
     margin-bottom: 150px;
 }
 
+#message-large-left {
+    text-align: left;
+}
+
+#message-large-left span {
+    font-size:  70pt;
+    font-weight: bold;
+}
+
 #message-large span {
     font-size: 40pt;
     font-weight: bold;
@@ -139,9 +148,11 @@ iframe {
 
 
 #topzones {
-    margin: 5px auto;
+    margin: 20px auto;
     padding: 15px;
-    width: 75%;
+    position: absolute;
+    left: 20%;
+    right: 10%;
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
@@ -159,10 +170,8 @@ iframe {
     height: 250px;
 }
 
-
-
-
 #topzones a div h4 {
+    font-size: 20pt;
     color: white;
 }
 #topzones a div h5 {
@@ -179,6 +188,7 @@ iframe {
     position: absolute;
     top: 0;
 }
+
 .in-center-image{
     position: absolute;
     top: 40%;

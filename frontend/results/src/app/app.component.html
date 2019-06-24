@@ -1,0 +1,25 @@
+<section id="search-section">
+    <span class="t-white t-title-small">Busca tu restaurante favorito</span>
+    <form>
+        <div>
+            <!--input id="search-input" 
+                [(ngModel)]="search_input" 
+                autocomplete="off"
+                name = "search_input" 
+                utocomplete="off" 
+                (ngModelChange)="onEdit($event)"
+                placeholder="  Ubicación, restaurante, o menú"-->
+            <input id="search-input" 
+                [(ngModel)]="search_input" 
+                autocomplete="off"
+                name = "search_input" 
+                placeholder="  Ubicación, restaurante, o menú">
+            <!--ul style="list-style: none; background-color: white">
+                <li *ngFor="let sugg of suggestions" style="color: black"> {{sugg.nombre}}</li>
+            </ul-->
+        </div>
+        
+        <button id="search-btn" (click)= "onSearch()">buscar</button>
+    </form>
+</section>
+<app-results [restaurants]=results ></app-results>

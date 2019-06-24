@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    font-family:"Ubuntu", sans-serif;
+}
+
+
+.root {
+    margin: 0
+}
+
+::placeholder {
+    color: rgb(94, 94, 94);
+}
+
+#message-large {
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    margin: 140px auto;
+    margin-bottom: 150px;
+}
+
+#message-large-left {
+    text-align: left;
+}
+
+#message-large-left span {
+    font-size:  70pt;
+    font-weight: bold;
+}
+
+#message-large span {
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+#search-section {
+    margin: 0;
+    text-align: center;
+    justify-items: center;
+    padding: 30px;
+    background: url(/assets/images/search-bg2.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+#search-section form {
+    justify-content: space-evenly;
+    display: flex;
+    width: 50%;
+    margin: 10px auto;
+}
+
+
+#search-input {
+    margin: 15px;
+    width: 77%;
+    height: 45px;
+    border-radius: 5px;
+    border: transparent;
+    background-color: white;
+    font-size: 14pt;
+}
+
+#search-btn {
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    border: transparent;
+    margin: 15px;
+    width: 15%;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+}
+
+
+.map-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    margin: 10px;
+}
+
+
+.summary-section {
+    width: 98%;
+    margin: 25px auto;
+}
+
+.summary-section span {
+    font-size: 20pt;
+    font-weight: bold;
+    color: var(--dark)
+}
+
+.cards-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.card {
+    margin: 5px;
+    
+    box-shadow: 0px 0px 5px 0px #b2bfc2;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.card:hover {
+    margin-top: 0;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 8px 0px #b2bfc2;
+}
+
+.card-details {
+    padding: 10px;
+}
+
+.card-details h1 {
+    color: black;
+    font-weight: bold;
+}
+
+.image-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    background: center center;
+}
+
+.image-wrapper img {
+    width: 250px;
+    height: 208px;
+}
+
+
+#topzones {
+    margin: 20px auto;
+    padding: 15px;
+    position: absolute;
+    left: 20%;
+    right: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+#topzones a {
+    margin: 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+#topzones a img {
+    width: 360px;
+    height: 250px;
+}
+
+#topzones a div h4 {
+    font-size: 20pt;
+    color: white;
+}
+#topzones a div h5 {
+    color: white;
+    font-size: 16pt;
+    margin-bottom: 7px;
+}
+
+.shadower {
+    background: black;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.in-center-image{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}

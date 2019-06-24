@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start:dev": "forever -w ./bin/www",
-    "start": "forever ./bin/www"
+    "start": "forever ./bin/www",
+
+    "mv:home" :"rm public/js/home/*.js ; cp frontend/home/dist/home/*.js public/js/home/",
+    "mv:results": "rm public/js/results/*.js; cp frontend/results/dist/results/*.js public/js/results/"
   },
   "dependencies": {
     "debug": "~2.6.9",
@@ -16,9 +19,6 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0"
   },
-  "description": "yarn",
-  "main": "yarn init",
   "repository": "https://github.com/fullstucks/takeit.com.git",
-  "author": "Neythan León <neythan.astro@gmail.com>",
   "license": "MIT"
 }

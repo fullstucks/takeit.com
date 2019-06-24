@@ -1,0 +1,13 @@
+footer {
+  border-top: #c4e28c;
+  border-width: 20px;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--dark);
+  width: 100%;
+  color: white;
+}
+
+footer>p {
+  text-align: center;
+}

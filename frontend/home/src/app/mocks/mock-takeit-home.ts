@@ -3,7 +3,6 @@ import { expressionType } from '@angular/compiler/src/output/output_ast';
 import { TopZones } from '../topzones/topzones';
 
 export const TOPGYE: TopGye[] = [
-    
     {
         img_url: "1.jpg",
         nombre: "Miskay Restaurant",
