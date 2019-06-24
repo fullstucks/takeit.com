@@ -1,156 +1,117 @@
 <!DOCTYPE html>
+<html lang="es">
+
 <head>
-    <meta charset="utf-8">
-    <title>Takeit.com</title>
-    
-    <script src="js/reservarRestaurante.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-    <link rel="stylesheet" href="/stylesheets/estilosFH.css">
-    <link rel='stylesheet' href="/stylesheets/estandares.css">
-    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css">
-    <link rel="stylesheet" href="/stylesheets/nosotros.css">
-
-    <link rel="stylesheet" href="/stylesheets/colors.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/header.responsive.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/style.responsive.css' />
-    <link rel="stylesheet" href="/stylesheets/footer.css">
-    <link rel="stylesheet" href="/stylesheets/content.css">
-    <link rel="stylesheet" href="/stylesheets/content.responsive.css">
-    <link rel="stylesheet" href="/stylesheets/generaReserva.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-     
-    <link rel="stylesheet" type="text/css" href=https://github.com/eternicode/bootstrap-datepicker">
-
+    <title>Takeit: Armar Reserva</title>
+    <% include partials/helmet-bootstrap.ejs %>
+    <link rel="stylesheet" href="/stylesheets/seleccionarEntradas.css">
 
 </head>
 
-<body class="content.css">
-    <header>
-        <div class="container">
-            <div class="home">
-                <a href="/">
-                    <img src="/images/logo2.png" alt="main page" srcset="" span="Takeit">
-                </a>
+<body>
+    <% include partials/header-bootstrap.ejs %>
+    <div class="jumbotron bg-dark bg-image">
+        <h1 class="t-bold t-white">Arma tu reserva</h1>
+        <p class="lead t-white">Cuando quieras y como quieras</p>
+    </div>
+
+    <div class="container">
+        <h3 class="t-bold">Tu Reserva</h3>
+        <hr class="my-4">
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Fecha y Hora</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/seleccionarMesa">Mesa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/confirmacion">Confirmación</a>
+            </li>
+
+        </ul>
+
+        <div id="reserva" class="container-fluid">
+
+            <section id="restaurant-data" class="mt-3">
+                <div class="card">
+                    <div class="card-header">
+                        Estás reservando para
+                    </div>
+                    <div class="container-fluid">
+                        <div class="image-wrapper mt-2">
+                            <img class="card-img-top img-fluid" src="/images/restaurants/5.jpg"></img>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Miskay Restaurant</h5>
+                            <p class="card-text text-muted">Av Victor Emilio Estrada 800</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dates-and-times" class="mt-5">
+                <h6 class="t-bold">Horarios disponibles</h6>
+                <hr>
+                <div class="available-dates">
+                    <p>Hoy. 6 de junio</p>
+                    <button type="button" class="btn btn-outline-secondary"
+                        class="btn btn-outline-secondary">19:00</button>
+                    <button type="button" class="btn btn-outline-secondary">20:00</button>
+                    <button type="button" class="btn btn-outline-secondary">21:00</button>
+                    <button type="button" class="btn btn-outline-secondary">22:00</button>
+                </div>
+                <div class="available-dates">
+                    <p>Viernes. 7 de junio</p>
+                    <button type="button" class="btn btn-outline-secondary">19:00</button>
+                    <button type="button" class="btn btn-outline-secondary">20:00</button>
+                    <button type="button" class="btn btn-outline-secondary">21:00</button>
+                    <button type="button" class="btn btn-outline-secondary">22:00</button>
+                </div>
+                <div class="available-dates">
+                    <p>Sábado. 7 de junio</p>
+                    <button type="button" class="btn btn-outline-secondary">17:00</button>
+                    <button type="button" class="btn btn-outline-secondary">18:00</button>
+                    <button type="button" class="btn btn-outline-secondary">19:00</button>
+                    <button type="button" class="btn btn-outline-secondary">20:00</button>
+                </div>
+                <div class="available-dates">
+                    <p>Domingo. 9 de junio</p>
+                    <button type="button" class="btn btn-outline-secondary">18:00</button>
+                    <button type="button" class="btn btn-outline-secondary">19:00</button>
+                </div>
+            </section>
+
+            <section id="tables" class="mt-5">
+                <h6 class="t-bold">Invitados</h6>
+                <hr>
+                <p>Número de personas</p>
+                <select class="form-control">
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+            </section>
+            <!-- HELP, CAN'T CENTER BUTTON -->
+            <div id="next-wrap" class="container-fluid">
+                <button id="next" type="button" class="btn btn-primary bg-blue"
+                    href="/seleccionarMesa">Siguiente</button>
             </div>
 
-            <nav>
-                <div id="info">
-                    <a class="t-link t-dark" href="/nosotros">¿Quienes somos?</a>
-                </div>
-                <div id="session">
-                    <div id="logup" class="btn bg-indigo border-indigo t-white">
-                        <span>Registrarse</span>
-                    </div>
-                    <div id="login" class="btn border-black t-black">
-                        <span>Iniciar sesión</span>
-                    </div>
-                </div>
-            </nav>
         </div>
-    </header>
+    </div>
+    <br>
+    <% include partials/footer.ejs %>
 
-    <section>
-        <div class="jumbotron bg-dark bg-image">
-        <h1 class="t-bold t-white">Selecciona tus Entradas</h1>
-        <p class="lead t-white">Escoge la fecha y hora en la que deseas degustar de una deliciosa comida</p>
-        </div>
-    </section>
-    
-    <section>
-        <div id="form-reservation" class="format-general-form">
-            <div id="img-form-reservation" class="back-img-form format-img-form">
-                <div id="name-restaurant-reservation" class="title-img-reservation">
-                    <h1 class="title-img-reservation">Parrillada del Nato</h1>
-                </div>
-                <div id="description-restaurant-reservation" class="paragraf-reservation">
-                    <p>No es un lugar exclusivo, pero de seguro es un lugar donde la mezcla de aromas exquisitos extremecen tu paladar y presionan tus deseos por probar nuestros asados.</p>
-                </div>
-            </div>
-            
-            <div id="nav-form-reservation" class="list-nav-bar">
-                    <li><a class="reserve-menu" href="/seleccionarEntradas">Seleccionar tus entradas</a></li>
-                    <li><a class="reserve-menu" href="/confirmacion">Confirma tu reserva</a></li>
-                    <li><a class="reserve-menu" href="/pago">Efectúa el Pago de tu reserva</a></li>
-            </div>
-
-            <div id="form-reservation-section" class="form-reservation-area">
-                <div id="select-sucursal" >
-                    <h1 class="subtitule-reservation">Selecciona Sucursal</h1>
-                    <div class="custom-select" style="width:200px;">
-                        <select class="select">
-                            <option value="volvo">Sauces</option>
-                            <option value="saab">Alborada</option>
-                            <option value="fiat">Zamborondon</option>
-                            <option value="audi">Duran</option>
-                        </select>
-                    </div>
-                </div> 
-                
-                <div id="select-fecha">
-                    <h1 class="subtitule-reservation">Fecha de la Reserva</h1>
-                    <form >
-                        <input type="date" name="fecha-reserva" id="fecha-reserva" class="datepicker input-group date">
-                    </form>
-                </div>
-                
-                <div id="select-hora">
-                    <h1 class="subtitule-reservation">Hora de la reserva</h1>
-                    <form >
-                        <input type="time" name="fecha-reserva">
-                    </form>
-                </div>
-            </div>
-            <div class="tickect-section">
-                    <div class="tickets-section-titlte">
-                        <h1 class="subtitule-reservation">Selecciona tus entradas</h1>
-                        <h1 class="subtitule-reservation">Asientos disponibles: 000</h1>
-                    </div>
-                    <form action="processEntradas" method="post" name="seleccionarEntradas">
-                    <div class="item-entradas">
-                        <h4 class="textInBox-reservation">Número de personas: </h4>
-                        <input id="num-entradas" type="number" name="num-entradas" size="10">
-                        <h4 class="textInBox-reservation">x $0.00</h4>
-                        <h4 class="textInBox-reservation">$0.00</h4>
-                        <input class="btn bg-indigo border-indigo t-white" type="submit" value="Continuar"name="Continuar" id="cont-entradas">
-
-                    </div>
-                    </form>
-            </div>
-            <div id="confirmation-section" class="tickect-section">
-                    <div id="confirmation-section" class="tickets-section-titlte">
-                        <h1 class="subtitule-reservation">Confirma tu reservación</h1>
-                    </div>
-                    <form action="processConfirmation" method="get" name="seleccionarEntradas">
-                    <div id="reservation-data" class="item-data">
-                        <h4 class="textInBox-reservation">Nombre cliente: </h4>
-                        <h4 class="textInBox-reservation">Número de entradas:</h4>
-                        <h4 class="textInBox-reservation">Sucursal:</h4>
-                        <h4 class="textInBox-reservation">Fecha y hora:</h4>
-                        <h4 class="textInBox-reservation">Valor total:</h4>
-                    </div>
-                    <div class="align-button">
-                        <input class="btn bg-indigo border-indigo t-white" type="submit" value="Confirmar" name="Confirmar" id="cont-entradas">
-                    </div>
-                    </form>
-            </div>
-        </div>
-
-    </section>
-    
-    <footer>
-        <p> Visita nuestro perfil de <a href="https://github.com/fullstucks">Github</a></p>
-        <hr width="30%">
-        <p><a href="#">Volver al tope</a></p>
-        <div class="btn-group">
-            <h8 class="labelFooter">Copyright © Takeit.com 2019</h8>
-        </div>
-    </footer>
 </body>
 
 </html>

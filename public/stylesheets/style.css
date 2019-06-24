@@ -97,6 +97,10 @@ hr {
   background-color: var(--dark)
 }
 
+.bg-gray {
+  background-color: lightgray;
+}
+
 
 /* ----------- text ------------ */
 .t-white {

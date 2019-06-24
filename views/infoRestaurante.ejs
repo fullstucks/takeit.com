@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Takeit.com - Restaurante</title>
+    <title>Takeit : El Restaurante</title>
     <% include partials/helmet-bootstrap.ejs %>
     <link rel="stylesheet" href="/stylesheets/infoRestaurante.css">
 
@@ -16,16 +16,15 @@
         <br>
         <br>
         <section>
-            <div id="info-title">
-                <h1 id="restaurant-name" class="t-black">Eddy's BBQ</h1>
-                <button type="submit" class="btn btn-primary bg-blue">takeit!</button>
+            <div class="jumbotron bg-dark">
+                <h1 id="restaurant-name" class="t-white">Eddy's BBQ</h1>
+                <button type="submit" class="btn btn-primary-large bg-blue">takeit!</button>
+                <p class="lead t-white descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui ante,
+                        bibendum sed ullamcorper eget, tristique in ligula.
+                        Sed consequat eros sit amet sapien ultricies auctor.
+                        Suspendisse eu lorem odio. Interdum et malesuada fames
+                        ac ante ipsum primis in faucibus</p>
             </div>
-            <hr>
-            <p id=descripcion>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui ante,
-                bibendum sed ullamcorper eget, tristique in ligula.
-                Sed consequat eros sit amet sapien ultricies auctor.
-                Suspendisse eu lorem odio. Interdum et malesuada fames
-                ac ante ipsum primis in faucibus.</p>
             <div id="imagenes-restaurante" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#imagenes-restaurante" data-slide-to="0" class="active"></li>
@@ -123,7 +122,6 @@
     <% include partials/footer.ejs %>
 
     <% include partials/scripts.bundles.ejs %>
-    <script src="bootstrap/jquery-3.4.1.min.js"></script>
     <script src="js/recommendations.js"></script>
 </body>
 
