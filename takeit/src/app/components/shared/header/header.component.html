@@ -1,0 +1,114 @@
+
+<header class="navbar sticky-top navbar-expand navbar-light navbarHeader">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="assets/images/logo2.png" width="110" height="50" class="d-inline-block align-top" alt="logo">
+        </a>
+
+        <ng-container *ngIf="!loggedin">
+                <button class="navbar-toggler" 
+                        type="button" 
+                        data-toggle="collapse" 
+                        data-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" 
+                        aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div id="info" class="btn-group">
+                                <a class="t-link t-dark" routerLink="/quienessomos" >¿Quiénes somos?</a>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" 
+                                        class="btn btn-secondary bg-indigo" 
+                                        style="height: auto">
+                                    <strong>Registrarse</strong>
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" 
+                                        (click)="login()"
+                                        class="btn btn-outline-secondary" 
+                                        style="height: auto">
+                                    <strong>Iniciar sesión</strong>
+                                </button>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+        </ng-container>
+
+        <ng-container *ngIf="loggedin">
+                <button class="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/images/user.png" width="50" height="50" alt="perfil" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="btn btn-secondary btnIcons" (click)="goMisReservas()">
+                                    <i class="fa fa-cog disabled" aria-hidden="true" href="#"></i>
+                                    <span class="text">Mis Reservas</span>
+                                </button>
+                            <button class="btn btn-secondary btnIcons"
+                                    (click)="logout()">
+                                <i class="fa fa-sign-out disabled" aria-hidden="true" href="#"></i>
+                                <span class="text">Cerrar sesión</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </ng-container>
+
+        
+    </div>
+</header>
+
+<!------------------------    Ya no sirve pero no lo borren   --------------------->
+<!--header>
+    <div class="container">
+        <div class="home">
+            <a routerLink="/">
+                <img src="assets/images/logo2.png" alt="main page" srcset="" span="Takeit">
+            </a>
+        </div>
+
+        <nav>
+            <div id="info">
+                <a class="t-link t-dark" href="/nosotros">¿Quiénes somos?</a>
+            </div>
+            <div id="session">
+                    <div *ngIf="loggedin" class="user">
+                        <img src="assets/images/user.png" alt="">
+                    </div>
+                    
+                    <ng-container  *ngIf="!loggedin">
+                        <div id="logup" class="btn bg-indigo border-indigo t-white">
+                            <span>Registrarse</span>
+                        </div>
+                        <div id="login" class="btn border-black t-black">
+                            <span>Iniciar sesión</span>
+                        </div>
+
+                    </ng-container>
+                    
+        
+            </div>
+        </nav>
+    </div>
+
+</header-->
+
+

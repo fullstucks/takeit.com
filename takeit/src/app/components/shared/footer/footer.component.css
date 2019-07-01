@@ -1,0 +1,28 @@
+footer {
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: var(--dark);
+    padding: 30px;
+    margin-top: 10px;
+ }
+
+ hr{
+     margin: 0px;
+ }
+
+ footer>p {
+    text-align: center;
+  }
+  
+  .labelFooter {
+    margin-top: 5px;
+    font-size: 15px;
+    font-family: "Brandon", sans-serif;
+    color: var(--gray);
+    padding-right: 15px;
+    padding-left: 15px;
+  }

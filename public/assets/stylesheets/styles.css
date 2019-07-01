@@ -1,0 +1,133 @@
+
+body{
+  margin: 0;
+  font-family: 'Ubuntu'
+}
+
+/* ------------ fonts -------------- */
+h2, h3 {
+  font-family: "Brandon";
+}
+
+h1{
+  font-weight: bold;
+}
+
+h3{
+  font-weight: 500;
+  color: var(--dark)
+}
+
+p{
+  text-align: justify;  
+}
+
+hr {
+  height: 1px;
+  background-color: var(--dark);
+}
+
+
+
+/* ----------- buttons ------------ */
+.btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid;  
+  height: 30%;
+  cursor: pointer;
+}
+
+.takeit-btn {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid;
+  height: 30%;
+  cursor: pointer;
+}
+
+.takeit-btn span {
+  font-weight: bold;
+}
+
+.btn span {
+  margin: 0;
+  font: 10pt "Helvetica", Arial, sans-serif;
+}
+
+
+
+/* ----------- borders ------------ */
+.border-black {
+  border-color: black;
+}
+
+.border-indigo {
+  border-color: var(--primary-indigo);
+}
+
+
+
+
+/* ----------- backgrounds ------------ */
+.bg-indigo {
+  background-color: var(--primary-indigo);
+}
+
+.bg-transparent {
+  color: transparent;
+}
+
+.bg-blue {
+  background-color: var(--primary-blue);
+}
+
+.bg-green {
+  background-color: var(--primary-light);
+}
+
+.bg-dark {
+  background-color: var(--dark)
+}
+
+.bg-gray {
+  background-color: lightgray;
+}
+
+
+/* ----------- text ------------ */
+.t-white {
+  color: white;
+}
+
+.t-black {
+  color: black;
+}
+
+.t-indigo {
+  color: var(--primary-indigo)
+}
+
+.t-dark {
+  color: var(--dark);
+}
+
+.t-bold {
+  font-weight: bold;
+}
+
+.t-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.t-title-small{
+  font-size: 15pt;
+}

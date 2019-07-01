@@ -1,0 +1,48 @@
+<section id="search-section">
+    <span class="t-white t-title-small">Busca tu restaurante favorito</span>
+    <form>
+        <input id="search-input"
+                [(ngModel)]="text_input"
+                name="text-input" 
+                placeholder=" Ubicación o restaurante" 
+                type="text">
+        <button id="search-btn" (click)= "onSearch()">buscar</button>
+    </form>
+</section>
+
+<div class="wrapper">
+
+    <div id="results" class="result_container">
+        <div *ngIf="restaurants.length === 0">
+            <span class="notFountMsg">no pudimos encontrar nada con {{given_text_input}}</span>
+        </div>
+        <div *ngFor="let restaurant of restaurants" class="result-box" 
+            [class.selected]="selectedRestaurant === restaurant"
+            (click) = "onSelect(restaurant)">
+            <div class="x">
+                <img src="assets/images/restaurants/{{restaurant.img_url}}">
+                <div class="description">
+                    <h1>{{restaurant.nombre}}</h1>
+                    <div class="star-rating">
+                        <span *ngFor="let i of list_n(restaurant.n_estrellas)" class="fa fa-star checked"></span>
+                    </div>
+                    <h3>{{restaurant.resenas}}</h3>
+                    <h3>{{restaurant.mesas_disponibles}} mesas disponibles</h3>
+                    <span>{{restaurant.ubicacion}}</span>
+                </div>
+            </div>
+            <button (click)="takeit(restaurant.id)" class="takeit">take it!</button>
+        </div>
+    </div>
+      
+
+    <div class="map_container">
+        <div class="map"
+            leaflet
+            [leafletOptions]="options">
+            <div [leafletLayer]="marker"></div>
+        </div>
+    </div>
+      
+</div>
+      
