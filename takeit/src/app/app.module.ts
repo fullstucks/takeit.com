@@ -17,6 +17,7 @@ import { InfoRestauranteComponent } from './components/info-restaurante/info-res
 import { GenerarReservaComponent } from './components/generar-reserva/generar-reserva.component';
 import { MisReservasComponent } from './components/mis-reservas/mis-reservas.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
     InfoRestauranteComponent,
     GenerarReservaComponent,
     MisReservasComponent,
-    QuienesSomosComponent
+    QuienesSomosComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ export class Restaurant{
     id: number;
     img_url: string;
     nombre: string;
+    descripcion: string;
     resenas: number;
     mesas_disponibles: number;
     ubicacion: string;
