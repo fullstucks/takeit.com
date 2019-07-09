@@ -25,6 +25,10 @@ header {
     border: none !important;
 }
 
+.btnIcons span:hover {
+    font-weight: bolder;
+}
+
 .btnIcons i {
     font-size: 20px;
     margin-right: 10px;
