@@ -1,42 +1,27 @@
 <div class="root">
 
-    <section id="search-section">
-        <div id="message-large" class="t-white">
-          <span>Reserva tu mesa sin preocupaciones</span>
-        </div>
-        <app-search></app-search>
-    </section>
+  <section id="search-section">
+    <div id="message-large" class="t-white">
+      <span>Reserva tu mesa sin preocupaciones</span>
+    </div>
+    <app-search></app-search>
+  </section>
 
-    <section style="visibility: hidden;">
-      <div id="mapa" class="summary-section">
-        <hr>
-      </div>
+  <div class="container-fluid mt-5">
+
+    <section>
+      <h3 class="t-bold">Recomendados</h3>
+      <hr class="my-4">
+      <app-topgye>
+      </app-topgye>
     </section>
 
     <section>
-      <div class="summary-section">
-        <div>
-          <span>Restaurantes recomendados</span>
-          <hr>
-        </div>
-
-        <app-topgye>
-
-        </app-topgye>
-        
-      </div>
+      <h3 class="t-bold">Zonas</h3>
+      <hr class="my-4">
+      <app-topzones>
+      </app-topzones>
     </section>
-
-    <section>
-      <div class="summary-section">
-        <div>
-          <span>Zonas destacadas</span>
-          <hr>
-        </div>
-        <app-topzones>
-
-        </app-topzones>
-      </div>
-    </section>
-
   </div>
+
+</div>
