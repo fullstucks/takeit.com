@@ -89,5 +89,4 @@ export class ResultsComponent implements OnInit {
   list_n(n:number):Array<number>{
     return Array(n)
   }
-
 }
