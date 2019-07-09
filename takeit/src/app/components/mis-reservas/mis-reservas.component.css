@@ -8,16 +8,17 @@
     font-size: x-large;
 }
 
-.card-info *{
+.card-info * {
     display: inline-block;
 }
 
-.card-info img{
+.card-info img {
     width: 15px;
     height: 15px;
+    margin-right: 10px;
 }
 
-.card-info{
+.card-info {
     margin-bottom: 5px;
 }
 
@@ -27,7 +28,6 @@
     color: var(--dark);
 }
 
-/* Taken from content.css
 .cards-container {
     display: flex;
     flex-flow: row wrap;
@@ -36,9 +36,10 @@
 }
 
 .card:hover {
-    margin-top: 0;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 8px 0px #b2bfc2;
+    box-shadow: 0px 0px 5px 0px #b2bfc2;
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: 0.3s ease-out;
 }
 
 .image-wrapper {
@@ -52,4 +53,3 @@
     width: 250px;
     height: 208px;
 }
-*/
