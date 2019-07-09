@@ -22,7 +22,7 @@
 }
 
 #message-large-left span {
-    font-size:  70pt;
+    font-size: 70pt;
     font-weight: bold;
 }
 
@@ -30,7 +30,6 @@
     font-size: 40pt;
     font-weight: bold;
 }
-
 
 .summary-section {
     width: 98%;
@@ -43,36 +42,33 @@
     color: var(--dark)
 }
 
-@media only screen and (max-width: 960px) {
+.noticias {
+    height: 700px;
+}
 
+.noticias:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 960px) {
     #message-large {
         width: 50%;
         text-align: center;
         justify-content: center;
         margin: 70px auto;
     }
-
-    #message-large span {
-
-    }
-    #search-section {
-
-    }
-    
-    .summary-section span {
-
-    }
+    #message-large span {}
+    #search-section {}
+    .summary-section span {}
 }
 
 @media only screen and (max-width: 760px) {
-
     #message-large {
         width: 50%;
         text-align: center;
         justify-content: center;
         margin: 70px auto;
     }
-
     #message-large span {
         font-size: 20pt;
         font-weight: bold;
@@ -80,7 +76,6 @@
     #search-section {
         padding: 15px;
     }
-    
     .summary-section span {
         font-size: 18pt;
         font-weight: bold;

@@ -18,6 +18,7 @@ import { GenerarReservaComponent } from './components/generar-reserva/generar-re
 import { MisReservasComponent } from './components/mis-reservas/mis-reservas.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NoticiasComponent } from './components/home/noticias/noticias.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     GenerarReservaComponent,
     MisReservasComponent,
     QuienesSomosComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,
