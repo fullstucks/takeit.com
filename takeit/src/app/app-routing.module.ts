@@ -6,6 +6,8 @@ import { InfoRestauranteComponent } from './components/info-restaurante/info-res
 import { GenerarReservaComponent } from './components/generar-reserva/generar-reserva.component';
 import { MisReservasComponent } from './components/mis-reservas/mis-reservas.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -13,7 +15,8 @@ const routes: Routes = [
   {path: 'results', component:ResultsComponent},
   {path: 'infoRestaurante/:id', component:InfoRestauranteComponent},
   {path: 'generarReserva/:id', component: GenerarReservaComponent},
-  {path: 'misReservas', component:MisReservasComponent}
+  {path: 'misReservas', component:MisReservasComponent},
+  {path: '**', component:NotFoundComponent}
 ];
 
 @NgModule({

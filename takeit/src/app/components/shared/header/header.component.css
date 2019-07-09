@@ -1,19 +1,42 @@
-header{
-    background-color: var(--primary-light)
+header {
+    background-color: var(--primary-light);
 }
 
-#info a{
+#info a {
     margin: auto 10px;
     font-size: 14pt;
 }
 
-#info:hover a{
+#info:hover a {
     text-decoration: none;
     color: black;
 }
 
+.subitems {
+    background-color: var(--primary-light);
+}
+
+.btnIcons {
+    margin: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    color: var(--dark);
+    width: max-content;
+    border: none !important;
+}
+
+.btnIcons span:hover {
+    font-weight: bolder;
+}
+
+.btnIcons i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
 
 /*  <---------------- no borrar -------------------> */
+
 
 /*
 header {
@@ -135,4 +158,3 @@ nav #session {
 }
 
 */
-

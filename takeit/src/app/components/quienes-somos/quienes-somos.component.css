@@ -1,4 +1,3 @@
-
 .jumbotron {
     padding: 30px;
     border-radius: 0;
@@ -18,4 +17,11 @@
     width: 95%;
     justify-content: left !important;
     border: none !important;
+}
+
+.bg-image {
+    background-image: url("/assets/images/team-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
