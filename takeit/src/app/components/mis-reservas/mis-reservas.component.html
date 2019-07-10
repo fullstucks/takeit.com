@@ -8,7 +8,39 @@
     <hr class="my-4">
 
     <div class="cards-container">
-        <div class="card mb-3">
+        <div *ngFor="let rest of reservas" (click)="cancel(rest.id)" class="card mb-3">
+            <div class="image-wrapper">
+                <img class="card-img-top img-fluid" src="assets/images/restaurants/{{rest.id}}.jpg">
+            </div>
+            <article class="card-body">
+                <h5 class="card-title t-bold">{{rest.nombre}}</h5>
+                <h6 class="card-subtitle mb-3 text-muted">{{rest.ubicacion}}</h6>
+                <div class="card-info">
+                    <img src="assets/images/icons/group.svg" alt="Número de personas">
+                    <p class="card-text">{{rest.asientos}}</p>
+                </div>
+                <div class="card-info">
+                    <img src="assets/images/icons/datetime.svg" alt="Fecha">
+                    <p class="card-text">{{rest.fecha}}, {{rest.hora}}</p>
+                </div>
+                <div class="card-info">
+                    <img src="assets/images/icons/message.svg" alt="Mensaje">
+                    <p class="card-text">{{rest.info}}</p>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="button" (click)="eliminar(x.id)" class="btn btn-danger" href="#">Cancelar</button>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--NO BORRAR POR SI ACASO-->
+
+<!--div class="card mb-3">
             <div class="image-wrapper">
                 <img class="card-img-top img-fluid" src="assets/images/restaurants/5.jpg">
             </div>
@@ -28,7 +60,7 @@
                     <p class="card-text">1 silla para bebés</p>
                 </div>
                 <div class="text-center mt-3">
-                    <button type="button" class="btn btn-danger" href="#">Cancelar</button>
+                    <button type="button" (click)="eliminar(x.id)" class="btn btn-danger" href="#">Cancelar</button>
                 </div>
             </article>
         </div>
@@ -81,8 +113,4 @@
                     <button type="button" class="btn btn-danger" href="#">Cancelar</button>
                 </div>
             </article>
-        </div>
-
-    </div>
-
-</div>
+        </div-->

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TakeitdataService } from 'src/app/services/takeitdata.service';
+import { Reservas } from '../../models/reservas';
 
 @Component({
   selector: 'app-mis-reservas',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisReservasComponent implements OnInit {
 
-  constructor() { }
+  reservas:Reservas[]
+
+  constructor(private takeitDataService:TakeitdataService) { }
 
   ngOnInit() {
+    this.getRest()
+  }
+
+  getRest():void{
+    this.takeitDataService.getReservas()
+    .subscribe(reservas => this.reservas = reservas)
+  }
+
+  cancel(id:number):void{
+    
   }
 
 }

@@ -12,7 +12,7 @@ export const NOTICIAS: Noticias[] =  [
         id: 2,
         img_url: "https://www.eluniverso.com/sites/default/files/styles/powgallery_1280/public/fotos/2019/07/17681131.jpg?itok=SCAdqTUW",
         titulo: "20 variedades de platos con langosta en festival de restaurante El Fortín",
-        descripcion: "“En un festival pueden llegar a prepararse más de 2.200 langostas de este tipo, en toda la cita gastronómica, de ahí también piden la langosta al grill, la langosta en salsa de jengibre con coco, paellas de langosta, ensaladas, cebiches, una serie de platos”, detalla.",
+        descripcion: "“En un festival pueden llegar a prepararse más de 2.200 langostas de este tipo, en toda la cita gastronómica, de ahí también piden la langosta al grill, la langosta en salsa de jengibre con coco, paellas de langosta, ensaladas, cebiches, una serie de platos",
         url_noticia: "https://www.eluniverso.com/entretenimiento/2019/07/06/nota/7411383/festival-langosta-alternativa-consentir-paladar",
     }
 ]

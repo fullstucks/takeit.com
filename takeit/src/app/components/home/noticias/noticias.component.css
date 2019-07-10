@@ -1,0 +1,16 @@
+.noticias {
+    height: 600px;
+}
+
+.noticias:hover {
+    cursor: pointer;
+}
+
+.noticias h1,
+h3 {
+    color: var(--dark);
+}
+
+.carousel-indicators li {
+    background-color: black !important;
+}

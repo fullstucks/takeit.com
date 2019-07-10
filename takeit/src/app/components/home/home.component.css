@@ -42,14 +42,6 @@
     color: var(--dark)
 }
 
-.noticias {
-    height: 700px;
-}
-
-.noticias:hover {
-    cursor: pointer;
-}
-
 @media only screen and (max-width: 960px) {
     #message-large {
         width: 50%;

@@ -7,7 +7,8 @@ import { Restaurant } from '../models/restaurant';
 import { RESTAURANTS } from '../mocks/mocks.results';
 import { Noticias } from '../models/noticias';
 import { NOTICIAS } from '../mocks/mock-noticias';
-
+import { Reservas } from '../models/reservas';
+import { RESERVAS } from '../mocks/mock-reservas';
 
 
 
@@ -37,4 +38,9 @@ export class TakeitdataService {
   getNews():Observable<Noticias[]>{
     return of(NOTICIAS)
   }
+
+  getReservas():Observable<Reservas[]>{
+    return of(RESERVAS)
+  }
+
 }
