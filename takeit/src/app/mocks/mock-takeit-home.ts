@@ -79,5 +79,10 @@ export const TOPZONES:TopZones[] = [
         img_url: "kennedy.jpg",
         nombre:"Kennedy Norte",
         n_restaurants: 20
+    },
+    {
+        img_url: "lapuntilla.jpeg",
+        nombre:"La Puntilla",
+        n_restaurants: 102
     }
 ]
