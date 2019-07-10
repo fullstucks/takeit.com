@@ -25,3 +25,7 @@
     background-position: center;
     background-size: cover;
 }
+
+.col-sm {
+    text-align: center;
+}

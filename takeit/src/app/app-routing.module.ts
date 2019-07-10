@@ -10,8 +10,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'quienessomos', component: QuienesSomosComponent},
+  {path: '', component:HomeComponent},
+  {path: 'quienessomos', component: QuienesSomosComponent},
   {path: 'results', component:ResultsComponent},
   {path: 'infoRestaurante/:id', component:InfoRestauranteComponent},
   {path: 'generarReserva/:id', component: GenerarReservaComponent},

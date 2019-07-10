@@ -14,13 +14,15 @@ export class NoticiasComponent implements OnInit {
 
   constructor(private takeitDataService:TakeitdataService) { }
 
+
   ngOnInit() {
     this.getNews()
+    console.log("xxxx")
   }
 
   getNews():void{
     this.takeitDataService.getNews()
-    .subscribe(news => this.news = news)
+    .subscribe(news => {this.news = news; console.log(news)})
   }
 
 }
