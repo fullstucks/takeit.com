@@ -1,20 +1,37 @@
 <header class="navbar sticky-top navbar-expand-lg navbar-light navbarHeader">
     <a class="navbar-brand" href="/">
-        <img src="assets/images/logo2.png" width="auto" height="50" class="d-inline-block align-top" alt="logo">
+        <img src="assets/images/logo2.png" 
+                width="auto" 
+                height="50" 
+                class="d-inline-block align-top" 
+                alt="logo">
     </a>
 
     <ng-container *ngIf="!loggedin">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link t-bold" routerLink="/quienessomos">¿Quiénes somos?</a>
-                <button type="button" class="nav-item btn btn-secondary bg-indigo my-2 my-sm-0 t-bold">
+                <a class="nav-item nav-link t-bold" 
+                    data-step="1"
+                    data-intro="muestra información del sitio y de contacto"
+                    routerLink="/quienessomos">¿Quiénes somos?</a>
+                <button type="button" 
+                        class="nav-item btn btn-secondary bg-indigo my-2 my-sm-0 t-bold">
                     Registrarse
                 </button>
-                <button type="button" (click)="login()" class="btn btn-outline-secondary my-2 my-sm-0t-bold t-bold">
+                <button type="button" 
+                    data-step="2"
+                    data-intro="Inicia sessión. Se desplegará un menú el que podrás ver tus reservas"
+                        (click)="login()" 
+                        class="btn btn-outline-secondary my-2 my-sm-0 t-bold t-bold">
                     Inicar Sesión
                 </button>
             </div>
@@ -23,8 +40,13 @@
     </ng-container>
 
     <ng-container *ngIf="loggedin">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,7 +54,10 @@
                 <a class="nav-item nav-link mt-2" routerLink="/quienessomos">¿Quiénes somos?</a>
                 <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle" style="font-size: 40px" aria-hidden="true" href="#"></i>
+                    <i class="fa fa-user-circle" 
+                        style="font-size: 40px" 
+                        aria-hidden="true" 
+                        href="#"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right subitems">
                     <button class="btn btn-secondary btnIcons" (click)="goMisReservas()">
@@ -48,38 +73,3 @@
         </div>
     </ng-container>
 </header>
-
-<!------------------------    Ya no sirve pero no lo borren   --------------------->
-<!--header>
-    <div class="container">
-        <div class="home">
-            <a routerLink="/">
-                <img src="assets/images/logo2.png" alt="main page" srcset="" span="Takeit">
-            </a>
-        </div>
-
-        <nav>
-            <div id="info">
-                <a class="t-link t-dark" href="/nosotros">¿Quiénes somos?</a>
-            </div>
-            <div id="session">
-                    <div *ngIf="loggedin" class="user">
-                        <img src="assets/images/user.png" alt="">
-                    </div>
-                    
-                    <ng-container  *ngIf="!loggedin">
-                        <div id="logup" class="btn bg-indigo border-indigo t-white">
-                            <span>Registrarse</span>
-                        </div>
-                        <div id="login" class="btn border-black t-black">
-                            <span>Iniciar sesión</span>
-                        </div>
-
-                    </ng-container>
-                    
-        
-            </div>
-        </nav>
-    </div>
-
-</header-->
