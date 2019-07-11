@@ -71,3 +71,9 @@
 .modal-body {
     font-size: 18px;
 }
+
+.alerta {
+    background-color: var(--primary-indigo);
+    width: 350px;
+    color: white;
+}

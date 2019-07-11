@@ -13,6 +13,7 @@ export class MisReservasComponent implements OnInit {
 
   constructor(private takeitDataService:TakeitdataService) { }
 
+
   ngOnInit() {
     this.getRest()
   }
