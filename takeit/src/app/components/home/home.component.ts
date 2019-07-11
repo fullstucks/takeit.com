@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  showIntroModal:boolean = true;
+
+  data_intro:string[] = [
+    "UNO",
+    "DOS",
+    "TRES"
+  ]
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  close():void{
+    this.showIntroModal = !this.showIntroModal
   }
 
 }

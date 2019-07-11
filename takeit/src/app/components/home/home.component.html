@@ -1,35 +1,70 @@
 <div class="root">
 
-    <section id="search-section">
-        <div id="message-large" class="t-white">
-            <span>Reserva tu mesa sin preocupaciones</span>
+<div *ngIf="showIntroModal" class="darken"></div>
+  <div *ngIf="showIntroModal"  class="modal fade show" 
+        tabindex="-1" 
+        role="dialog"
+        style="padding-right: 15px; display: block;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button (click)="close()" 
+                    type="button" 
+                    class="close" 
+                    data-dismiss="modal" 
+                    aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <app-search></app-search>
+        <div class="modal-body">
+          <p style="font-size: 18pt">¿Mostrar la guía del sitio?</p>
+        </div>
+        <div class="modal-footer">
+          <button (click)="close()"
+                    type="button" 
+                    class="btn btn-primary bg-blue t-bold"
+                    href="javascript:void(0);"
+                    onclick="javascript:introJs().start();">mostrar</button>
+          <button (click)="close()" 
+                    type="button" 
+                    class="btn btn-secondary t-bold" 
+                    data-dismiss="modal">por ahora no</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="search-section">
+    <div id="message-large" class="t-white">
+      <span>Reserva tu mesa sin preocupaciones</span>
+    </div>
+    <app-search></app-search>
+  </section>
+
+  <div class="container-fluid mt-5">
+
+    <section>
+      <h3 class="t-bold">Recomendados</h3>
+      <hr class="my-4">
+      <app-topgye>
+      </app-topgye>
     </section>
 
-    <div class="container-fluid mt-5">
+    <section>
+      <h3 class="t-bold">Zonas</h3>
+      <hr class="my-4">
 
-        <section>
-            <h3 class="t-bold">Recomendados</h3>
-            <hr class="my-4">
-            <app-topgye>
-            </app-topgye>
-        </section>
+      <app-topzones>
+      </app-topzones>
+    </section>
 
-        <section>
-            <h3 class="t-bold">Zonas</h3>
-            <hr class="my-4">
-            <app-topzones>
-            </app-topzones>
-        </section>
+    <section>
+      <h3 class="t-bold">Noticias</h3>
+      <hr class="my-4">
+      <app-noticias>
+      </app-noticias>
+    </section>
 
-        <section>
-            <h3 class="t-bold">Noticias</h3>
-            <hr class="my-4">
-            <app-noticias>
-            </app-noticias>
-        </section>
-
-    </div>
+  </div>
 
 </div>

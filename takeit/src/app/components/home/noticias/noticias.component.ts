@@ -17,12 +17,11 @@ export class NoticiasComponent implements OnInit {
 
   ngOnInit() {
     this.getNews()
-    console.log("xxxx")
   }
 
   getNews():void{
     this.takeitDataService.getNews()
-    .subscribe(news => {this.news = news; console.log(news)})
+    .subscribe(news => this.news = news)
   }
 
 }

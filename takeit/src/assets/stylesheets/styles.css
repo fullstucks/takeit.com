@@ -131,3 +131,7 @@ hr {
 .t-title-small{
   font-size: 15pt;
 }
+
+.introjs-helperLayer{
+  background-color: transparent;
+}
