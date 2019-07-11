@@ -22,8 +22,8 @@ export class MisReservasComponent implements OnInit {
     .subscribe(reservas => this.reservas = reservas)
   }
 
-  cancel(id:number):void{
-    
+  eliminar(id:number):void{
+      this.reservas.splice(id-1, 1);    
   }
 
 }

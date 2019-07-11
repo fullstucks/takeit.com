@@ -5,7 +5,7 @@ export const RESERVAS: Reservas[] =  [
     {
         id: 1,
         img_url: "1.jpg",
-        nombre: "Miskay Restaurant",
+        nombre: "Miskay Restaurant ",
         descripcion: "Cocina ecuatoriana con producto nacional. Mejorando la cultura gastronomica de Ecuador. Comida tipica y de autoria",
         ubicacion: "Los ceibos",
         asientos: "8 personas",
