@@ -1,0 +1,43 @@
+<div id="form-reservation-section" class="form-reservation-area">
+    <div id="select-sucursal" >
+        <h1 class="subtitule-reservation">Selecciona Sucursal</h1>
+        <div class="custom-select" style="width:200px;">
+            <select class="select">
+                <option value="volvo">Sauces</option>
+                <option value="saab">Alborada</option>
+                <option value="fiat">Zamborondon</option>
+                <option value="audi">Duran</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="select-fecha">
+        <h1 class="subtitule-reservation">Fecha de la Reserva</h1>
+        <form >
+            <input type="date" name="fecha-reserva" id="fecha-reserva" class="datepicker input-group date">
+        </form>
+    </div>
+
+    <div id="select-hora">
+        <h1 class="subtitule-reservation">Hora de la reserva</h1>
+        <form >
+            <input type="time" name="fecha-reserva">
+        </form>
+    </div>
+</div>
+<div class="tickect-section">
+        <div class="tickets-section-titlte">
+            <h1 class="subtitule-reservation">Selecciona tus entradas</h1>
+            <h1 class="subtitule-reservation">Asientos disponibles: 000</h1>
+        </div>
+        <form action="processEntradas" method="post" name="seleccionarEntradas">
+        <div class="item-entradas">
+            <h4 class="textInBox-reservation">Número de personas: </h4>
+            <input id="num-entradas" type="number" name="num-entradas" size="10">
+            <h4 class="textInBox-reservation">x $0.00</h4>
+            <h4 class="textInBox-reservation">$0.00</h4>
+            <input class="btn bg-indigo border-indigo t-white" type="submit" value="Continuar"name="Continuar" id="cont-entradas">
+
+        </div>
+        </form>
+</div>

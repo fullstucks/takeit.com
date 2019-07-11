@@ -26,6 +26,9 @@
 
 }
 
+#img-form-reservation{
+
+}
 
 .title-img-reservation{
     font-size: 34pt;
@@ -90,10 +93,6 @@
 .list-nav-bar  li {
     float: left;
  }
-
-
-
-
 #reservation-section{
     align-content: center;
     padding-bottom: 20px;

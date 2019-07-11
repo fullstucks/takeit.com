@@ -5,11 +5,11 @@ import { Location } from '@angular/common';
 import { Restaurant } from 'src/app/models/restaurant';
 
 @Component({
-  selector: 'app-generar-reserva',
-  templateUrl: './generar-reserva.component.html',
-  styleUrls: ['./generar-reserva.component.css']
+  selector: 'app-confirmar-reserva',
+  templateUrl: './confirmar-reserva.component.html',
+  styleUrls: ['./confirmar-reserva.component.css']
 })
-export class GenerarReservaComponent implements OnInit {
+export class ConfirmarReservaComponent implements OnInit {
 
   restaurant: Restaurant
 
@@ -34,7 +34,5 @@ export class GenerarReservaComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
-
 
 }

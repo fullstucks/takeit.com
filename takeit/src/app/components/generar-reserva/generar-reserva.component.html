@@ -1,6 +1,75 @@
-<div class="container-fluid">
+    <section>
+        <div class="jumbotron bg-dark bg-image">
+        <h1 class="t-bold t-white">Selecciona tus Entradas</h1>
+        <p class="lead t-white">Escoge la fecha y hora en la que deseas degustar de una deliciosa comida</p>
+        </div>
+    </section>
 
-    <h1>Generar reserva</h1>
+    <section>
+        <div id="form-reservation" class="format-general-form">
+            <div id="img-form-reservation" class="back-img-form format-img-form">
+                <div id="name-restaurant-reservation" class="title-img-reservation">
+                    <h1 class="title-img-reservation">{{restaurant.nombre}}</h1>
+                </div>
+                <div id="description-restaurant-reservation" class="paragraf-reservation">
+                    <p>No es un lugar exclusivo, pero de seguro es un lugar donde la mezcla de aromas exquisitos extremecen tu paladar y presionan tus deseos por probar nuestros asados.</p>
+                </div>
+            </div>
+
+            <div id="nav-form-reservation" class="list-nav-bar">
+                    <li><a class="reserve-menu" href="/seleccionarEntradas">Seleccionar tus entradas</a></li>
+                    <li><a class="reserve-menu" href="/confirmacion">Confirma tu reserva</a></li>
+                    <li><a class="reserve-menu" href="/pago">Efectúa el Pago de tu reserva</a></li>
+            </div>
+
+                <div>
+                  <ul class="stepper horizontal" id="horizontal-stepper">
+                    <li class="step active">
+                      <div class="step-title waves-effect waves-dark">Step 1</div>
+                      <div class="step-new-content">
+                        <div class="row">
+                          <div class="md-form col-12 ml-auto">
+                            <input id="email-horizontal" type="email" class="validate form-control" required>
+                            <label for="email-horizontal">Email</label>
+                          </div>
+                        </div>
+                        <div class="step-actions">
+                          <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="someFunction21">CONTINUE</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="step">
+                      <div class="step-title waves-effect waves-dark">Step 2</div>
+                      <div class="step-new-content">
+                        <div class="row">
+                          <div class="md-form col-12 ml-auto">
+                            <input id="password-horizontal" type="password" class="validate form-control" required>
+                            <label for="password-horizontal">Your password</label>
+                          </div>
+                        </div>
+                        <div class="step-actions">
+                          <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="someFunction21">CONTINUE</button>
+                          <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="step">
+                      <div class="step-title waves-effect waves-dark">Step 3</div>
+                      <div class="step-new-content">
+                        Finish!
+                        <div class="step-actions">
+                          <button class="waves-effect waves-dark btn-sm btn btn-primary m-0 mt-4" type="button">SUBMIT</button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+            </div>
+            <app-escoger-entradas></app-escoger-entradas>
+            <app-confirmar-reserva></app-confirmar-reserva>
+        </div>
+
+    </section>
+
     <button (click)="goBack()">go back</button>
 
     <h2>
@@ -9,6 +78,3 @@
     <h2>
         nombre: {{restaurant.nombre}}
     </h2>
-</div>
-
-

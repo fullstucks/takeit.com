@@ -15,6 +15,8 @@ import {FormsModule} from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { InfoRestauranteComponent } from './components/info-restaurante/info-restaurante.component';
 import { GenerarReservaComponent } from './components/generar-reserva/generar-reserva.component';
+import { EscogerEntradasComponent } from './components/generar-reserva/entradas/escoger-entradas.component';
+import { ConfirmarReservaComponent } from './components/generar-reserva/confirmar/confirmar-reserva.component';
 import { MisReservasComponent } from './components/mis-reservas/mis-reservas.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -31,7 +33,7 @@ import { NoticiasComponent } from './components/home/noticias/noticias.component
     SearchComponent,
     FooterComponent,
     InfoRestauranteComponent,
-    GenerarReservaComponent,
+    GenerarReservaComponent,EscogerEntradasComponent,ConfirmarReservaComponent,
     MisReservasComponent,
     QuienesSomosComponent,
     NotFoundComponent,
