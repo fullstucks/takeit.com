@@ -64,7 +64,7 @@ export const RESTAURANTS: Restaurant[] =  [
     },
     {
         id: 6,
-        img_url: "1.jpg",
+        img_url: "4.jpg",
         nombre: "Parrilladas del ñato",
         descripcion: "Al momento, no se ha proveído una descripción del restaurante",
         resenas: 200,
@@ -76,7 +76,7 @@ export const RESTAURANTS: Restaurant[] =  [
     },
     {
         id: 7,
-        img_url: "2.jpg",
+        img_url: "1.jpg",
         nombre: "Menestras del negro",
         descripcion: "Cocina ecuatoriana con producto nacional. Mejorando la cultura gastronomica de Ecuador. Comida tipica y de autoria",
         resenas: 534,
@@ -88,7 +88,7 @@ export const RESTAURANTS: Restaurant[] =  [
     },
     {
         id: 8,
-        img_url: "3.jpg",
+        img_url: "4.jpg",
         nombre: "El gran chef",
         descripcion: "Cocina ecuatoriana con producto nacional. Mejorando la cultura gastronomica de Ecuador. Comida tipica y de autoria",
         resenas: 345,
@@ -100,7 +100,7 @@ export const RESTAURANTS: Restaurant[] =  [
     },
     {
         id: 9,
-        img_url: "4.jpg",
+        img_url: "3.jpg",
         nombre: "Sal & Pimienta",
         descripcion: "Cocina ecuatoriana con producto nacional. Mejorando la cultura gastronomica de Ecuador. Comida tipica y de autoria",
         resenas: 101,
@@ -112,7 +112,7 @@ export const RESTAURANTS: Restaurant[] =  [
     },
     {
         id: 10,
-        img_url: "5.jpg",
+        img_url: "2.jpg",
         nombre: "Pyros parrilla y arroces",
         descripcion: "Cocina ecuatoriana con producto nacional. Mejorando la cultura gastronomica de Ecuador. Comida tipica y de autoria",
         resenas: 10,
