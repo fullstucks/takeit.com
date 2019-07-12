@@ -3,19 +3,22 @@
     <div class="jumbotron bg-image bg-dark">
         <div id="heading">
             <h1 class="text-left t-white">{{restaurant.nombre}}</h1>
-            <button class="btn btn-primary bg-blue btn-lg">takeit!</button>
+            <div class="star-rating">
+                <span *ngFor="let i of list_n(restaurant.n_estrellas)" class="fa fa-star checked"></span>
+            </div>
+            <button class="btn btn-primary bg-blue btn-lg" (click)="takeit(restaurant.id)">take it!</button>
         </div>
-        <p class="mr-5 t-white">{{restaurant.descripcion}}</p>
+        <p class="mr-5 t-white lead">{{restaurant.descripcion}}</p>
     </div>
     <div class="container">
         <section>
             <h3 class="t-bold t-black">Fotos</h3>
             <hr class="my-4">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselRestaurante" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselRestaurante" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselRestaurante" data-slide-to="1"></li>
+                    <li data-target="#carouselRestaurante" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -31,11 +34,11 @@
                             [alt]="restaurant.img_url">
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselRestaurante" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselRestaurante" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -45,11 +48,11 @@
             <h3 class="t-bold t-black">Platos</h3>
             <hr class="my-4">
             <p>{{restaurant.descripcion}}</p>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselPlatos" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselPlatos" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselPlatos" data-slide-to="1"></li>
+                    <li data-target="#carouselPlatos" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -65,11 +68,11 @@
                             [alt]="restaurant.img_url">
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselPlatos" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselPlatos" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>

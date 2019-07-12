@@ -1,31 +1,21 @@
 form {
     justify-content: space-evenly;
-    display: flex;
     width: 50%;
     margin: 10px auto;
 }
 
-
-#search-input {
-    margin: 15px;
-    width: 77%;
-    height: 45px;
-    border-radius: 5px;
-    border: transparent;
-    background-color: white;
-    font-size: 14pt;
+form * {
+    display: inline-block;
 }
 
-#search-btn {
-    background-color: var(--primary-blue);
-    border-radius: 5px;
-    border: transparent;
-    margin: 15px;
-    width: 15%;
-    color: white;
-    font-weight: bold;
-    font-size: 14pt;
+form input {
+    width: 70%;
 }
+
+form button {
+    margin: 10px;
+}
+
 
 
 @media only screen and (max-width: 960px) {
@@ -33,16 +23,6 @@ form {
 
     form {
         width: 80%;
-    }
-
-    #search-input,
-    #search-btn {
-        height: 40px;
-        font-size: 12pt;
-    }
-
-    #search-btn {
-        width: 100px;
     }
     
 }
@@ -54,14 +34,5 @@ form {
         width: 100%;
     }
 
-    #search-input,
-    #search-btn {
-        height: 40px;
-        font-size: 12pt;
-    }
-
-    #search-btn {
-        width: 100px;
-    }
     
 }

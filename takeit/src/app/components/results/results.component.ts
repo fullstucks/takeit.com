@@ -3,7 +3,6 @@ import {latLng, marker, tileLayer, Marker} from 'leaflet';
 import { Restaurant } from 'src/app/models/restaurant';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
 import { ActivatedRoute, Router} from '@angular/router';
-import { map }                from 'rxjs/operators';
 
 @Component({
   selector: 'app-results',

@@ -33,38 +33,22 @@ hr {
 
 
 /* ----------- buttons ------------ */
-
 .btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
-    padding: 7px;
-    border-radius: 5px;
-    border: 1px solid;
-    height: 30%;
-    cursor: pointer;
-}
-
-.takeit-btn {
-    display: flex;
-    align-items: center;
-    margin: 5px;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid;
-    height: 30%;
-    cursor: pointer;
-}
-
-.takeit-btn span {
     font-weight: bold;
 }
 
-.btn span {
-    margin: 0;
-    font: 10pt "Helvetica", Arial, sans-serif;
+.btn + .btn {
+    margin-left: 10px;
 }
+
+.btn-primary, .btn-dark {
+    border-style: none;
+}
+
+.btn-primary:hover {
+    background-color: rgb(33, 122, 138);
+}
+
 
 
 /* ----------- borders ------------ */

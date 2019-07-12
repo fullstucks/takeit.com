@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Restaurant } from 'src/app/models/restaurant';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-restaurante',
@@ -13,7 +13,8 @@ export class InfoRestauranteComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private location: Location,
-              private takeitDataService: TakeitdataService) { }
+              private takeitDataService: TakeitdataService,
+              private router: Router) { }
 
 
   restaurant: Restaurant
@@ -32,4 +33,11 @@ export class InfoRestauranteComponent implements OnInit {
     this.location.back();
   }
 
+  takeit(id:number):void{
+    this.router.navigateByUrl('/generarReserva/'+ id)
+  }
+
+  list_n(n:number):Array<number>{
+    return Array(n)
+  }
 }

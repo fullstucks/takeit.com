@@ -1,12 +1,12 @@
 <section id="search-section">
     <span class="t-white t-title-small">Busca tu restaurante favorito</span>
     <form>
-        <input id="search-input"
+        <input class="form-control"
                 [(ngModel)]="text_input"
                 name="text-input" 
                 placeholder=" Ubicación o restaurante" 
                 type="text">
-        <button id="search-btn" (click)= "onSearch()">buscar</button>
+        <button class="btn btn-primary bg-blue" (click)= "onSearch()">Buscar</button>
     </form>
 </section>
 
@@ -31,7 +31,7 @@
                     <span>{{restaurant.ubicacion}}</span>
                 </div>
             </div>
-            <button (click)="takeit(restaurant.id)" class="takeit">take it!</button>
+            <button (click)="takeit(restaurant.id)" class="btn btn-primary bg-blue">take it!</button>
         </div>
     </div>
       

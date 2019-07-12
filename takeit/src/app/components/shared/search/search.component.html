@@ -1,11 +1,11 @@
 <span class="t-white t-title-small">Busca tu restaurante favorito</span>
 <form method="post" >
-    <input id="search-input"
+    <input class="form-control"
             [(ngModel)]="text_input"
             name="text-input" 
-            placeholder=" Ubicación o restaurante" 
+            placeholder="Ubicación o restaurante" 
             type="text"
             data-step="3"
             data-intro="Descubre nuevos lugares o busca tu restaurante favorito!">
-    <button type="submit" name ="aaa" id="search-btn" (click)= "onSearch()">Buscar</button>
+    <button type="submit" name ="aaa" class="btn btn-primary bg-blue" (click)= "onSearch()">Buscar</button>
 </form>
