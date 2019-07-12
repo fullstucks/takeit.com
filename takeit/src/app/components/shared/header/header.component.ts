@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginstatusService } from 'src/app/services/loginstatus.service';
 
 @Component({
   selector: 'app-header',
@@ -8,20 +9,29 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() loggedin;
+  loggedin:boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private loginstatusService: LoginstatusService) { 
+                loginstatusService
+                    .loggedin$.subscribe(
+                      status => this.loggedin = status
+                      )
+              }
 
   ngOnInit() {
+    
   }
 
 
   login():void{
-    this.loggedin = true
+    this.loginstatusService
+        .setSessionStatus(true)
   }
 
   logout():void{
-    this.loggedin = false
+    this.loginstatusService
+        .setSessionStatus(false)
   }
 
   goMisReservas(){

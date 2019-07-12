@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
 import { Reservas } from '../../models/reservas';
+import { LoginstatusService } from 'src/app/services/loginstatus.service';
 
 @Component({
   selector: 'app-mis-reservas',
@@ -10,11 +11,19 @@ import { Reservas } from '../../models/reservas';
 export class MisReservasComponent implements OnInit {
 
   reservas:Reservas[]
+  loggedin:boolean;
 
-  constructor(private takeitDataService:TakeitdataService) { }
+  constructor(private takeitDataService:TakeitdataService,
+              private loginStatusService: LoginstatusService) {
+               }
 
 
   ngOnInit() {
+    
+    this.loginStatusService
+                  .loggedin$
+                  .subscribe(status => this.loggedin = status);
+    this.loginStatusService.setSessionStatus(true)
     this.getRest()
   }
 

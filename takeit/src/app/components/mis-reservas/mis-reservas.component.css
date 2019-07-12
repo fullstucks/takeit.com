@@ -77,3 +77,13 @@
     width: 350px;
     color: white;
 }
+
+
+
+#not_logged_msg{
+    font-family: 'Brandon';
+    font-size: 20pt;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+}
