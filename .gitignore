@@ -1,4 +1,4 @@
 node_modules/*
 yarn.lock
-frontend/home/dist/*
+takeit_frontend/dist/*
 frontend/result/dist/*

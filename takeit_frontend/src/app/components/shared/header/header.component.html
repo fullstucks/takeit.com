@@ -1,0 +1,75 @@
+<header class="navbar sticky-top navbar-expand-lg navbar-light navbarHeader">
+  <a class="navbar-brand" href="/">
+    <img src="assets/images/logo2.png" width="auto" height="50" class="d-inline-block align-top" alt="logo">
+  </a>
+
+  <ng-container *ngIf="!loggedin">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link t-bold" data-step="1" data-intro="muestra información del sitio y de contacto"
+          routerLink="/quienessomos">¿Quiénes somos?</a>
+
+        <div>
+          <button type="button" class="nav-item btn btn-secondary bg-indigo my-2 my-sm-0 t-bold">Registrarse
+          </button>
+        </div>
+
+        <div class="dropdown">
+          <button type="button" data-step="2"
+            data-intro="Inicia sessión. Se desplegará un menú el que podrás ver tus reservas" (click)="login()"
+            class="btn btn-outline-secondary my-2 my-sm-0 t-bold t-bold" id="login_dropdown" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Inicar Sesión
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="login_dropdown">
+            <form method="POST" action="http://localhost:8000/accounts/login/" class="px-4 py-3">
+              <div class="form-group">
+                <label for="exampleDropdownFormEmail1">Usuario</label>
+                <input required type="email" name="username" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleDropdownFormPassword1">Contraseña</label>
+                <input required type="password" name="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary bg-indigo">iniciar sesión</button>
+            </form>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">¿no tienes una cuenta? regísrate</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="loggedin">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link mt-2" routerLink="/quienessomos">¿Quiénes somos?</a>
+        <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="fa fa-user-circle" style="font-size: 40px" aria-hidden="true" href="#"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right subitems">
+          <button class="btn btn-secondary btnIcons" (click)="goMisReservas()">
+            <i class="fa fa-book-open disabled" aria-hidden="true" href="#"></i>
+            <span class="text">Mis Reservas</span>
+          </button>
+          <button class="btn btn-secondary btnIcons" (click)="logout()">
+            <i class="fa fa-sign-out-alt disabled" aria-hidden="true" href="#"></i>
+            <span class="text">Cerrar sesión</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</header>

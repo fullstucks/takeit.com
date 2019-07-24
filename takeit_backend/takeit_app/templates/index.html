@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>Takeit</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/introjs/introjs.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/introjs/introjs-rtl.min.css' %}">
+    <style>
+        .loader {
+            margin: 45%;
+            border: 16px solid var(--primary-dark);
+            /* Light grey */
+            border-top: 16px solid #addb8f;
+            /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.8c7f89c16f542b7f7060.css">
+</head>
+
+<body>
+    {% csrf_token %}
+    <input type="hidden" name="next" value="">
+    <app-root>
+        <div class="loader"></div>
+    </app-root>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'assets/introjs/intro.min.js' %}"></script>
+    <script src="{% static 'runtime-es2015.858f8dd898b75fe86926.js' %}" type="module"></script>
+    <script src="{% static 'polyfills-es2015.5728f680576ca47e99fe.js' %}" type="module"></script>
+    <script src="{% static 'runtime-es5.741402d1d47331ce975c.js' %}" nomodule></script>
+    <script src="{% static 'polyfills-es5.7f43b971448d2fb49202.js' %}" nomodule></script>
+    <script src="{% static 'main-es2015.0aa41caa2b7a3a1174b6.js' %}" type="module"></script>
+    <script src="{% static 'main-es5.71c6080f849ee0f148fd.js' %}" nomodule></script>
+</body>
+
+</html>
