@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopGye } from '../../../models/topgye';
+import { TopGye } from '../../../models/tops';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
 import { Router } from '@angular/router';
 

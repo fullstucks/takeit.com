@@ -1,5 +1,4 @@
-import { TopGye } from '../models/topgye';
-import { TopZones } from '../models/topzones';
+import { TopGye, TopZones } from '../models/tops';
 
 export const TOPGYE: TopGye[] = [
     {

@@ -1,36 +1,58 @@
 from rest_framework import serializers
-from rest_framework_jwt.settings import api_settings
-from django.contrib.auth.models import User
+#from rest_framework_jwt.settings import api_settings
+from .models import Usuario, Tag, Resena, Zona, Reserva, ReservaPlanificacion, Restaurante
 
 
-class UserSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = User
-        fields = ('username',)
-
-
-class UserSerializerWithToken(serializers.ModelSerializer):
-
-    token = serializers.SerializerMethodField()
-    password = serializers.CharField(write_only=True)
-
-    def get_token(self, obj):
-        jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
-        jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
-
-        payload = jwt_payload_handler(obj)
-        token = jwt_encode_handler(payload)
-        return token
-
-    def create(self, validated_data):
-        password = validated_data.pop('password', None)
-        instance = self.Meta.model(**validated_data)
-        if password is not None:
-            instance.set_password(password)
-        instance.save()
-        return instance
+class UsuarioSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
-        fields = ('token', 'username', 'password')
+        model = Usuario
+        exclude = ['is_staff','is_superuser', 'is_active', 'password']
+
+class TagSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Tag
+        fields = ['tag']
+
+class ZonaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Zona
+        fields = '__all__'
+
+class RestauranteSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Restaurante
+        fields = '__all__'
+
+class RestauranteSearchSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Restaurante
+        fields = ['nombre','ubicacion', 'zona']
+
+class FotosRestauranteSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = FotosRestauranteSerializer
+        exclude = ['restaurante']
+
+class ResenaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Resena
+        exclude = ['restaurante']
+
+class ReservaPlanificacionSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = ReservaPlanificacion
+        fields = '__all__'
+
+class ReservaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Reserva
+        fields = '__all__'

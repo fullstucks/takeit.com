@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
-import { TopGye } from '../models/topgye';
-import { TopZones } from '../models/topzones';
+import { TopZones, TopGye } from '../models/tops';
 import { TOPGYE, TOPZONES } from '../mocks/mock-takeit-home';
 import { Restaurant } from '../models/restaurant';
 import { RESTAURANTS } from '../mocks/mocks.results';

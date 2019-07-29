@@ -3,7 +3,7 @@
     <img src="assets/images/logo2.png" width="auto" height="50" class="d-inline-block align-top" alt="logo">
   </a>
 
-  <ng-container *ngIf="!loggedin">
+  <ng-container *ngIf="!loginStatusService.loggedin">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,21 +20,30 @@
 
         <div class="dropdown">
           <button type="button" data-step="2"
-            data-intro="Inicia sessión. Se desplegará un menú el que podrás ver tus reservas" (click)="login()"
-            class="btn btn-outline-secondary my-2 my-sm-0 t-bold t-bold" id="login_dropdown" data-toggle="dropdown"
+            data-intro="Inicia sessión. Se desplegará un menú el que podrás ver tus reservas" 
+            class="btn btn-outline-secondary my-2 my-sm-0 t-bold t-bold" 
+            id="login_dropdown" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Inicar Sesión
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="login_dropdown">
-            <form method="POST" action="http://localhost:8000/accounts/login/" class="px-4 py-3">
+            <form class="px-4 py-3">
               <div class="form-group">
-                <label for="exampleDropdownFormEmail1">Usuario</label>
-                <input required type="email" name="username" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                <label for="u1">Usuario</label>
+                <input required type="email" 
+                      name="username" 
+                      class="form-control" 
+                      id="u1" placeholder="nombre de usuario"
+                      [(ngModel)]="user.username">
               </div>
               <div class="form-group">
-                <label for="exampleDropdownFormPassword1">Contraseña</label>
-                <input required type="password" name="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                <label for="p1">Contraseña</label>
+                <input required type="password" 
+                      name="password" 
+                      class="form-control" 
+                      id="p1" placeholder="contraseña"
+                      [(ngModel)]="user.password">
               </div>
-              <button type="submit" class="btn btn-primary bg-indigo">iniciar sesión</button>
+              <button (click)="login(user)" class="btn btn-primary bg-indigo">iniciar sesión</button>
             </form>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="">¿no tienes una cuenta? regísrate</a>
@@ -47,7 +56,7 @@
     </div>
   </ng-container>
 
-  <ng-container *ngIf="loggedin">
+  <ng-container *ngIf="loginStatusService.loggedin">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

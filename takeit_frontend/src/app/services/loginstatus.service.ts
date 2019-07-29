@@ -6,14 +6,13 @@ import { Subject, BehaviorSubject } from 'rxjs';
 })
 export class LoginstatusService {
 
-  private loggedin:Subject<boolean> = new Subject<boolean>();
-  loggedin$ = this.loggedin.asObservable();
+  loggedin:boolean
 
-  constructor() { }
-
+  constructor() {}
 
   setSessionStatus(status: boolean):void {
-    this.loggedin.next(status);
+    this.loggedin = status;
   }
+
 }
 

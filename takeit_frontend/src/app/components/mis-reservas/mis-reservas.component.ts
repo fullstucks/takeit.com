@@ -14,23 +14,17 @@ export class MisReservasComponent implements OnInit {
   loggedin:boolean;
 
   constructor(private takeitDataService:TakeitdataService,
-              private loginStatusService: LoginstatusService) {
-               }
+              private loginStatusService: LoginstatusService) {}
 
 
   ngOnInit() {
-    
-    this.loginStatusService
-                  .loggedin$
-                  .subscribe(status => this.loggedin = status);
-    this.loginStatusService.setSessionStatus(true)
     this.getRest()
   }
   
 
   getRest():void{
     this.takeitDataService.getReservas()
-    .subscribe(reservas => this.reservas = reservas)
+        .subscribe(reservas => this.reservas = reservas)
   }
 
   eliminar(id:number):void{

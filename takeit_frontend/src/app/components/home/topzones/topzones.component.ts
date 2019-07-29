@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopZones } from '../../../models/topzones';
+import { TopZones } from '../../../models/tops';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
 
 

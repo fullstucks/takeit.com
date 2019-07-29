@@ -1,2 +1,3 @@
-.env
 takeit_project/settings_prod.py
+takeit_project/settings_dev.py
+*.pyc

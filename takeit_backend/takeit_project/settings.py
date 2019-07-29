@@ -1,10 +1,9 @@
 import os
+import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '&!@#zq0^l9c#)-boy^glm$k51*ztngc59@9&*7)z@sx5aa*@v('
-
-ALLOWED_HOSTS = ['localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -15,24 +14,35 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'django_seed',
     'api.apps.ApiConfig',
     'takeit_app.apps.TakeitAppConfig',
 ]
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
 
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-    ),
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ],
+}
+AUTH_USER_MODEL = 'api.Usuario'
+JWT_AUTH = {
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=1000),
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(hours=2),
+    'JWT_AUTH_COOKIE': 'tokenx'
 }
 
-CORS_ORIGIN_WHITELIST = (
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
-)
+    'http://localhost:8000'
+]
 
 
 
@@ -96,7 +106,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
