@@ -7,6 +7,7 @@ import { GenerarReservaComponent } from './components/generar-reserva/generar-re
 import { MisReservasComponent } from './components/mis-reservas/mis-reservas.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'results', component:ResultsComponent},
   {path: 'infoRestaurante/:id', component:InfoRestauranteComponent},
   {path: 'generarReserva/:id', component: GenerarReservaComponent},
+  {path: 'signup', component: SignupFormComponent},
   {path: 'misReservas', component:MisReservasComponent},
   {path: '**', component:NotFoundComponent}
 ];

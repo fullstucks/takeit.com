@@ -17,7 +17,6 @@ class Zona(models.Model):
     def __str__(self):
         return "" + self.nombre
 
-
 class Restaurante(models.Model):
     nombre      = models.CharField(max_length = 20)
     descripcion = models.CharField(max_length = 400)
@@ -32,7 +31,6 @@ class Restaurante(models.Model):
     def __str__(self):
         return "" + self.nombre
 
-
 class FotosRestaurante(models.Model):
     restaurante     = models.ForeignKey( Restaurante, on_delete = models.CASCADE)
     img_path        = models.CharField(max_length = 50)
@@ -42,13 +40,10 @@ class FotosRestaurante(models.Model):
     def __str__(self):
         return "{} {} {}".format(self.restaurante , self.tipo, self.tamano)
 
-
-
-
 class Usuario(AbstractUser):
 
-    fecha_nacimiento       = models.DateTimeField(blank=True, null=True)
-    img_url                = models.CharField(max_length = 50)
+    fecha_nacimiento       = models.DateField(blank=True, null=True)
+    img_url                = models.CharField(max_length = 50, blank = True)
     restaurantes_favoritos = models.ManyToManyField(Restaurante, blank=True)
 
     def __str__(self):
@@ -71,9 +66,6 @@ class Resena(models.Model):
 
     def __str__(self):
         return "{} {}".format(self.usuario, self.comentario)
-
-
-
 
 class ReservaPlanificacion(models.Model):
     restaurante      = models.ForeignKey(Restaurante, on_delete = models.CASCADE)

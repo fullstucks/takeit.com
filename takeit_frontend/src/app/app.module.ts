@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from "@angular/common/http";
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -21,6 +21,7 @@ import { MisReservasComponent } from './components/mis-reservas/mis-reservas.com
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NoticiasComponent } from './components/home/noticias/noticias.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NoticiasComponent } from './components/home/noticias/noticias.component
     MisReservasComponent,
     QuienesSomosComponent,
     NotFoundComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,

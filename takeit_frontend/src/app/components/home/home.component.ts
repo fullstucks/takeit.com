@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Cookie} from 'ng2-cookies/ng2-cookies';
+import {Cookie} from 'ng2-cookies';
 
 @Component({
   selector: 'app-home',
@@ -10,24 +10,20 @@ export class HomeComponent implements OnInit {
 
   showIntroModal:boolean = true;
 
-  data_intro:string[] = [
-    "UNO",
-    "DOS",
-    "TRES"
-  ]
-
-
   constructor() { }
 
   ngOnInit() {
-    let cookie = Cookie.get('showIntro')
-    if(!cookie) Cookie.set('showIntro', 'f')
-    else this.showIntroModal = false
+    if (!Cookie.check('showIntro')) {
+      Cookie.set('showIntro', '1')
+    }else{
+      this.showIntroModal = Cookie.get('showIntro') === '1'
+    }
+    
   }
 
   close():void{
-    this.showIntroModal = !this.showIntroModal
-    Cookie.delete('showIntro')
+    this.showIntroModal = false
+    Cookie.set('showIntro', '0')
   }
 
 }

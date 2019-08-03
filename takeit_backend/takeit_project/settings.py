@@ -37,13 +37,6 @@ JWT_AUTH = {
     'JWT_AUTH_COOKIE': 'tokenx'
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:4200',
-    'http://localhost:8000'
-]
-
 
 
 MIDDLEWARE = [
@@ -95,13 +88,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 

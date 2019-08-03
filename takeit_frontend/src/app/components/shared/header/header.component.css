@@ -35,126 +35,75 @@ header {
 }
 
 
-/*  <---------------- no borrar -------------------> */
+.loader-container {
+    padding-top: 10px;
+    height: 20px;
+    text-align: center;
+}
 
+.circle {
+    margin: 5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    transform: scale(0);
+    animation: bulge 2s infinite ease-in-out;
+}
 
-/*
-header {
-    position: sticky;
+.circle::after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 100%;
     width: 100%;
-    background: var(--primary-light);
+    border-radius: 50%;
+    background-color: inherit;
     top: 0;
-    z-index: 9999;
+    left: 0;
+    z-index: -1;
+    transform: scale(1);
+    animation: blow 2s infinite ease-in-out;
 }
 
-header .container {
-    display: flex; 
-    justify-content: space-between;
-    width: 97%;
-    padding: 15px 10px;
-    margin: auto auto;
+.circle:nth-child(1) {
+    background-color: #4695B8;
+    animation-delay: 0s;
 }
 
-.home {
-    margin-left: 0px;
+.circle:nth-child(2) {
+    background-color: #67A142;
+    animation-delay: .25s;
 }
 
-.home img {
-    width: 115px;
-    height: 55px;
-}
-
-.home span {
-    font: 13pt "Ubuntu";
-}
-
-.home a {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: black;
-    align-items: center
-}
-
-nav {
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
-}
-
-nav #info {
-    margin-right: 20px;
-}
-
-nav #session {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#login,
-#logup {
-        padding: 10px;
-        border-radius: 6px;
-    }
-
-#login span ,
-#logup span {
-    font: 14pt "Helvetica", Arial, sans-serif;
-    font-weight: 400;
+.circle:nth-child(3) {
+    background-color: #8FC0A7;
+    animation-delay: .50s;
 }
 
 
-.user {
-    margin-top: 30%;
-    margin-right: 5%;
-    cursor: pointer;
-}
-
-.user img {
-    width: 40px;
-    height: 40px;
-}
-
-#info a{
-    font-size: 14pt;
-}
-
-
-@media only screen and (max-device-width: 590px) {
-
-    .home img {
-        width: 85px;
-        height: 35px;
-    }
-
-    .user img {
-        width: 40px;
-        height: 45px;
-    }
-
-    #login,
-    #logup {
-        padding: 8px;
-        border-radius: 5px;
-    }
-
-    #login span,
-    #logup span {
-        font: 12pt "Helvetica", Arial, sans-serif;
-    }
-
-    #info {
-        display: none;
+@keyframes bulge {
+    50% {
+        transform: scale(1);
     }
 }
 
-@media screen and (max-width: 960px) {
 
-    #info {
-        display: none;
+@keyframes blow {
+    25% {
+        opacity: 0.5;
     }
 
-}
+    50% {
+        opacity: 0.5;
+    }
 
-*/
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

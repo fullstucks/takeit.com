@@ -1,9 +1,9 @@
-from django.urls import path, include
-from rest_framework import routers
-from rest_framework_jwt.views import ObtainJSONWebToken , RefreshJSONWebToken
+from django.urls import path
+#from rest_framework import routers
+from rest_framework_jwt.views import ObtainJSONWebToken, RefreshJSONWebToken
 from .views import RegistrationView
 
-router = routers.DefaultRouter()
+#router = routers.DefaultRouter()
 
 urlpatterns = [
     #path(r'', include(router.urls)),

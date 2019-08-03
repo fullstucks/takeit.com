@@ -1,0 +1,42 @@
+<section>
+    <div class="wrapper">
+        <div></div>
+        <form #form_data="ngForm" (ngSubmit)="signup(form_data)">
+            <input class="form-control" type="text" 
+                    name="first_name" 
+                    id="first_name" 
+                    placeholder="nombres" ngModel>
+            <input type="text" 
+                    name="last_name" 
+                    id="last_name" 
+                    placeholder="apellidos" ngModel>
+            <input type="text" 
+                    name="username" 
+                    id="username" 
+                    placeholder="nombre de usuario" ngModel required>
+            <input type="password"
+                    name="password"
+                    id="password"
+                    placeholder="contraseña" ngModel required>
+            <input type="password"
+                    name="password"
+                    id="password_again"
+                    placeholder="vuelva a escribir la contraseña" required>
+            <input type="email"
+                    name="email"
+                    placeholder="email"
+                    id="email" ngModel required>
+            <input type="date"
+                    name="fecha_nacimiento"
+                    id="fecha_nacimiento"
+                    placeholder="fecha de nacimiento" ngModel>
+            <button type="submit" id="submit">Registrar</button>
+            <div *ngIf="success">
+                    <span class="msg">
+                       Registro exitoso. 
+                    </span>
+            </div>
+
+        </form>
+    </div>
+</section>

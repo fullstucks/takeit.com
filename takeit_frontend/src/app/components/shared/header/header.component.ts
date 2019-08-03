@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LoginstatusService } from 'src/app/services/loginstatus.service';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -18,32 +18,19 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(private router: Router,
-              private loginStatusService: LoginstatusService) {}
+              private loginService: LoginService) {}
 
   ngOnInit() {
   }
 
 
   login(user:any):void{
-    console.log(this.user)
-
-    fetch('http://localhost:8000/api/auth/',{
-      method:'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.user)
-    })
-    .then(res => {
-      this.loginStatusService
-          .setSessionStatus(true)
-    })
-    .catch(err => console.log(err))
+    this.loginService.login(user);
   }
 
   logout():void{
-    this.loginStatusService
-        .setSessionStatus(false)
+    this.loginService
+        .logout()
   }
 
 
