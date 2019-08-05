@@ -5,11 +5,8 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import ValidationError
-from .serializers import UsuarioSerializer, RestauranteSerializer
-from .models import Restaurante
-
-def index(req):
-    return render(req, 'index.html')
+from .serializers import UsuarioSerializer, RestauranteSerializer, ReservaSerializer
+from .models import Restaurante, Reserva
 
 
 class RegistrationView(GenericAPIView):
@@ -26,14 +23,14 @@ class RegistrationView(GenericAPIView):
             serializer.save()
         except ValidationError as e:
             return Response(data={'msg': str(e)})
-        return Response(data={'msg':'Registrado con éxito'})
+        return Response(data={'msg':'Registrado con éxito'}, status=200)
 
 
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
 
     def get(self):
-        pass
+        return Response(status=200, data={'msg': 'nope'})
     def post(self):
         pass
     def put(self):
@@ -62,8 +59,23 @@ class RestauranteListView(GenericAPIView):
   
         serializer = self.get_serializer(data, many=True)
 
-        return Response(serializer.data)
+        return Response(data=serializer.data)
 
 
+class ReservaView(GenericAPIView):
+    serializer_class = ReservaSerializer
 
+    def get(self, resquest):
+        reservas = Reserva.objects.all()
+        serializer = self.get_serializer(reservas, many=True)
+        return Response(data=serializer.data)
+
+    def post(self, resquest):
+        serializer = self.get_serializer(data=request.data)
+        try:
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+        except ValidationError as e:
+            return Response(data={'msg': str(e)})
+        return Response(data={'msg':'Registrado con éxito'}, status=200)
 

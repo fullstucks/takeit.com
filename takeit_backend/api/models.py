@@ -88,7 +88,7 @@ class ReservaPlanificacion(models.Model):
         return "{} {} {}".format(self.restaurante, self.mesas_disponibles, self.fecha)
 
 class Reserva(models.Model):
-    reserva_planificacion  = models.ForeignKey(ReservaPlanificacion, on_delete = models.CASCADE)
+    reserva_planificacion  = models.ForeignKey(ReservaPlanificacion, on_delete=models.CASCADE)
     fecha       = models.DateTimeField()
     asistio     = models.BooleanField()
     asientos    = models.IntegerField() 
