@@ -15,8 +15,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'django_seed',
-    'api.apps.ApiConfig',
-    'takeit_app.apps.TakeitAppConfig',
+    'api.apps.ApiConfig'
 ]
 
 REST_FRAMEWORK = {

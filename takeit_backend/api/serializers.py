@@ -47,11 +47,6 @@ class RestauranteSerializer(serializers.ModelSerializer):
         model = Restaurante
         fields = '__all__'
 
-class RestauranteSearchSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = Restaurante
-        fields = ['nombre','ubicacion', 'zona']
 
 class FotosRestauranteSerializer(serializers.ModelSerializer):
 

@@ -42,10 +42,7 @@ export class SignupFormComponent implements OnInit {
 
 
   validate(data:any):boolean{
-
-    data.
-    return true
-
+    return data.password === data.password_again
   }
 
 }
