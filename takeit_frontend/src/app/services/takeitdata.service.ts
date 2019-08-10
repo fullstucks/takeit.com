@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
-import { TopZones, TopGye } from '../models/tops';
-import { TOPGYE, TOPZONES } from '../mocks/mock-takeit-home';
+import { Zones} from '../models/tops';
 import { Restaurant } from '../models/restaurant';
-import { RESTAURANTS } from '../mocks/mocks.results';
 import { Noticias } from '../models/noticias';
 import { NOTICIAS } from '../mocks/mock-noticias';
 import { Reservas } from '../models/reservas';
 import { RESERVAS } from '../mocks/mock-reservas';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import api from './api';
 
 
 
@@ -16,22 +16,19 @@ import { RESERVAS } from '../mocks/mock-reservas';
 })
 export class TakeitdataService {
 
-  constructor() { }
-
-  getTopGye():Observable<TopGye[]>{
-    return of(TOPGYE)
-  }
-
-  getTopZones():Observable<TopZones[]>{
-    return of(TOPZONES)
-  }
-
-  getRestaurants():Observable<Restaurant[]>{
-    return of(RESTAURANTS)
-  }
+  constructor(private http: HttpClient) { }
 
   getRestaurant(id:number):Observable<Restaurant>{
-    return of(RESTAURANTS.find(restaurant => restaurant.id == id ));
+    let params:any = {id_restaurante: id}
+    return this.http.get<Restaurant>(api.restaurante, {params})
+  }
+
+  getRestaurants(params:any):Observable<Restaurant[]>{
+    return this.http.get<Restaurant[]>(api.restaurantes, {params})
+  }
+
+  getTopZones(params:any):Observable<Zones[]>{
+    return this.http.get<Zones[]>(api.zonas, {params})
   }
 
   getNews():Observable<Noticias[]>{

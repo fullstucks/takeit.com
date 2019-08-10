@@ -57,16 +57,9 @@ export class ResultsComponent implements OnInit {
 
 
   getRestaurants(search_string:string):void{
-    this.takeitdataService.getRestaurants()
+    this.takeitdataService.getRestaurants({search_input:search_string})
       .subscribe(restaurants =>{
-        this.restaurants = []
-  
-        for (let restaurant of restaurants){
-          let r = restaurant.nombre.toLowerCase().includes(search_string.toLowerCase())
-          let u = restaurant.ubicacion.toLowerCase().includes(search_string.toLowerCase())
-          if(r || u)
-            this.restaurants.push(restaurant)
-        }
+        this.restaurants = restaurants
       })
   }
 
@@ -78,11 +71,9 @@ export class ResultsComponent implements OnInit {
   }
 
 
-
   takeit(id:number):void{
     this.router.navigateByUrl('/generarReserva/'+ id)
   }
-
 
 
   list_n(n:number):Array<number>{

@@ -1,12 +1,12 @@
 <div class="cards-container">
   <div *ngFor="let top of tops" class="card mb-3" (click)="goInfo(top.id)">
     <div class="image-wrapper">
-      <img class="card-img-top img-fluid" src="assets/images/restaurants/{{top.img_url}}" alt="">
+      <img class="card-img-top img-fluid" src="assets/images/restaurants/{{top.img_paths[0].img_path}}" alt="">
     </div>
     <article class="card-body">
       <h5 class="card-title">{{top.nombre}}</h5>
-      <p class="card-text">{{top.resenas}} reseñas</p>
-      <p class="card-text">{{top.mesas_disponibles}} mesas disponibles</p>
+      <p class="card-text">{{top.n_resenas}} reseñas</p>
+      <p class="card-text">calificacion: {{top.calificacion_prom}} </p>
     </article>
   </div>
 </div>
