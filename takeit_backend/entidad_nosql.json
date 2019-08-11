@@ -1,0 +1,48 @@
+[
+    {
+        "id": 36,
+        "nombre": "Parrilladas del 10",
+        "ubicacion": "Los ceibos",
+        "zona": 
+            {
+                "id": 24,
+                "nombre": "Las Peñas",
+                "n_restaurantes": 2,
+                "img_path": "laspenas.jpg"
+            },
+        "descripcion": "se educado y espera",
+        "lat": -2.1622,
+        "lng": -79.938,
+        "img_paths": [
+            {
+                "id": 22,
+                "img_path": "2.jpg",
+                "tipo": "profile",
+                "tamano": "small"
+            },
+            {
+                "id": 23,
+                "img_path": "3.jpg",
+                "tipo": "header",
+                "tamano": "medium"
+            }
+        ],
+        "tags": [
+            {
+                "id": 26,
+                "tag": "FreeThinking",
+                "veces_usado": 1
+            },
+            {
+                "id": 29,
+                "tag": "Música en vivo",
+                "veces_usado": 3
+            },
+            {
+                "id": 22,
+                "tag": "BuenAmbiente",
+                "veces_usado": 2
+            }
+        ]
+    }
+]

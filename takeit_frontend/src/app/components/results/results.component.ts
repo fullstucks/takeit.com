@@ -16,8 +16,8 @@ export class ResultsComponent implements OnInit {
 
   restaurants: Restaurant[];
   selectedRestaurant:Restaurant;
-  text_input:string;
-  given_text_input:string;
+  search_input:string;
+  given_search_input:string;
 
   /*
     Open street map option's for leaflet
@@ -45,19 +45,19 @@ export class ResultsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.given_text_input = this.route.snapshot.queryParamMap.get('search_string');
-    this.getRestaurants(this.given_text_input);
+    this.given_search_input = this.route.snapshot.queryParamMap.get('search_input');
+    this.getRestaurants(this.given_search_input);
   }
 
 
   onSearch():void{
-    this.getRestaurants(this.text_input)
-    this.given_text_input = this.text_input;
+    this.getRestaurants(this.search_input)
+    this.given_search_input = this.search_input;
   }
 
 
-  getRestaurants(search_string:string):void{
-    this.takeitdataService.getRestaurants({search_input:search_string})
+  getRestaurants(search_input:string):void{
+    this.takeitdataService.getRestaurants({search_input:search_input})
       .subscribe(restaurants =>{
         this.restaurants = restaurants
       })

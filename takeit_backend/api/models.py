@@ -31,7 +31,9 @@ class Restaurante(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
 
     def save(self, *args, **kwargs):
+
         self.zona.n_restaurantes += 1
+        self.zona.save()
         super(Restaurante, self).save(*args, **kwargs)
 
     def __str__(self):

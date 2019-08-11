@@ -33,3 +33,7 @@ def get_restaurant_by_search_input(search_input, top):
             }
         ]
     }, {'_id': False}).limit(int(top))
+
+
+def add_photo_restaurant(id_restaurant, data):
+    db.restaurante.update({"id": int(id_restaurant)},{"$push": { "img_paths": data }})

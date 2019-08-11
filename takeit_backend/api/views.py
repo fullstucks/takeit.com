@@ -4,12 +4,11 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework.exceptions import ValidationError
-from rest_framework.parsers import JSONParser
 from .serializers import *
-from .models import Restaurante, Reserva, Zona, ReservaPlanificacion, Resena
+from .models import *
 from .to_mongo import *
 from bson.json_util import dumps, loads
-#from django.http.request import QueryDict
+
 
 
 
@@ -31,6 +30,7 @@ class RegistrationView(GenericAPIView):
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
 
+
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
     permission_classes = [AllowAny]
@@ -50,15 +50,30 @@ class RestauranteView(GenericAPIView):
         serializer = self.get_serializer(data)
         return Response(data=serializer.data)
 
+
     def post(self, request):
         print("<-------------------------->")
-        serializer = RestauranteSaveSerializer(data=request.data)
+
+        serializer = RestauranteSaverSerializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
-
+        
         saved = serializer.save()
+        print("<-----------  yep --------------->")
+
+        try:
+            tags_ids = loads(request.data['tags'])
+        except:
+            return Response(data={'msg': 'bad tag format.'})
+        for tag_id in tags_ids:
+            tag = Tag.objects.get(pk=tag_id)
+            print(tag)
+            tag.veces_usado += 1
+            tag.save()
+            saved.tags.add(tag)
+        saved.save()
         
         insert_restaurante({
             'id': saved.id,
@@ -66,16 +81,20 @@ class RestauranteView(GenericAPIView):
             'ubicacion':saved.ubicacion,
             'zona': saved.zona.id,
             'descripcion': saved.descripcion,
+            'n_resenas': saved.n_resenas,
+            'calificacion_prom': saved.calificacion_prom,
             'lat': saved.lat,
             'lng': saved.lng,
             'img_paths': [],
-            'tags':[]
+            'tags':[{'tag_id': tag.id, 'tag_name': tag.tag} for tag in saved.tags.all()]
         })
 
         return Response(status=200, data={'msg': 'created'})
 
+
     def put(self):
         pass
+
 
 
 class RestauranteListView(GenericAPIView):
@@ -89,6 +108,19 @@ class RestauranteListView(GenericAPIView):
         recomended = request.query_params.get('get_recomended')
         tag_id = request.query_params.get('tag_id')
 
+        # < --------- using mongo ----------->
+        if recomended == '1':
+            data = get_restaurant_recomended(5)
+        elif tag_id:
+            data = get_restaurant_by_tag(tag_id)
+        elif not top and not search_input:
+            data = get_restaurante_all()
+        else:
+            top = top if top else '10'
+            search_input = search_input if search_input else ''
+            data = get_restaurant_by_search_input(search_input, top)
+        
+        # < --------- using postgres ----------->
         #if recomended == '1':
         #    data = Restaurante.objects.order_by(
         #        'calificacion_prom', 'n_resenas')[:5]
@@ -104,19 +136,9 @@ class RestauranteListView(GenericAPIView):
         #        Q(descripcion__icontains=search_input) |
         #        Q(ubicacion__icontains=search_input)
         #    )[:int(top)]
-
-        if recomended == '1':
-            data = get_restaurant_recomended(5)
-        elif tag_id:
-            data = get_restaurant_by_tag(tag_id)
-        elif not top and not search_input:
-            data = get_restaurante_all()
-        else:
-            top = top if top else '10'
-            search_input = search_input if search_input else ''
-            data = get_restaurant_by_search_input(search_input, top)
-            
+    
         return Response(data=loads(dumps(data)))
+
 
 
 class ReservaView(GenericAPIView):
@@ -151,6 +173,7 @@ class ReservaView(GenericAPIView):
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
 
+
 class ReservaPlanificacionView(GenericAPIView):
     serializer_class = ReservaPlanificacionSerializer
 
@@ -176,6 +199,7 @@ class ReservaPlanificacionView(GenericAPIView):
         
         serializer.save()
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
 
 
 class ResenaView(GenericAPIView):
@@ -230,3 +254,41 @@ class ZonaView(GenericAPIView):
         data = Zona.objects.order_by('n_restaurantes')[:int(top)]
         serializer = self.get_serializer(data, many=True)
         return Response(data=serializer.data)
+
+
+class FotosRestauranteView(GenericAPIView):
+
+    serializer_class = FotosRestauranteSerializer
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        foto_id = request.query_params.get('foto_id')
+        if not foto_id:
+            return Response(status=400, data={'msg': 'at least you should send the id of the entity'})
+        try:
+            data = FotosRestaurante.objects.get(pk=foto_id)
+        except FotosRestaurante.DoesNotExist:
+            return Response(status=400, data={'msg': 'no results for id: ' + foto_id})
+
+        serializer = self.get_serializer(data)
+
+        return Response(serializer.data)
+
+
+    
+    def post(self, request):
+
+        serializer = self.get_serializer(data=request.data)
+        try:
+            serializer.is_valid(raise_exception=True)
+        except ValidationError as error:
+            return Response(data={'msg': str(error)})
+
+        serializer.save()
+        add_photo_restaurant(request.data['restaurante'], {
+            'img_path': request.data['img_path'],
+            'tipo': request.data['tipo'],
+            'tamano': request.data['tamano']
+        })
+        return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
