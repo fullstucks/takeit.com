@@ -1,13 +1,6 @@
-export class TopZones{
-    img_url: string
-    nombre: string
-    n_restaurants: number
-}
-
-export class TopGye{
+export class Zones{
     id: number
-    img_url: string
-    nombre: string;
-    resenas: number
-    mesas_disponibles:number
+    img_path: string
+    nombre: string
+    n_restaurantes: number
 }

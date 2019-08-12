@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TopZones } from '../../../models/tops';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
+import { Zones } from 'src/app/models/tops';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { TakeitdataService } from 'src/app/services/takeitdata.service';
 
 export class TopzonesComponent implements OnInit {
 
-  tops: TopZones[];
+  tops: Zones[];
 
   constructor(private takeitDataService: TakeitdataService) { }
 
@@ -21,9 +21,11 @@ export class TopzonesComponent implements OnInit {
     this.getTops();
   }
 
-  getTops():void{
-    this.takeitDataService.getTopZones()
-    .subscribe(tops=> {this.tops = tops})
+  getTops(): void {
+    this.takeitDataService.getTopZones({ top: 9 })
+      .subscribe(tops => {
+        this.tops = tops
+      })
   }
 
 }

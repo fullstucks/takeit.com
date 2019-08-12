@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TopGye } from '../../../models/tops';
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
 import { Router } from '@angular/router';
+import { Restaurant } from 'src/app/models/restaurant';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class TopgyeComponent implements OnInit {
 
-  tops:TopGye[]
+  tops:any[]
 
   constructor(private takeitDataService:TakeitdataService,
               private router: Router) { }
@@ -21,8 +21,11 @@ export class TopgyeComponent implements OnInit {
   }
 
   getTops():void{
-    this.takeitDataService.getTopGye()
-    .subscribe(tops => this.tops = tops)
+    this.takeitDataService.getRestaurants({top: 5})
+    .subscribe(tops =>{
+      this.tops = tops
+      console.log(tops)
+    } )
   }
 
   goInfo(id:number):void{

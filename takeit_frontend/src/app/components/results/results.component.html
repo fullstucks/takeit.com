@@ -2,7 +2,7 @@
     <span class="t-white t-title-small">Busca tu restaurante favorito</span>
     <form>
         <input class="form-control"
-                [(ngModel)]="text_input"
+                [(ngModel)]="search_input"
                 name="text-input" 
                 placeholder=" Ubicación o restaurante" 
                 type="text">
@@ -20,14 +20,13 @@
             [class.selected]="selectedRestaurant === restaurant"
             (click) = "onSelect(restaurant)">
             <div class="x">
-                <img src="assets/images/restaurants/{{restaurant.img_url}}">
+                <img src="assets/images/restaurants/{{restaurant.img_paths[0].img_path}}">
                 <div class="description">
                     <h1>{{restaurant.nombre}}</h1>
                     <div class="star-rating">
-                        <span *ngFor="let i of list_n(restaurant.n_estrellas)" class="fa fa-star checked"></span>
+                        <span *ngFor="let i of list_n(restaurant.calificacion_prom)" class="fa fa-star checked"></span>
                     </div>
-                    <h3>{{restaurant.resenas}} reseñas</h3>
-                    <h3>{{restaurant.mesas_disponibles}} mesas disponibles</h3>
+                    <h3>{{restaurant.n_resenas}} reseñas</h3>
                     <span>{{restaurant.ubicacion}}</span>
                 </div>
             </div>

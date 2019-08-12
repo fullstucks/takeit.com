@@ -1,12 +1,14 @@
 export class Restaurant{
     id: number;
-    img_url: string;
     nombre: string;
-    descripcion: string;
-    resenas: number;
-    mesas_disponibles: number;
     ubicacion: string;
-    n_estrellas: number;
+    zona: any;
+    descripcion: string;
+    n_resenas: number;
     lat: number;
     lng: number;
+    img_paths: any[];
+    tags:any[]
+    calificacion_prom: number;
+    
 }
