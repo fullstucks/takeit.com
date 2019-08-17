@@ -1,7 +1,5 @@
-import { Restaurant } from '../models/restaurant';
 
-
-export const RESTAURANTS: Restaurant[] =  [
+export const RESTAURANTS: any[] =  [
     {
         id: 1,
         img_url: "1.jpg",

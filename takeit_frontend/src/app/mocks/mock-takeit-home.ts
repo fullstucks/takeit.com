@@ -1,6 +1,6 @@
-import { TopGye, TopZones } from '../models/tops';
 
-export const TOPGYE: TopGye[] = [
+
+const TOPGYE: any[] = [
     {
         id: 1,
         img_url: "1.jpg",
@@ -37,8 +37,7 @@ export const TOPGYE: TopGye[] = [
         mesas_disponibles: 2
     }
 ]
-
-export const TOPZONES:TopZones[] = [
+const TOPZONES:any[] = [
     {
         img_url: "losceibos.jpeg",
         nombre:"Los Ceibos",

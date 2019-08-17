@@ -115,8 +115,7 @@ STATICFILES_DIRS = [
 
 
 os.environ['RUN_AS'] = ''
-if os.environ['RUN_AS'] == 'prod':                          
-   #from .settings_prod import * 
-   print()
+if os.environ['RUN_AS'] == 'prod':
+    from .settings_prod import *
 else:
-   from .settings_dev import * 
+    from .settings_dev import *

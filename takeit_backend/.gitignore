@@ -1,3 +1,4 @@
 takeit_project/settings_prod.py
 takeit_project/settings_dev.py
+api/migrations/*
 *.pyc
