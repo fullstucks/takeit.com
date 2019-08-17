@@ -12,9 +12,6 @@ from .to_mongo import *
 from bson.json_util import dumps, loads
 
 
-
-
-
 class RegistrationView(GenericAPIView):
     serializer_class = UsuarioSerializer
     permission_classes = [AllowAny]
