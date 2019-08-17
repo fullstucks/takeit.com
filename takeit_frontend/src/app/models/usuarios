@@ -1,0 +1,10 @@
+export class Usuarios{
+    id: number;
+    img_url: string;
+    nombre: string;
+    apellido: string;
+    correo: string;
+    telefono: string;
+    fecha_nacimiento: string;
+    mensaje: string;
+}

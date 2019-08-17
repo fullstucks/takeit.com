@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Q
+from django.core.mail import send_mail
 from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
@@ -7,6 +8,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import ValidationError
 from .serializers import UsuarioSerializer, RestauranteSerializer, ReservaSerializer
 from .models import Restaurante, Reserva
+
 
 
 class RegistrationView(GenericAPIView):
@@ -21,10 +23,25 @@ class RegistrationView(GenericAPIView):
         try:
             serializer.is_valid(raise_exception=True)
             serializer.save()
+            email(request)
         except ValidationError as e:
             return Response(data={'msg': str(e)})
         return Response(data={'msg':'Registrado con éxito'}, status=200)
 
+    def email(request):
+        SUBJECT = "Confirmación de Registro Takeit.com"
+        BODY = "Gracias por verificar tu cuenta, has sido registrado exitosamente."
+        EMAIL_FROM = "takeitdotcom@gmail.com"
+        EMAIL_TO = ["jfabricioherrerac@gmail.com"]
+
+        return send_mail(SUBJECT, BODY, EMAIL_FROM, EMAIL_TO, fail_silently=False)
+
+        #id = request.POST.get('id')
+        #client = Client.objects.get(id=id)
+        #msg_html = render_to_string('templates/email.html', {'client': client})
+        #template_email_text = ''
+        #return send_mail('Lelander work samples', template_email_text, 'test@e
+    
 
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
@@ -65,12 +82,12 @@ class RestauranteListView(GenericAPIView):
 class ReservaView(GenericAPIView):
     serializer_class = ReservaSerializer
 
-    def get(self, resquest):
+    def get(self, request):
         reservas = Reserva.objects.all()
         serializer = self.get_serializer(reservas, many=True)
         return Response(data=serializer.data)
 
-    def post(self, resquest):
+    def post(self, request):
         serializer = self.get_serializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)

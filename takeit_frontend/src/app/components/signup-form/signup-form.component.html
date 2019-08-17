@@ -30,7 +30,7 @@
                     name="fecha_nacimiento"
                     id="fecha_nacimiento"
                     placeholder="fecha de nacimiento" ngModel>
-            <button type="submit" id="submit">Registrar</button>
+            <button type="submit" id="submit" (click)='registrar()'>Registrar</button>
             <div *ngIf="success">
                     <span class="msg">
                        Registro exitoso. 
