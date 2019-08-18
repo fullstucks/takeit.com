@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from "@angular/common/http";
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { ChartsModule} from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +23,7 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NoticiasComponent } from './components/home/noticias/noticias.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { MisRestaurantesComponent } from './components/mis-restaurantes/mis-restaurantes.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +41,16 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
     QuienesSomosComponent,
     NotFoundComponent,
     NoticiasComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    MisRestaurantesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

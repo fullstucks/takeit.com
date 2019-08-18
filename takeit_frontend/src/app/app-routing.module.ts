@@ -8,6 +8,7 @@ import { MisReservasComponent } from './components/mis-reservas/mis-reservas.com
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { MisRestaurantesComponent } from './components/mis-restaurantes/mis-restaurantes.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'generarReserva/:id', component: GenerarReservaComponent},
   {path: 'signup', component: SignupFormComponent},
   {path: 'misReservas', component:MisReservasComponent},
+  {path: 'misRestaurantes', component:MisRestaurantesComponent},
   {path: '**', component:NotFoundComponent}
 ];
 

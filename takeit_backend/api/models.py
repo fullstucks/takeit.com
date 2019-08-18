@@ -29,6 +29,7 @@ class Restaurante(models.Model):
     lat = models.FloatField()
     lng = models.FloatField()
     tags = models.ManyToManyField(Tag, blank=True)
+    dueno = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
 

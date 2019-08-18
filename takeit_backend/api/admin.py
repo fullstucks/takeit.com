@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Usuario, Tag, Zona, Restaurante, Reserva, ReservaPlanificacion, FotosRestaurante, Resena, Noticias
 
+admin.site.site_header = "Administración"
 admin.site.register(Usuario)
 admin.site.register(Tag)
 admin.site.register(Zona)

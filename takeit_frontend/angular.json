@@ -30,7 +30,7 @@
                             "node_modules/ngx-toastr/toastr.css"
 
                         ],
-                        "scripts": []
+                        "scripts": ["src/assets/chartjs/Chart.min.js"]
                     },
                     "configurations": {
                         "production": {
