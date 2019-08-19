@@ -59,11 +59,12 @@ class RestauranteSerializer(serializers.ModelSerializer):
         field = 'img_paths'
         depth = 1
 
-class RestauranteSaveSerializer(serializers.ModelSerializer):
+        
+class RestauranteSaverSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurante
-        fields = '__all__'
+        exclude = ['tags']
 
 
 class ResenaSerializer(serializers.ModelSerializer):

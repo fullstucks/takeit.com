@@ -12,6 +12,7 @@ urlpatterns = [
     path(r'signup/', views.RegistrationView.as_view()),
     path(r'restaurante/', views.RestauranteView.as_view()),
     path(r'restaurante/listas/', views.RestauranteListView.as_view()),
+    path(r'restaurante/fotos/', views.FotosRestauranteView.as_view()),
     path(r'zona/', views.ZonaView.as_view()),
     path(r'reserva/', views.ReservaView.as_view()),
     path(r'planificacion/', views.ReservaPlanificacionView.as_view()),

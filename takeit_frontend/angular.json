@@ -30,7 +30,11 @@
                             "node_modules/ngx-toastr/toastr.css"
 
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "src/assets/js/mail.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -87,7 +91,11 @@
                             "src/styles.css",
                             "node_modules/ngx-toastr/toastr.css"
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "src/assets/js/mail.js"
+                        ]
                     }
                 },
                 "lint": {

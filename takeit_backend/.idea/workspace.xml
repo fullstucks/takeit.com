@@ -2,24 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e25e07b1-79d0-4179-ba1d-4513fb08b6f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/entidad_nosql.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/models/usuarios" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/services/user.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/services/user.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takeit_frontend/src/assets/js/mail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/to_mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/to_mongo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/takeit_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/takeit_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/takeit_project/settings_dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/takeit_project/settings_dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../takeit_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/confirmar/confirmar-reserva.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/confirmar/confirmar-reserva.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/entradas/escoger-entradas.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/entradas/escoger-entradas.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/entradas/escoger-entradas.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/entradas/escoger-entradas.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/entradas/escoger-entradas.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/entradas/escoger-entradas.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/home/topgye/topgye.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/home/topgye/topgye.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/home/topgye/topgye.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/home/topgye/topgye.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/info-restaurante/info-restaurante.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/info-restaurante/info-restaurante.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/info-restaurante/info-restaurante.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/info-restaurante/info-restaurante.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/home/topzones/topzones.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/home/topzones/topzones.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/results/results.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/results/results.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/results/results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/results/results.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/shared/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/shared/search/search.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/shared/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/shared/search/search.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/signup-form/signup-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/signup-form/signup-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/signup-form/signup-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/signup-form/signup-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/signup-form/signup-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/signup-form/signup-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/models/restaurant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/models/restaurant.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/services/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/services/takeitdata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/services/takeitdata.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/models/tops.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/models/tops.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/api/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -41,11 +49,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/takeit_project/settings_dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state relative-caret-position="525">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../LAST 2.0/takeit.com/takeit_backend/takeit_project/settings_dev.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -65,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+            <state relative-caret-position="-1315">
+              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -74,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="91" column="6" lean-forward="true" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
+              <caret line="93" column="6" lean-forward="true" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -117,6 +134,7 @@
       <list>
         <option value="$PROJECT_DIR$/api/serializers.py" />
         <option value="$PROJECT_DIR$/api/views.py" />
+        <option value="$PROJECT_DIR$/takeit_project/settings_dev.py" />
       </list>
     </option>
   </component>
@@ -161,6 +179,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ProyectoTest/Espol" />
   </component>
   <component name="RunDashboard">
@@ -288,17 +307,10 @@
     <entry file="file://$PROJECT_DIR$/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/takeit_project/settings_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -329,23 +341,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="93" column="6" lean-forward="true" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        <state relative-caret-position="-1315">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/models.py">
+    <entry file="file://$PROJECT_DIR$/../../LAST 2.0/takeit.com/takeit_backend/takeit_project/settings_dev.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="91" column="6" lean-forward="true" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/takeit_project/settings_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>

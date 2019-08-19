@@ -18,6 +18,15 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig'
 ]
 
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT =  587
+EMAIL_HOST_USER = 'takeitdotcom@gmail.com'
+EMAIL_HOST_PASSWORD = 'Takeit2019'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',

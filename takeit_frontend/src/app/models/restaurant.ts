@@ -2,14 +2,15 @@ import { Zones } from './tops';
 
 export class Restaurant{
     id: number;
-    img_paths: any[];
     nombre: string;
+    ubicacion: string;
+    zona: any;
     descripcion: string;
     n_resenas: number;
-    ubicacion: string;
-    calificacion_prom: number;
     lat: number;
     lng: number;
-    zona: any;
+    img_paths: any[];
     tags:any[]
+    calificacion_prom: number;
+    
 }

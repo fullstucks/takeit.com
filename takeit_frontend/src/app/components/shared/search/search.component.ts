@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
 
-  text_input:string = "";
+  search_input:string = "";
 
 
   constructor(private router: Router) { }
@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch():void{
-    this.router.navigate(['/results'], {queryParams:{search_string: this.text_input}})
+    this.router.navigate(['/results'], {queryParams:{search_input: this.search_input}})
   }
 
 }

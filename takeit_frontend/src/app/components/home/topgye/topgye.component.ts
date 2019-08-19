@@ -11,7 +11,7 @@ import { Restaurant } from 'src/app/models/restaurant';
 })
 export class TopgyeComponent implements OnInit {
 
-  tops:Restaurant[]
+  tops:any[]
 
   constructor(private takeitDataService:TakeitdataService,
               private router: Router) { }
