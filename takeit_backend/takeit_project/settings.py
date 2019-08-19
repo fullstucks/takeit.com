@@ -24,8 +24,8 @@ REST_FRAMEWORK = {
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 AUTH_USER_MODEL = 'api.Usuario'
@@ -33,7 +33,7 @@ JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=1000),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(hours=2),
-    'JWT_AUTH_COOKIE': 'tokenx'
+    'JWT_AUTH_COOKIE': 'token'
 }
 
 

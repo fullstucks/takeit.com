@@ -1,19 +1,22 @@
 from pymongo import MongoClient, DESCENDING
+import ssl
 
-client = MongoClient("mongodb+srv://mglpg:vXMfQV1YMOR5CJtA@takeit-biilu.gcp.mongodb.net/test?retryWrites=true&w=majority")
-db = client.takeidb
+client = MongoClient("mongodb://mglps:1controlXYZW@localhost")
+db = client.takeitdb
+print(db)
 
 def insert_restaurante(data):
     db.restaurante.insert_one(data)
 
 def get_restaurante_all():
     return db.restaurante.find({}, {'_id': False})
+
 def get_restaurante(restaurante_id):
     return db.restaurante.find_one({'id': restaurante_id}, {'_id': False})
 
 def get_restaurant_recomended(limit):
     return db.restaurante.find({}, {'_id': False}).sort([
-                ("n_resenas", DESCENDING), 
+                ("n_resenas", DESCENDING),
                 ("calificacion_prom", DESCENDING)
             ]).limit(limit)
 
@@ -36,4 +39,4 @@ def get_restaurant_by_search_input(search_input, top):
 
 
 def add_photo_restaurant(id_restaurant, data):
-    db.restaurante.update({"id": int(id_restaurant)},{"$push": { "img_paths": data }})
+    db.restaurante.update({"id": int(id_restaurant)}, {"$push": { "img_paths": data }})

@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
 import {Cookie} from 'ng2-cookies';
 import api from './api'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private loggedin:boolean
+  public loggedin:boolean
   public loading:boolean = false
 
-  constructor() {
-    let hasLog = Cookie.check('logged')
-    this.loggedin = hasLog;
+  private user_info:any = {
+    es_admin_restaurante: false
+  };
+
+  constructor(private http: HttpClient) {
+    this.loggedin = Cookie.check('logged');
   }
+
 
   login(user:any):void{
     this.loading = true
@@ -27,12 +32,12 @@ export class LoginService {
     .then(res => {
       if(res.ok){
         Cookie.set('logged', '1')
+        this.load_user_info()
         this.loggedin = true
       }
       this.loading = false
     })
     .catch(err => console.log(err))
-
   }
 
   logout():void{
@@ -41,7 +46,27 @@ export class LoginService {
   }
 
   getSessionStatus():boolean{
-    return this.loggedin
+      return this.loggedin
+  }
+
+  load_user_info(){
+    fetch(api.user_info, {
+      method: 'get'
+    })
+      .then(
+        response => response.json()
+      )
+      .then(
+        data =>{
+          console.log(data)
+          console.log(this.user_info)
+        }
+        
+      )
+  }
+
+  get_user_info():any{
+    return this.user_info;
   }
 
 }

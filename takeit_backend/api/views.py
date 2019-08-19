@@ -2,13 +2,24 @@ from django.db.models import Q
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.exceptions import ValidationError
 from .serializers import *
 from .models import *
 from .to_mongo import *
 from bson.json_util import dumps, loads
 
+
+class UsuarioView(GenericAPIView):
+    serializer_class = UsuarioSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        
+        #print(request.user.fecha_nacimiento)
+        serializer = self.get_serializer(request.user)
+
+        return Response(serializer.data)
 
 
 
@@ -256,6 +267,7 @@ class ZonaView(GenericAPIView):
         return Response(data=serializer.data)
 
 
+
 class FotosRestauranteView(GenericAPIView):
 
     serializer_class = FotosRestauranteSerializer
@@ -291,4 +303,3 @@ class FotosRestauranteView(GenericAPIView):
             'tamano': request.data['tamano']
         })
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
-

@@ -79,6 +79,16 @@
             <i class="fa fa-book-open disabled" aria-hidden="true" href="#"></i>
             <span class="text">Mis Reservas</span>
           </button>
+
+          <!------------------ if restaurant admin  --------------->
+          <ng-container *ngIf="loginService.get_user_info().es_admin_restaurante">
+            <button class="btn btn-secondary btnIcons" (click)="goAdministrarRestaurantes()">
+              <i class="fa fa-book-open disabled" aria-hidden="true" href="#"></i>
+              <span class="text">Administrar Restaurantes</span>
+            </button>
+          </ng-container>
+          <!-------------------------------------------------------->
+          
           <button class="btn btn-secondary btnIcons" (click)="logout()">
             <i class="fa fa-sign-out-alt disabled" aria-hidden="true" href="#"></i>
             <span class="text">Cerrar sesión</span>

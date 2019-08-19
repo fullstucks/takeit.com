@@ -9,6 +9,7 @@ urlpatterns = [
     #path(r'', include(router.urls)),
     path(r'auth/', ObtainJSONWebToken.as_view()),
     path(r'auth/refresh/', RefreshJSONWebToken.as_view()),
+    path(r'auth/user/info/', views.UsuarioView.as_view()),
     path(r'signup/', views.RegistrationView.as_view()),
     path(r'restaurante/', views.RestauranteView.as_view()),
     path(r'restaurante/listas/', views.RestauranteListView.as_view()),

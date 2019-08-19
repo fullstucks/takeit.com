@@ -42,4 +42,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/misReservas')
   }
 
+  goAdministrarRestaurantes(){
+    this.router.navigateByUrl('/administrarRestaurantes')
+  }
+
 }
