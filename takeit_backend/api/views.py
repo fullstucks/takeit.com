@@ -1,4 +1,6 @@
 from django.db.models import Q
+from django.core.mail import send_mail
+from rest_framework.views import APIView
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
@@ -35,11 +37,25 @@ class RegistrationView(GenericAPIView):
         try:
             serializer.is_valid(raise_exception=True)
             serializer.save()
+            self.email(request)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
+        return Response(data={'msg':'Registrado con éxito'}, status=200)
 
-        return Response(data={'msg': 'Registrado con éxito'}, status=200)
+    def email(self, request):
+        SUBJECT = "Confirmación de Registro Takeit.com"
+        BODY = "Gracias por verificar tu cuenta, has sido registrado exitosamente."
+        EMAIL_FROM = "takeitdotcom@gmail.com"
+        EMAIL_TO = ["jfabricioherrerac@gmail.com"]
 
+        return send_mail(SUBJECT, BODY, EMAIL_FROM, EMAIL_TO, fail_silently=False)
+
+        #id = request.POST.get('id')
+        #client = Client.objects.get(id=id)
+        #msg_html = render_to_string('templates/email.html', {'client': client})
+        #template_email_text = ''
+        #return send_mail('Lelander work samples', template_email_text, 'test@e
+    
 
 
 class RestauranteView(GenericAPIView):
@@ -171,6 +187,7 @@ class ReservaView(GenericAPIView):
 
         serializer = self.get_serializer(reservas, many=True)
         return Response(data=serializer.data)
+
 
     def post(self, request):
 

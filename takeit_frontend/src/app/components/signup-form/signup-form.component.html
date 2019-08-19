@@ -1,42 +1,44 @@
-<section>
-    <div class="wrapper">
-        <div></div>
-        <form #form_data="ngForm" (ngSubmit)="signup(form_data)">
-            <input class="form-control" type="text" 
-                    name="first_name" 
-                    id="first_name" 
-                    placeholder="nombres" ngModel>
-            <input type="text" 
-                    name="last_name" 
-                    id="last_name" 
-                    placeholder="apellidos" ngModel>
-            <input type="text" 
-                    name="username" 
-                    id="username" 
-                    placeholder="nombre de usuario" ngModel required>
-            <input type="password"
-                    name="password"
-                    id="password"
-                    placeholder="contraseña" ngModel required>
-            <input type="password"
-                    name="password"
-                    id="password_again"
-                    placeholder="vuelva a escribir la contraseña" required>
-            <input type="email"
-                    name="email"
-                    placeholder="email"
-                    id="email" ngModel required>
-            <input type="date"
-                    name="fecha_nacimiento"
-                    id="fecha_nacimiento"
-                    placeholder="fecha de nacimiento" ngModel>
-            <button type="submit" id="submit">Registrar</button>
-            <div *ngIf="success">
-                    <span class="msg">
-                       Registro exitoso. 
-                    </span>
-            </div>
+<div class="jumbotron bg-image">
+    <h1 class="t-bold t-white">Portal de Registro</h1>
+    <p class="lead t-white">Descubre lo que se siente poder reservar un lugar desde la comodidad de tu hogar</p>
+</div>
 
+<div class="container-fluid">
+    <h3 class="t-bold t-black">Formulario de Registro</h3>
+    <hr class="my-4">
+    <div class="container">
+        <form #form_data="ngForm" (ngSubmit)="signup(form_data)">
+            <div class="form-group">
+                <label >Nombres</label>
+                <input type="text" class="form-control" id="name_input" 
+                    placeholder="Nombres" ngModel>
+                <label >Apellidos</label>
+                <input type="text" class="form-control" id="lastname_input" 
+                    placeholder="Apellidos" ngModel>
+                <label>Correo electrónico</label>
+                <input type="email" class="form-control" id="email_input"
+                    placeholder="Correo electrónico" ngModel required>
+                <label >Nombre de usuario</label>
+                <input type="text" class="form-control" id="username_input" 
+                    placeholder="Nombre de usuario" ngModel required>
+                <label >Contraseña</label>
+                <input type="password" class="form-control" id="password_input" 
+                    placeholder="Contraseña" ngModel required>
+                <label >Confirmación de contraseña</label>
+                <input type="password" class="form-control" id="password_again_input" 
+                    placeholder="Confirmación de contraseña" ngModel required>
+                <label >Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="birthday_input" 
+                    placeholder="Fecha de nacimiento" ngModel>
+                </div>
+                
+                <button type="submit" id="submit" class="btn btn-primary bg-blue" (click)='registrar()'>Registrar</button>
+                <div *ngIf="success">
+                        <span class="msg">
+                        Registro exitoso. 
+                        </span>
+                </div>                
+            
         </form>
     </div>
-</section>
+</div>

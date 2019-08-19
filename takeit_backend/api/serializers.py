@@ -1,7 +1,6 @@
 from rest_framework import serializers
 #from rest_framework_jwt.settings import api_settings
-from .models import Usuario, Tag, Resena, Zona, Reserva, ReservaPlanificacion, Restaurante, FotosRestaurante
-
+from .models import *
 
 class UsuarioSerializer(serializers.ModelSerializer):
 
