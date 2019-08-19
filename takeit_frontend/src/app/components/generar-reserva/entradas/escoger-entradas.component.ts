@@ -10,7 +10,7 @@ import { Restaurant } from 'src/app/models/restaurant';
   styleUrls: ['./escoger-entradas.component.css']
 })
 export class EscogerEntradasComponent implements OnInit {
-
+  planificados=[]
   restaurant: Restaurant
 
   constructor(private route: ActivatedRoute,
@@ -18,7 +18,8 @@ export class EscogerEntradasComponent implements OnInit {
               private takeitDataService: TakeitdataService) { }
 
   ngOnInit() {
-    this.getRestaurant()
+    this.getRestaurant();
+    this.getPlanificados();
   }
 
 
@@ -33,6 +34,15 @@ export class EscogerEntradasComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  getPlanificados():void{
+    const id =+ this.route.snapshot.paramMap.get('id');
+    this.takeitDataService.getReservasPlanificadas(id)
+       .subscribe(
+         data=>{
+           this.planificados = data;
+         })
   }
 
 }

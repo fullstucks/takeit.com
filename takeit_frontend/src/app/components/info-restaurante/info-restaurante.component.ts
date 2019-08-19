@@ -10,24 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./info-restaurante.component.css']
 })
 export class InfoRestauranteComponent implements OnInit {
-
+  
+  restaurant:Restaurant
+  
   constructor(private route: ActivatedRoute,
               private location: Location,
               private takeitDataService: TakeitdataService,
               private router: Router) { }
-
-
-  restaurant: Restaurant
 
   ngOnInit() {
     this.getRestaurant()
   }
 
   getRestaurant():void{
-    const id =+ this.route.snapshot.paramMap.get('id');
+    let id:number =+ this.route.snapshot.paramMap.get('id');
     this.takeitDataService.getRestaurant(id)
-        .subscribe(restaurant => this.restaurant = restaurant)
+        .subscribe(restaurant => {
+            this.restaurant = restaurant
+            console.log(restaurant)
+          })
   }
+
 
   goBack(): void {
     this.location.back();

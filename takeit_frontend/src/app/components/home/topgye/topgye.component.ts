@@ -17,13 +17,14 @@ export class TopgyeComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.getTops()
+    this.getTops();
   }
 
   getTops():void{
-    this.takeitDataService.getRestaurants({top: 5})
+    this.takeitDataService.getRestaurants({ top: 10 })
     .subscribe(tops =>{
       this.tops = tops
+      console.log(tops)
     } )
   }
 

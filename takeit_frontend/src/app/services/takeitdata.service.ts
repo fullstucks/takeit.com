@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { Zones} from '../models/tops';
 import { Restaurant } from '../models/restaurant';
+import { Planificados } from '../models/planificaciones.model';
 import { Noticias } from '../models/noticias';
 import { NOTICIAS } from '../mocks/mock-noticias';
 import { Reservas } from '../models/reservas';
@@ -18,9 +19,9 @@ export class TakeitdataService {
 
   constructor(private http: HttpClient) { }
 
-  getRestaurant(id:number):Observable<Restaurant>{
-    let params:any = {id_restaurante: id}
-    return this.http.get<Restaurant>(api.restaurante, {params})
+  getRestaurant(id:number):Observable<any>{
+    let params:any = {restaurante_id: id}
+    return this.http.get<Restaurant>(api.restaurante,{params})
   }
 
   getRestaurants(params:any):Observable<Restaurant[]>{
@@ -38,5 +39,9 @@ export class TakeitdataService {
   getReservas():Observable<Reservas[]>{
     return of(RESERVAS)
   }
-
+  
+  getReservasPlanificadas(id:number):Observable<any>{
+    let params:any = {id_restaurante: id}
+    return this.http.get<Planificados[]>(api.horariosPlanificados,{params})
+  }
 }

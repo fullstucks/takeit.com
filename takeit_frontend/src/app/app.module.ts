@@ -23,6 +23,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NoticiasComponent } from './components/home/noticias/noticias.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,14 +41,16 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
     QuienesSomosComponent,
     NotFoundComponent,
     NoticiasComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    NgSelectModule,FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

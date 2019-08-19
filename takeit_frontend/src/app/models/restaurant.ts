@@ -1,3 +1,5 @@
+import { Zones } from './tops';
+
 export class Restaurant{
     id: number;
     img_paths: any[];

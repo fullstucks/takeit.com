@@ -1,6 +1,6 @@
 from pymongo import MongoClient, DESCENDING
 
-client = MongoClient("mongodb+srv://mglpg:vXMfQV1YMOR5CJtA@takeit-biilu.gcp.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient("mongodb://mglpg:vXMfQV1YMOR5CJtA@takeit-biilu.gcp.mongodb.net/test?retryWrites=true&w=majority")
 db = client.takeidb
 
 def insert_restaurante(data):

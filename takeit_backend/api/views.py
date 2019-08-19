@@ -89,35 +89,45 @@ class RestauranteListView(GenericAPIView):
         recomended = request.query_params.get('get_recomended')
         tag_id = request.query_params.get('tag_id')
 
-        #if recomended == '1':
-        #    data = Restaurante.objects.order_by(
-        #        'calificacion_prom', 'n_resenas')[:5]
-        #elif tag_id:
-        #    data = Restaurante.objects.filter(tags__id=tag_id)
-        #elif not top and not search_input:
-        #    data = Restaurante.objects.all()
-        #else:
-        #    top = top if top else '10'
-        #    search_input = search_input if search_input else ''
-        #    data = Restaurante.objects.filter(
-        #        Q(nombre__icontains=search_input) |
-        #        Q(descripcion__icontains=search_input) |
-        #        Q(ubicacion__icontains=search_input)
-        #    )[:int(top)]
+
+        #top = request.query_params.get('top')
+        #top = top if top else '5'
+
+        #data = Restaurante.objects.all()[:int(top)]
+        #serializer = self.get_serializer(data, many=True)
+        #return Response(data=serializer.data)
 
         if recomended == '1':
-            data = get_restaurant_recomended(5)
+            data = Restaurante.objects.order_by(
+                'calificacion_prom', 'n_resenas')[:5]
         elif tag_id:
-            data = get_restaurant_by_tag(tag_id)
+            data = Restaurante.objects.filter(tags__id=tag_id)
+            serializers = self.get_serializer(data, many=True)
         elif not top and not search_input:
-            data = get_restaurante_all()
+            data = Restaurante.objects.all()
+            serializers = self.get_serializer(data, many=True)
         else:
             top = top if top else '10'
             search_input = search_input if search_input else ''
-            data = get_restaurant_by_search_input(search_input, top)
-            
-        return Response(data=loads(dumps(data)))
-
+            data = Restaurante.objects.filter(
+                Q(nombre__icontains=search_input) |
+                Q(descripcion__icontains=search_input) |
+                Q(ubicacion__icontains=search_input)
+            )[:int(top)]
+            serializers = self.get_serializer(data, many=True)
+        #if recomended == '1':
+        #    data = get_restaurant_recomended(5)
+        #elif tag_id:
+        #    data = get_restaurant_by_tag(tag_id)
+        #elif not top and not search_input:
+        #    data = get_restaurante_all()
+        #else:
+        #    top = top if top else '10'
+        #    search_input = search_input if search_input else ''
+        #    data = get_restaurant_by_search_input(search_input, top)
+        #serializer = self.get_serializer(data, many=True)
+        #return Response(data=loads(dumps(data)))
+        return Response(data=serializers.data)
 
 class ReservaView(GenericAPIView):
     serializer_class = ReservaSerializer
@@ -149,6 +159,7 @@ class ReservaView(GenericAPIView):
 
         serializer.save()
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
 
 
 class ReservaPlanificacionView(GenericAPIView):

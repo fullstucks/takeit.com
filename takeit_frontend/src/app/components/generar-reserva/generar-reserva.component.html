@@ -12,20 +12,98 @@
                     <h1 class="title-img-reservation">{{restaurant.nombre}}</h1>
                 </div>
                 <div id="description-restaurant-reservation" class="paragraf-reservation">
-                    <p>No es un lugar exclusivo, pero de seguro es un lugar donde la mezcla de aromas exquisitos extremecen tu paladar y presionan tus deseos por probar nuestros asados.</p>
+                    <p>{{restaurant.descripcion}}</p>
                 </div>
             </div>
-
-            <div id="nav-form-reservation" class="list-nav-bar">
-                    <li><a class="reserve-menu" href="/seleccionarEntradas">Seleccionar tus entradas</a></li>
-                    <li><a class="reserve-menu" href="/confirmacion">Confirma tu reserva</a></li>
-                    <li><a class="reserve-menu" href="/pago">Efectúa el Pago de tu reserva</a></li>
+            <!--nav-form-reservation-->
+        <form id="nav-form">
+            <div id="progressbar">
+                    <li class="{{step1}}" (click)="goStep1()">Seleccionar tus entradas</li>
+                    <li class="{{step2}}" (click)="goStep2()">Confirma tu reserva</li>
+                    <li class="{{step3}}" (click)="goStep3()">Efectúa el Pago de tu reserva</li>
             </div>
 
-            <app-escoger-entradas></app-escoger-entradas>
-            <app-confirmar-reserva></app-confirmar-reserva>
-        </div>
+            <fieldset>  <!--ENTRADAS-->
+                <div  *ngIf="!isCollapsedEntradas" class="tickect-section">
+                    <div class="tickets-section-titlte">
+                        <h1 class="subtitule-reservation">Selecciona tus entradas</h1>
+                        <h1 class="subtitule-reservation">Mesas disponibles: {{planificados.id}}</h1>
+                    </div>
+                    
+                    <div class="item-entradas">
+                        <div  id="select-sucursal" >
+                           <h4 class="textInBox-reservation">Fechas Disponibles</h4>
+                           <select id="selectFeccha" [(ngModel)]="planificaciones">
+                                <option value="">Seleccione una fecha</option>
+                                <option *ngFor="let plan of planificados" [value]="plan.id">
+                                    {{plan.fecha}}
+                                </option>
+                            </select>
+                               
+                        </div>
 
+                        <div id="select-sucursal" >
+                                <h4 class="textInBox-reservation">Mesas a reservar: </h4>
+                                <input id="num-entradas" type="number" name="num-entradas" size="5">
+                        </div>
+
+                        <h4 class="textInBox-reservation">$0.00</h4>
+                    </div>
+                     <div class="align-button">
+                    <button *ngIf="!isCollapsedEntradas" (click)="goStep2()" class="btn bg-indigo border-indigo t-white" value="Continuar"name="Continuar" id="cont-entradas">Continuar</button>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>  <!--CONFIRMACION-->
+                <div *ngIf="!isCollapsedConfirmacion" id="confirmation-section" class="tickect-section">
+                    <div id="confirmation-section" class="tickets-section-titlte">
+                        <h1 class="subtitule-reservation">Confirma tu reservación</h1>
+                    </div>
+
+                    <div id="reservation-data" class="item-data">
+                            <h4 class="textInBox-reservation">Nombre cliente: </h4>
+                            <h4 class="textInBox-reservation">Número de entradas:</h4>
+                            <h4 class="textInBox-reservation">Sucursal:</h4>
+                            <h4 class="textInBox-reservation">Fecha y hora:</h4>
+                            <h4 class="textInBox-reservation">Valor total:</h4>
+                    </div>
+                    
+                    <div class="align-button">
+                            <input (click)="goStep3()" class="btn bg-indigo border-indigo t-white" type="submit" value="Confirmar" name="Confirmar" id="cont-entradas">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>  <!--CONFIRMACION-->
+                <div *ngIf="!isCollapsedPago" id="confirmation-section" class="tickect-section">
+                    <div id="confirmation-section" class="tickets-section-titlte">
+                        <h1 class="subtitule-reservation">Confirma tu pago</h1>
+                    </div>
+
+                    <div id="reservation-data" class="card-area">
+                        <img src="assets/images/icons/seguridad.png" width="200px" height="200px">
+                        <div class="card-pago">
+                            <input class="card-pago" id="num-tarjeta" type="number" placeholder="Número de tarjeta" name="num-tarjeta" width="100%">
+                            <input class="card-pago" id="id-tarjeta" type="text" placeholder="Nombre (Debe coincidir con la tarjeta)" name="id-tarjeta" width="100%">
+                        </div>   
+                        <div class="card-flex">
+                            <input class="card-flex" id="mesexp-tarjeta" type="month" placeholder="Mes de expiración" name="mesexp-tarjeta" width="20%">
+                            <input class="card-flex" id="añoexp-tarjeta" type="number" placeholder="Año de expiración" name="añoexp-tarjeta"width="20%">
+                            <input class="card-flex" id="cvv-tarjeta" type="text" placeholder="CVV/CSC" name="cvv-tarjeta"width="20%" >
+                        </div>
+                    </div>
+                    
+                    <div class="align-button">
+                            <input class="btn bg-indigo border-indigo t-white" type="submit" value="Confirmar" name="Confirmar" id="cont-entradas">
+                    </div>
+                </div>
+            </fieldset>
+           
+        </form>
+            
+        </div>
+        
     </section>
 
     <button (click)="goBack()">go back</button>
