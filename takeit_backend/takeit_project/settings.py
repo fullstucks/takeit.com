@@ -34,7 +34,7 @@ REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
+        #'rest_framework.authentication.TokenAuthentication',
     ],
 }
 AUTH_USER_MODEL = 'api.Usuario'
@@ -44,7 +44,6 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(hours=2),
     'JWT_AUTH_COOKIE': 'token'
 }
-
 
 
 MIDDLEWARE = [
@@ -59,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'takeit_project.urls'
-LOGIN_REDIRECT_URL = '/'
+#LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
