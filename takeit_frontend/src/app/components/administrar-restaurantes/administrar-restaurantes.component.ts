@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { Restaurant } from 'src/app/models/restaurant';
+import api from 'src/app/services/api'
+import { TakeitdataService } from 'src/app/services/takeitdata.service';
 
 @Component({
   selector: 'app-administrar-restaurantes',
@@ -8,10 +11,21 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class AdministrarRestaurantesComponent implements OnInit {
 
+  restaurantes: Restaurant[] = []
+  selected_restaurant:Restaurant
   
-  constructor(private loginService : LoginService ) { }
+  constructor(private loginService : LoginService,
+              private takeitDataService: TakeitdataService
+  ) { }
 
   ngOnInit() {
+    this.takeitDataService.getRestaurantesFavOrOwned()
+      .subscribe(
+        data => {
+          this.restaurantes = data
+          console.log(data)
+        }
+      )
   }
 
 }

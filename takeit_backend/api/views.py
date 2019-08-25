@@ -1,19 +1,57 @@
 from django.db.models import Q
 from django.core.mail import send_mail
-from rest_framework.views import APIView
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import ensure_csrf_cookie
+
+from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.exceptions import ValidationError
+from rest_framework_jwt.settings import api_settings
+from rest_framework_jwt.views import ObtainJSONWebToken
+
 from .serializers import *
 from .models import *
 from .to_mongo import *
 from bson.json_util import dumps, loads
+from datetime import datetime
+
+
+class JWTAuthView(ObtainJSONWebToken):
+
+    @method_decorator(ensure_csrf_cookie)
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+
+        if serializer.is_valid():
+            user = serializer.object.get('user') or request.user
+            token = serializer.object.get('token')
+            response_data = {
+                api_settings.JWT_AUTH_COOKIE: token,
+                'username':user.username,
+                'es_admin_restaurante': user.es_admin_restaurante
+            }
+            response = Response(data=response_data)
+            if api_settings.JWT_AUTH_COOKIE:
+                print("<------------------adentro")
+                expiration = (datetime.utcnow() +
+                              api_settings.JWT_EXPIRATION_DELTA)
+                response.set_cookie(api_settings.JWT_AUTH_COOKIE,
+                                    token,
+                                    expires=expiration,
+                                    httponly=True)
+                
+                print(response.cookies)
+            return response
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 class UsuarioView(GenericAPIView):
-    serializer_class = UsuarioSerializer
+    serializer_class = UsuarioProfileSerializer
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -121,6 +159,25 @@ class RestauranteView(GenericAPIView):
 
     def put(self):
         pass
+
+
+
+class RestauranteFavOwned(GenericAPIView):
+
+    serializer_class = RestauranteSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        user_id = request.user.id
+        restaurantes = request.user.restaurantes_fav_or_owned
+
+
+        print("<--------------------------->")
+        print(restaurantes)
+        print("<--------------------------->")
+        serializer = self.get_serializer(restaurantes, many=True)
+
+        return Response(data=serializer.data)
 
 
 

@@ -20,30 +20,11 @@ INSTALLED_APPS = [
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT =  587
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'takeitdotcom@gmail.com'
 EMAIL_HOST_PASSWORD = 'Takeit2019'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    ],
-
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        #'rest_framework.authentication.TokenAuthentication',
-    ],
-}
-AUTH_USER_MODEL = 'api.Usuario'
-JWT_AUTH = {
-    'JWT_ALLOW_REFRESH': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=1000),
-    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(hours=2),
-    'JWT_AUTH_COOKIE': 'token'
-}
 
 
 MIDDLEWARE = [
@@ -56,6 +37,28 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        #'rest_framework.authentication.TokenAuthentication',
+        #'rest_framework.authentication.BasicAuthentication',
+    ],
+}
+
+AUTH_USER_MODEL = 'api.Usuario'
+JWT_AUTH = {
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=1000),
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(hours=2),
+    'JWT_AUTH_COOKIE': 'tokenx'
+}
+
 
 ROOT_URLCONF = 'takeit_project.urls'
 #LOGIN_REDIRECT_URL = '/'

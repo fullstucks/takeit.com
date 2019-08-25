@@ -5,4 +5,5 @@ psycopg2
 whitenoise
 djangorestframework
 djangorestframework-jwt
+django-cors-headers
 pymongo

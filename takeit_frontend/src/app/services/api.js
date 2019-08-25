@@ -7,6 +7,7 @@ const api = {
     signup : URL_ROOT + API_URL+'signup/',
     restaurante: URL_ROOT + API_URL+'restaurante/',
     restaurantes: URL_ROOT + API_URL+'restaurante/listas/',
+    restaurantes_fav_or_owned: URL_ROOT + API_URL + 'restaurante/restaurantes_fav_or_owned/',
     zonas: URL_ROOT + API_URL+'zona/',
 }
 
