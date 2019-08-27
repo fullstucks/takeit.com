@@ -1,0 +1,18 @@
+<div>
+    <div class="container-fluid">
+        <h3 class="t-bold">Manejo de Reservas</h3>
+        <hr class="my-4">
+
+        <div style="width: 40%;">
+        <canvas
+            baseChart
+            [chartType]="'line'"
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartClick)="onChartClick($event)">
+        </canvas>
+        </div>
+    </div>
+</div>
