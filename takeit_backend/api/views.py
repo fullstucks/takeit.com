@@ -1,14 +1,65 @@
 from django.db.models import Q
+from django.core.mail import send_mail
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import ensure_csrf_cookie
+
+from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.exceptions import ValidationError
+from rest_framework_jwt.settings import api_settings
+from rest_framework_jwt.views import ObtainJSONWebToken
+
 from .serializers import *
 from .models import *
 from .to_mongo import *
 from bson.json_util import dumps, loads
+from datetime import datetime
 
+
+class JWTAuthView(ObtainJSONWebToken):
+
+    @method_decorator(ensure_csrf_cookie)
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+
+        if serializer.is_valid():
+            user = serializer.object.get('user') or request.user
+            token = serializer.object.get('token')
+            response_data = {
+                api_settings.JWT_AUTH_COOKIE: token,
+                'username':user.username,
+                'es_admin_restaurante': user.es_admin_restaurante
+            }
+            response = Response(data=response_data)
+            if api_settings.JWT_AUTH_COOKIE:
+                print("<------------------adentro")
+                expiration = (datetime.utcnow() +
+                              api_settings.JWT_EXPIRATION_DELTA)
+                response.set_cookie(api_settings.JWT_AUTH_COOKIE,
+                                    token,
+                                    expires=expiration,
+                                    httponly=True)
+                
+                print(response.cookies)
+            return response
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class UsuarioView(GenericAPIView):
+    serializer_class = UsuarioProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        
+        #print(request.user.fecha_nacimiento)
+        serializer = self.get_serializer(request.user)
+
+        return Response(serializer.data)
 
 
 
@@ -24,11 +75,25 @@ class RegistrationView(GenericAPIView):
         try:
             serializer.is_valid(raise_exception=True)
             serializer.save()
+            self.email(request)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
+        return Response(data={'msg':'Registrado con éxito'}, status=200)
 
-        return Response(data={'msg': 'Registrado con éxito'}, status=200)
+    def email(self, request):
+        SUBJECT = "Confirmación de Registro Takeit.com"
+        BODY = "Gracias por verificar tu cuenta, has sido registrado exitosamente."
+        EMAIL_FROM = "takeitdotcom@gmail.com"
+        EMAIL_TO = ["jfabricioherrerac@gmail.com"]
 
+        return send_mail(SUBJECT, BODY, EMAIL_FROM, EMAIL_TO, fail_silently=False)
+
+        #id = request.POST.get('id')
+        #client = Client.objects.get(id=id)
+        #msg_html = render_to_string('templates/email.html', {'client': client})
+        #template_email_text = ''
+        #return send_mail('Lelander work samples', template_email_text, 'test@e
+    
 
 
 class RestauranteView(GenericAPIView):
@@ -97,6 +162,25 @@ class RestauranteView(GenericAPIView):
 
 
 
+class RestauranteFavOwned(GenericAPIView):
+
+    serializer_class = RestauranteSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        user_id = request.user.id
+        restaurantes = request.user.restaurantes_fav_or_owned
+
+
+        print("<--------------------------->")
+        print(restaurantes)
+        print("<--------------------------->")
+        serializer = self.get_serializer(restaurantes, many=True)
+
+        return Response(data=serializer.data)
+
+
+
 class RestauranteListView(GenericAPIView):
     serializer_class = RestauranteSerializer
     permission_classes = [AllowAny]
@@ -160,6 +244,7 @@ class ReservaView(GenericAPIView):
 
         serializer = self.get_serializer(reservas, many=True)
         return Response(data=serializer.data)
+
 
     def post(self, request):
 
@@ -256,6 +341,7 @@ class ZonaView(GenericAPIView):
         return Response(data=serializer.data)
 
 
+
 class FotosRestauranteView(GenericAPIView):
 
     serializer_class = FotosRestauranteSerializer
@@ -291,4 +377,3 @@ class FotosRestauranteView(GenericAPIView):
             'tamano': request.data['tamano']
         })
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
-

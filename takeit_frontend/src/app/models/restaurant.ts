@@ -10,5 +10,4 @@ export class Restaurant{
     img_paths: any[];
     tags:any[]
     calificacion_prom: number;
-    
 }

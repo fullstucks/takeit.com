@@ -1,13 +1,14 @@
 from rest_framework import serializers
 #from rest_framework_jwt.settings import api_settings
-from .models import Usuario, Tag, Resena, Zona, Reserva, ReservaPlanificacion, Restaurante, FotosRestaurante
-
+from .models import *
 
 class UsuarioSerializer(serializers.ModelSerializer):
 
+    fecha_nacimiento = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
     class Meta:
         model = Usuario
-        fields = '__all__'
+        field = 'fecha_nacimiento'
+        exclude = ['password', 'id', 'user_permissions']
 
     def create(self, validated_data):
 
@@ -25,7 +26,7 @@ class UsuarioProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Usuario
-        exclude = ['is_staff', 'is_superuser', 'is_active', 'password']
+        exclude = ['is_staff', 'is_superuser', 'password']
 
 
 class TagSerializer(serializers.ModelSerializer):

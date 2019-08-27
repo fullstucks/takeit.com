@@ -23,7 +23,7 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NoticiasComponent } from './components/home/noticias/noticias.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
-import { MisRestaurantesComponent } from './components/mis-restaurantes/mis-restaurantes.component';
+import { AdministrarRestaurantesComponent } from './components/administrar-restaurantes/administrar-restaurantes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { MisRestaurantesComponent } from './components/mis-restaurantes/mis-rest
     NotFoundComponent,
     NoticiasComponent,
     SignupFormComponent,
-    MisRestaurantesComponent
+    AdministrarRestaurantesComponent
   ],
   imports: [
     BrowserModule,

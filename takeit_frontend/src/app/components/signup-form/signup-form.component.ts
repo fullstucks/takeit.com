@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import api from 'src/app/services/api'
 
+declare function main(): any;
+
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
@@ -36,13 +38,16 @@ export class SignupFormComponent implements OnInit {
       })
     }
       
-
-    
   }
-
 
   validate(data:any):boolean{
     return data.password === data.password_again
   }
+
+
+  registrar(){
+    main();
+  }
+
 
 }
