@@ -13,6 +13,7 @@ export class AdministrarRestaurantesComponent implements OnInit {
 
   restaurantes: Restaurant[] = []
   selected_restaurant:Restaurant
+
   
   constructor(private loginService : LoginService,
               private takeitDataService: TakeitdataService
@@ -26,6 +27,14 @@ export class AdministrarRestaurantesComponent implements OnInit {
           console.log(data)
         }
       )
+  }
+
+  eliminar(restaurant:Restaurant):void{
+    this.selected_restaurant = restaurant
+  }
+
+  editar(restaurant:Restaurant):void{
+    this.selected_restaurant = restaurant
   }
 
 }

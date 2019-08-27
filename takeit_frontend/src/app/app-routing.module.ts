@@ -9,6 +9,8 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { AdministrarRestaurantesComponent } from './components/administrar-restaurantes/administrar-restaurantes.component';
+import { AdministrarRestaurantesEditarComponent } from './components/administrar-restaurantes-editar/administrar-restaurantes-editar.component';
+import { AdministrarRestaurantesAgregarComponent } from './components/administrar-restaurantes-agregar/administrar-restaurantes-agregar.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupFormComponent},
   {path: 'misReservas', component:MisReservasComponent},
   {path: 'administrarRestaurantes', component: AdministrarRestaurantesComponent},
+  {path: 'administrarRestaurantes/editar', component: AdministrarRestaurantesEditarComponent},
+  {path: 'administrarRestaurantes/agregar', component: AdministrarRestaurantesAgregarComponent},
   {path: '**', component:NotFoundComponent},
 ];
 

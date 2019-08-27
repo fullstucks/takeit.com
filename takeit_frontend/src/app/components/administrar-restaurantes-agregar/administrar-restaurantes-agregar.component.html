@@ -1,0 +1,40 @@
+<div>
+        <div class="container-fluid">
+                <h3 class="t-bold t-black">Ingresar datos del nuevo restaurante</h3>
+                <hr class="my-4">
+                <div class="container">
+                    <form (ngSubmit)="post_restaurant()">
+                        <div class="form-group">
+                            <label >Nombre</label>
+                            <input type="text" class="form-control"
+                                placeholder="Nombres">
+                            <label >Ubicación</label>
+                            <input type="text" class="form-control"
+                                placeholder="Apellidos">
+                            <label >Descripción</label>
+                            <input type="text" class="form-control"
+                                placeholder="Nombre de usuario" required>
+                            <div>
+                                <label>Tags</label>
+                                <select>
+                                    <option *ngFor="let tag of tags" value="{{tag.id}}">{{tag.tag}}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Zona</label>
+                                <select>
+                                    <option *ngFor="let zona of zonas" value="{{zona.id}}">{{zona.nombre}}</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary bg-blue" (click)='post_restaurant()'>Registrar</button>
+                            <!--div *ngIf="success">
+                                <span class="msg">
+                                    Registro exitoso. 
+                                </span>
+                            </div-->                
+                        </div>
+                    </form>
+                </div>
+            </div>
+</div>

@@ -22,6 +22,8 @@ export class TakeitdataService {
   constructor(private http: HttpClient, private loginService: LoginService) {
    }
 
+
+
   getRestaurant(id:number):Observable<Restaurant>{
 
     let params:any = {id_restaurante: id}
@@ -32,6 +34,7 @@ export class TakeitdataService {
   }
 
 
+
   getRestaurants(params:any):Observable<Restaurant[]>{
 
     return this.http.get<Restaurant[]>(api.restaurantes, {
@@ -39,6 +42,8 @@ export class TakeitdataService {
       
     })
   }
+
+
 
   getRestaurantesFavOrOwned():Observable<Restaurant[]>{
 
@@ -53,14 +58,32 @@ export class TakeitdataService {
 
 
 
+  getTagsList():Observable<any[]>{
+    return this.http.get<any[]>(api.tag_list,{
+      withCredentials: true
+    })
+  }
+
+
+  getZonasList():Observable<any[]>{
+    return this.http.get<any[]>(api.zona_list, {
+      withCredentials: true
+    })
+  }
+
+
+
+
   getTopZones(params:any):Observable<Zones[]>{
     return this.http.get<Zones[]>(api.zonas, {params})
   }
 
 
+
   getNews():Observable<Noticias[]>{
     return of(NOTICIAS)
   }
+
 
 
   getReservas():Observable<Reservas[]>{

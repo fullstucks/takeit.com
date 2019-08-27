@@ -8,36 +8,40 @@
         </div>
         
         <div class="container-fluid">
-        
-            <h3 class="t-bold">Lista de restaurantes</h3>
+            
+            <div class="row-fluid">
+                <h3 class="t-bold">Lista de restaurantes</h3>
+                <div class="pull-right">
+                    <a href="">
+                        <i class="fa fa-plus"> Añadir nuevo restaurante</i>
+                    </a> 
+                </div>
+            </div>
+            
             <hr class="my-4">
         
             <div class="cards-container">
                 <div *ngFor="let r of restaurantes" class="card mb-3">
                     <div class="image-wrapper">
-                        <img class="card-img-top img-fluid" src="assets/images/restaurants/2.jpg">
+                        <img class="card-img-top img-fluid" src="assets/images/restaurants/{{r.img_paths[0].img_path}}">
                     </div>
                     <article class="card-body">
                         <h5 class="card-title t-bold">{{r.nombre}}</h5>
                         <h6 class="card-subtitle mb-3 text-muted">{{r.ubicacion}}</h6>
-                        <div class="card-info">
-                            <i class="fa fa-users"></i>
-                            <p class="card-text">{{r.asientos}}</p>
-                        </div>
-                        <div class="card-info">
-                            <i class="fa fa-calendar"></i>
-                            <p class="card-text">{{r.fecha}}, {{r.hora}}</p>
-                        </div>
-                        <div class="card-info">
-                            <i class="fa fa-comment"></i>
-                            <p class="card-text">{{r.info}}</p>
-                        </div>
+                   
                         <div class="text-center mt-3">
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Cancelar</button>
+                            <button type="button" 
+                                    class="btn btn-secondary"
+                                    (click)="editar(r)">Editar</button>
+                            <button type="button" 
+                                    class="btn btn-danger" 
+                                    data-toggle="modal" 
+                                    (click)="eliminar(r)">Eliminar</button>
                         </div>
                     </article>
                 </div>
             </div>
+            
         
         </div>
     </div>

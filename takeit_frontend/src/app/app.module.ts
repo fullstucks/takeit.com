@@ -23,6 +23,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NoticiasComponent } from './components/home/noticias/noticias.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { AdministrarRestaurantesComponent } from './components/administrar-restaurantes/administrar-restaurantes.component';
+import { AdministrarRestaurantesAgregarComponent } from './components/administrar-restaurantes-agregar/administrar-restaurantes-agregar.component';
+import { AdministrarRestaurantesEditarComponent } from './components/administrar-restaurantes-editar/administrar-restaurantes-editar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AdministrarRestaurantesComponent } from './components/administrar-resta
     NotFoundComponent,
     NoticiasComponent,
     SignupFormComponent,
-    AdministrarRestaurantesComponent
+    AdministrarRestaurantesComponent,
+    AdministrarRestaurantesAgregarComponent,
+    AdministrarRestaurantesEditarComponent,
   ],
   imports: [
     BrowserModule,
