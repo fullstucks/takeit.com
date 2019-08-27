@@ -17,6 +17,8 @@ urlpatterns = [
     path(r'restaurante/listas/', views.RestauranteListView.as_view()),
     path(r'restaurante/fotos/', views.FotosRestauranteView.as_view()),
     path(r'zona/', views.ZonaView.as_view()),
+    path(r'zona/list/', views.ZonaListView.as_view()),
+    path(r'tag/list/', views.TagListView.as_view()),
     path(r'reserva/', views.ReservaView.as_view()),
     path(r'planificacion/', views.ReservaPlanificacionView.as_view()),
     path(r'resena/', views.ResenaView.as_view()),

@@ -342,6 +342,16 @@ class ZonaView(GenericAPIView):
 
 
 
+class ZonaListView(GenericAPIView):
+    serializer_class = ZonaSerializer
+
+    def get(self, request):
+        data = Zona.objects.all()
+        serializer = self.get_serializer(data, many=True)
+        return Response(data=serializer.data)
+
+
+
 class FotosRestauranteView(GenericAPIView):
 
     serializer_class = FotosRestauranteSerializer
@@ -377,3 +387,13 @@ class FotosRestauranteView(GenericAPIView):
             'tamano': request.data['tamano']
         })
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
+
+
+class TagListView(GenericAPIView):
+    serializer_class = TagSerializer
+
+    def get(self, request):
+        data = Tag.objects.all()
+        serializer = self.get_serializer(data, many=True)
+        return Response(data=serializer.data)

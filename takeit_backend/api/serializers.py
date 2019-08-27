@@ -33,7 +33,7 @@ class TagSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tag
-        fields = ['tag']
+        fields = '__all__'
 
 
 class ZonaSerializer(serializers.ModelSerializer):
