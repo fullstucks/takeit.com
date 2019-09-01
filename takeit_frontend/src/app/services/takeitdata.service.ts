@@ -26,7 +26,7 @@ export class TakeitdataService {
 
   getRestaurant(id:number):Observable<Restaurant>{
 
-    let params:any = {id_restaurante: id}
+    let params:any = {restaurante_id: id}
 
     return this.http.get<Restaurant>(api.restaurante, {
       params: params
@@ -39,7 +39,6 @@ export class TakeitdataService {
 
     return this.http.get<Restaurant[]>(api.restaurantes, {
       params:params,
-      
     })
   }
 

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { Restaurant } from 'src/app/models/restaurant';
-import api from 'src/app/services/api'
 import { TakeitdataService } from 'src/app/services/takeitdata.service';
+import { Router } from '@angular/router';
+import api from 'src/app/services/api';
 
 @Component({
   selector: 'app-administrar-restaurantes',
@@ -16,8 +17,8 @@ export class AdministrarRestaurantesComponent implements OnInit {
 
   
   constructor(private loginService : LoginService,
-              private takeitDataService: TakeitdataService
-  ) { }
+              private takeitDataService: TakeitdataService,
+              private router: Router) {}
 
   ngOnInit() {
     this.takeitDataService.getRestaurantesFavOrOwned()
@@ -31,10 +32,22 @@ export class AdministrarRestaurantesComponent implements OnInit {
 
   eliminar(restaurant:Restaurant):void{
     this.selected_restaurant = restaurant
+
+    fetch(api.restaurante + restaurant.id + '/',{
+      method:'delete',
+      credentials: 'include'
+    })
+    .then(response => console.log(response.json()))
+    .catch(e => console.log(e))
   }
 
   editar(restaurant:Restaurant):void{
     this.selected_restaurant = restaurant
+    this.router.navigate(['administrarRestaurantes/editar/' + restaurant.id])
+  }
+
+  onAdd():void{
+    this.router.navigate(['/administrarRestaurantes/agregar'])
   }
 
 }

@@ -24,6 +24,8 @@ export class TopgyeComponent implements OnInit {
     this.takeitDataService.getRestaurants({top: 5})
     .subscribe(tops =>{
       this.tops = tops
+
+      console.log(tops)
     } )
   }
 

@@ -25,6 +25,7 @@ export class TopzonesComponent implements OnInit {
     this.takeitDataService.getTopZones({ top: 9 })
       .subscribe(tops => {
         this.tops = tops
+        console.log(tops)
       })
   }
 

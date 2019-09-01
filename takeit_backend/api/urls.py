@@ -13,6 +13,7 @@ urlpatterns = [
     path(r'auth/user/info/', views.UsuarioView.as_view()),
     path(r'signup/', views.RegistrationView.as_view()),
     path(r'restaurante/', views.RestauranteView.as_view()),
+    path(r'restaurante/<int:restaurante_id>/', views.RestauranteModifyView.as_view()),
     path(r'restaurante/restaurantes_fav_or_owned/', views.RestauranteFavOwned.as_view()),
     path(r'restaurante/listas/', views.RestauranteListView.as_view()),
     path(r'restaurante/fotos/', views.FotosRestauranteView.as_view()),

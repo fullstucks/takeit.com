@@ -3,37 +3,76 @@
                 <h3 class="t-bold t-black">Ingresar datos del nuevo restaurante</h3>
                 <hr class="my-4">
                 <div class="container">
-                    <form (ngSubmit)="post_restaurant()">
+                    <form #form_data="ngForm" (ngSubmit)="post_restaurant(form_data)">
                         <div class="form-group">
-                            <label >Nombre</label>
-                            <input type="text" class="form-control"
-                                placeholder="Nombres">
+                            <label >Nombre del restaurante</label>
+                            <input type="text" 
+                                class="form-control"
+                                name="nombre"
+                                placeholder="Nombre" ngModel>
+                        </div>
+
+                        <div class="form-group">
                             <label >Ubicación</label>
-                            <input type="text" class="form-control"
-                                placeholder="Apellidos">
+                            <input type="text" 
+                                name="ubicacion"
+                                class="form-control"
+                                placeholder="direccion detallada" ngModel>
+                        </div>
+
+                        <div class="form-group">
                             <label >Descripción</label>
-                            <input type="text" class="form-control"
-                                placeholder="Nombre de usuario" required>
-                            <div>
-                                <label>Tags</label>
-                                <select>
-                                    <option *ngFor="let tag of tags" value="{{tag.id}}">{{tag.tag}}</option>
-                                </select>
+                            <input type="text" 
+                                class="form-control"
+                                name="descripcion"
+                                placeholder="Descripción del restaurante" ngModel required>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Lat</label>
+                            <input type="number" 
+                                class="form-control"
+                                name="lat"
+                                placeholder="Latitud" ngModel required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Lng</label>
+                            <input type="number" 
+                                class="form-control"
+                                name="lng"
+                                placeholder="Longitud" ngModel required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <div class="chip-container">
+                                <div *ngFor="let tag of selectedTags" class="chip">
+                                    <span>#{{tag.tag}}</span>
+                                </div>
                             </div>
+                            <select>
+                                <option *ngFor="let tag of tags" 
+                                        (click)="addTag(tag)" 
+                                        value="{{tag.id}}">{{tag.tag}}</option>
+                            </select>
+                        </div>
                             <div>
                                 <label>Zona</label>
-                                <select>
-                                    <option *ngFor="let zona of zonas" value="{{zona.id}}">{{zona.nombre}}</option>
+                                <select name="zona" ngModel>
+                                    <option value="" selected>Seleccione una zona</option>
+                                    <option *ngFor="let zona of zonas"
+                                        ngValue="{{zona.id}}" >{{zona.nombre}}</option>
                                 </select>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary bg-blue" (click)='post_restaurant()'>Registrar</button>
-                            <!--div *ngIf="success">
+                            <button type="submit" class="btn btn-primary bg-blue">Registrar</button>
+                            <div *ngIf="success">
                                 <span class="msg">
                                     Registro exitoso. 
                                 </span>
-                            </div-->                
-                        </div>
+                            </div>                
+                        
                     </form>
                 </div>
             </div>

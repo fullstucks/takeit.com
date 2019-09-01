@@ -12,6 +12,8 @@ declare function main(): any;
 export class SignupFormComponent implements OnInit {
 
   success:boolean = false
+  error:boolean = false
+  error_msg:string = ""
 
   constructor() { }
 
@@ -20,8 +22,10 @@ export class SignupFormComponent implements OnInit {
 
   signup(form_data:NgForm):void{
 
+    console.log(form_data.value)
     if (this.validate(form_data.value)){
       fetch(api.signup, {
+        credentials: 'include',
         method : 'post',
         headers:{
           'Content-Type': 'application/json'
@@ -31,23 +35,28 @@ export class SignupFormComponent implements OnInit {
       .then(response => {
         console.log(response)
         this.success = response.ok
-        console.log(this.success)
+        this.error = !response.ok
       })
       .catch(e => {
+        this.error = true
+        this.error_msg = e
         console.log("error x", e)
       })
+    }
+    else{
+      this.error = true
+      this.error_msg = "Asegurese de poner todos los datos correctamente"
     }
       
   }
 
   validate(data:any):boolean{
-    return data.password === data.password_again
+    let complete = data.username &&
+                    data.email &&
+                    data.password &&
+                    data.fecha_nacimiento &&
+                    data.first_name &&
+                    data.last_name
+    return (data.password === data.password_again) && complete
   }
-
-
-  registrar(){
-    main();
-  }
-
-
 }

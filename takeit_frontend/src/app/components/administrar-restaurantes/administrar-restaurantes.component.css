@@ -68,3 +68,10 @@
     text-align: center;
     padding: 20px;
 }
+
+
+.link-btn{
+    cursor: pointer;
+    margin: 5px;
+    color: rgb(0, 141, 206);
+}

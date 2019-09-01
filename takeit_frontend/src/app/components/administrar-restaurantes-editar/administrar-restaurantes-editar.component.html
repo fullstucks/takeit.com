@@ -1,1 +1,83 @@
-<p>administrar-restaurantes-editar works!</p>
+<div>
+        <div class="container-fluid">
+                <h3 class="t-bold t-black">Ingresar datos del nuevo restaurante</h3>
+                <hr class="my-4">
+                <div class="container">
+                    <form #form_data="ngForm" (ngSubmit)="put_restaurant(form_data)">
+                        <div class="form-group">
+                            <label >Nombre del restaurante</label>
+                            <input type="text" 
+                                class="form-control"
+                                name="nombre"
+                                ngModel="{{restaurant.nombre}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Ubicación</label>
+                            <input type="text" 
+                                name="ubicacion"
+                                class="form-control"
+                                ngModel="{{restaurant.ubicacion}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Descripción</label>
+                            <input type="text" 
+                                class="form-control"
+                                name="descripcion"
+                                ngModel="{{restaurant.descripcion}}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Lat</label>
+                            <input type="number" 
+                                class="form-control"
+                                name="lat"
+                                ngModel="{{restaurant.lat}}"  required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Lng</label>
+                            <input type="number" 
+                                class="form-control"
+                                name="lng"
+                                ngModel="{{restaurant.lng}}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <div class="chip-container">
+                                <div *ngFor="let tag of selected_tags" class="chip">
+                                    <span>#{{tag.tag}}</span>
+                                    <div class="close-fa" (click)="removeTag(tag)">
+                                        <i class="fa fa-close">x</i>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <select>
+                                <option *ngFor="let tag of available_tags" 
+                                        (click)="addTag(tag)" 
+                                        value="{{tag.id}}">{{tag.tag}}</option>
+                            </select>
+                        </div>
+                            <div>
+                                <label>Zona</label>
+                                <select name="zona" ngModel>
+                                    <option *ngFor="let zona of zonas"
+                                        ngValue="{{zona.id}}" 
+                                        [selected]="zona.id == restaurant.zona.id">{{zona.nombre}}</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary bg-blue">Guardar cambios</button>
+                            <div *ngIf="success">
+                                <span class="msg">
+                                    Registro exitoso. 
+                                </span>
+                            </div>                
+                        
+                    </form>
+                </div>
+            </div>
+</div>

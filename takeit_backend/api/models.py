@@ -7,7 +7,8 @@ class Tag(models.Model):
     veces_usado = models.IntegerField(default=0)
 
     def __str__(self):
-        return "" + self.tag
+        return f"{self.tag}"
+
 
 
 class Zona(models.Model):
@@ -16,7 +17,8 @@ class Zona(models.Model):
     img_path = models.CharField(max_length=50)
 
     def __str__(self):
-        return "" + self.nombre
+        return f"{self.nombre}"
+
 
 
 class Restaurante(models.Model):
@@ -37,18 +39,21 @@ class Restaurante(models.Model):
         super(Restaurante, self).save(*args, **kwargs)
 
     def __str__(self):
-        return "" + self.nombre
+        return f"{self.nombre}"
+
 
 
 class FotosRestaurante(models.Model):
     restaurante = models.ForeignKey(
-        Restaurante, on_delete=models.CASCADE, related_name='img_paths')
+        Restaurante, on_delete=models.CASCADE, related_name='img_paths'
+    )
     img_path = models.CharField(max_length=50)
     tipo = models.CharField(max_length=10)
     tamano = models.CharField(max_length=10, default='small')
 
     def __str__(self):
-        return "{} {} {}".format(self.restaurante, self.tipo, self.tamano)
+        return f"{self.restaurante} {self.tipo} {self.tamano}"
+
 
 
 class Usuario(AbstractUser):
@@ -59,7 +64,8 @@ class Usuario(AbstractUser):
     es_admin_restaurante = models.BooleanField(default=False)
 
     def __str__(self):
-        return "{} | {}".format(self.username, self.email)
+        return f"{self.username} | {self.email}"
+
 
 
 class Resena(models.Model):
@@ -85,7 +91,8 @@ class Resena(models.Model):
         super(Resena, self).save(*args, **kwargs)
 
     def __str__(self):
-        return "{} {}".format(self.usuario, self.comentario)
+        return f"{self.usuario} {self.comentario}"
+
 
 
 class ReservaPlanificacion(models.Model):
@@ -95,7 +102,8 @@ class ReservaPlanificacion(models.Model):
     fecha = models.DateTimeField()
 
     def __str__(self):
-        return "{} {} {}".format(self.restaurante, self.mesas_disponibles, self.fecha)
+        return f"{self.restaurante} {self.mesas_disponibles} {self.fecha}"
+
 
 
 class Reserva(models.Model):
@@ -112,7 +120,8 @@ class Reserva(models.Model):
         super(Reserva, self).save(*args, **kwargs)
 
     def __str__(self):
-        return "{} {}".format(self.usuario, self.detalles)
+        return f"{self.usuario} {self.detalles}"
+
 
 
 class Noticias(models.Model):
@@ -122,4 +131,4 @@ class Noticias(models.Model):
     url_noticia = models.URLField()
 
     def __str__(self):
-        return "{} {}".format(self.titulo, self.descripcion)
+        return f"{self.titulo} {self.descripcion}"

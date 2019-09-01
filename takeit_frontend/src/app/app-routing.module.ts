@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'signup', component: SignupFormComponent},
   {path: 'misReservas', component:MisReservasComponent},
   {path: 'administrarRestaurantes', component: AdministrarRestaurantesComponent},
-  {path: 'administrarRestaurantes/editar', component: AdministrarRestaurantesEditarComponent},
+  {path: 'administrarRestaurantes/editar/:restaurante_id', component: AdministrarRestaurantesEditarComponent},
   {path: 'administrarRestaurantes/agregar', component: AdministrarRestaurantesAgregarComponent},
   {path: '**', component:NotFoundComponent},
 ];

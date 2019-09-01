@@ -1,0 +1,13 @@
+.chip-container{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.chip{
+    margin: 2px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgb(233, 242, 248)
+}

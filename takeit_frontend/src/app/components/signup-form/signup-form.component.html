@@ -10,34 +10,75 @@
         <form #form_data="ngForm" (ngSubmit)="signup(form_data)">
             <div class="form-group">
                 <label >Nombres</label>
-                <input type="text" class="form-control" id="name_input" 
-                    placeholder="Nombres" ngModel>
+                <input type="text" 
+                    class="form-control" 
+                    name="first_name"
+                    id="name_input" 
+                    placeholder="Nombres" ngModel required>
+            </div>
+            <div class="form-group">
                 <label >Apellidos</label>
-                <input type="text" class="form-control" id="lastname_input" 
-                    placeholder="Apellidos" ngModel>
+                <input type="text" 
+                    class="form-control" 
+                    id="lastname_input" 
+                    name="last_name"
+                    placeholder="Apellidos" ngModel required>
+            </div>
+            <div class="form-group">
                 <label>Correo electrónico</label>
-                <input type="email" class="form-control" id="email_input"
+                <input type="email" 
+                    class="form-control" 
+                    id="email_input"
+                    name="email"
                     placeholder="Correo electrónico" ngModel required>
+            </div>
+            <div class="form-group">
                 <label >Nombre de usuario</label>
-                <input type="text" class="form-control" id="username_input" 
+                <input type="text" 
+                    class="form-control" 
+                    id="username_input" 
+                    name="username"
                     placeholder="Nombre de usuario" ngModel required>
+            </div>
+            <div class="form-group">
                 <label >Contraseña</label>
-                <input type="password" class="form-control" id="password_input" 
+                <input type="password" 
+                    class="form-control" 
+                    id="password_input" 
+                    name="password"
                     placeholder="Contraseña" ngModel required>
+            </div>
+            
+            <div class="form-group">
                 <label >Confirmación de contraseña</label>
-                <input type="password" class="form-control" id="password_again_input" 
+                <input type="password" 
+                    class="form-control" 
+                    id="password_again_input" 
+                    name="password_again"
                     placeholder="Confirmación de contraseña" ngModel required>
-                <label >Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="birthday_input" 
-                    placeholder="Fecha de nacimiento" ngModel>
-                </div>
                 
-                <button type="submit" id="submit" class="btn btn-primary bg-blue" (click)='registrar()'>Registrar</button>
+            </div>
+            <div class="form-group">
+                <label >Fecha de nacimiento</label>
+                <input type="date" 
+                    class="form-control" 
+                    id="birthday_input" 
+                    name="fecha_nacimiento"
+                    placeholder="Fecha de nacimiento" ngModel>
+            </div>
+            <div class="form-group">
+                <label class="margin-l-m">¿Es dueño de restaurante? 
+                    <input type="checkbox" name="es_admin_restaurante" ngModel>
+                </label>
+            </div>
+
+                <button type="submit" id="submit" class="btn btn-primary bg-blue">Registrar</button>
                 <div *ngIf="success">
-                        <span class="msg">
-                        Registro exitoso. 
-                        </span>
-                </div>                
+                    <span class="msg">Registro exitoso.</span>
+                </div>    
+                <div *ngIf="error" class="alert alert-danger">
+                    <span class="msg">Ha ocurrido un error: {{error_msg}}</span>
+                </div>             
             
         </form>
     </div>
