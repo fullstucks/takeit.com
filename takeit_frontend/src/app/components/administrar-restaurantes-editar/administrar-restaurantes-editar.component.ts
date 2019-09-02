@@ -5,6 +5,7 @@ import { Restaurant } from 'src/app/models/restaurant';
 import { NgForm } from '@angular/forms';
 import api from 'src/app/services/api'
 
+
 @Component({
   selector: 'app-administrar-restaurantes-editar',
   templateUrl: './administrar-restaurantes-editar.component.html',
@@ -14,8 +15,8 @@ export class AdministrarRestaurantesEditarComponent implements OnInit {
 
   restaurant:Restaurant = new Restaurant()
 
-  available_tags:any
-  selected_tags:any
+  available_tags:any[]
+  selected_tags:any[]
 
   zonas:any
 
@@ -67,12 +68,14 @@ export class AdministrarRestaurantesEditarComponent implements OnInit {
         )
   }
 
+
   getAvailableTags():void{
     this.takeitDataService.getTagsList()
         .subscribe(tags =>{
           this.available_tags = tags
         })
   }
+
 
   getAvailableZonas():void{
     this.takeitDataService.getZonasList()
@@ -92,11 +95,7 @@ export class AdministrarRestaurantesEditarComponent implements OnInit {
   }
 
   removeTag(tag):void{
-    for(var i = this.selected_tags.length - 1; i >= 0; i--) {
-      if(this.selected_tags[i].id === tag.id) {
-         this.selected_tags.splice(i, 1);
-      }
-    }
+    this.selected_tags.splice(this.selected_tags.indexOf(tag), 1);
   }
 
 }

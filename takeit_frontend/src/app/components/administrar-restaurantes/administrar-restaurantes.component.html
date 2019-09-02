@@ -12,8 +12,11 @@
             <div class="row-fluid">
                 <h3 class="t-bold">Lista de restaurantes</h3>
                 <div class="pull-right">
-                    <div (click)="onAdd()" class="link-btn">
-                        <i class="fa fa-plus"> Añadir nuevo restaurante</i>
+                    <div (click)="goAdd()" class="link-btn">
+                        <i class="fa fa-plus"> Nuevo restaurante</i>
+                    </div> 
+                    <div (click)="goPlanificar()" class="link-btn">
+                        <i class="fa fa-plus"> Planificar reservas </i>
                     </div> 
                 </div>
             </div>
@@ -21,7 +24,22 @@
             <hr class="my-4">
         
             <div class="cards-container">
+                
+                    
                 <div *ngFor="let r of restaurantes" class="card mb-3">
+                    <ng-container *ngIf="removing && r == selected_restaurant">
+                        <div class="anim-container">
+                            <div class="backblur"></div>
+                            <div class="anim">
+                                <div class="loader-container">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                            <span class="loader-msg">eliminando.</span>
+                        </div>
+                    </ng-container>
                     <div class="image-wrapper">
                         <img class="card-img-top img-fluid" src="assets/images/restaurants/{{r.img_paths[0].img_path}}">
                     </div>
@@ -32,12 +50,13 @@
                         <div class="text-center mt-3">
                             <button type="button" 
                                     class="btn btn-secondary"
-                                    (click)="editar(r)">Editar</button>
+                                    (click)="goEditar(r)">Editar</button>
                             <button type="button" 
                                     class="btn btn-danger" 
                                     data-toggle="modal" 
                                     (click)="eliminar(r)">Eliminar</button>
                         </div>
+                        
                     </article>
                 </div>
             </div>

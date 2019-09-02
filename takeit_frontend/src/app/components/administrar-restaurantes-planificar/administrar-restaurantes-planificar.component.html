@@ -1,0 +1,119 @@
+<div class="containerx gridx">
+
+    <div class="container">
+        <div class="title">
+            <span class="t-bold">Reservas planificadas</span>
+        </div>
+        
+        <div class="container list-view">
+            <div *ngFor="let planificacion of planificaciones" class="list-item">
+                <span><strong>{{planificacion.restaurante.nombre}}</strong></span>
+                <div class="form-group">
+                    <label>mesas totales: {{planificacion.mesas_totales}}</label>
+                    <input type="number" 
+                        class="input-number form-control"
+                        name="mesas_totales" 
+                        [(ngModel)]="planificacion.new_mesas_totales">
+                </div>
+                
+                <div class="form-group">
+                    <label>mesas disponibles: {{planificacion.mesas_disponibles}}</label>
+                    <input type="number" 
+                        class="input-number form-control"
+                        name="mesas_disponibles"
+                        [(ngModel)]="planificacion.new_mesas_disponibles">
+                </div>
+
+                <div class="form-group">
+                    <label>fecha: {{planificacion.fecha.split(' ')[0]}}</label>
+                    <input type="date"
+                        class="input-date form-control" 
+                        name="fecha"
+                        [(ngModel)]="planificacion.new_date">
+                </div>
+                
+                <div class="form-group">
+                    <label>hora: {{planificacion.fecha.split(' ')[1]}}</label>
+                    <input type="time" 
+                        class="form-control"
+                        name="time"
+                        min="9:00"
+                        max="22:00"
+                        [(ngModel)]="planificacion.new_time">
+                </div>
+                
+                <div class="form-group">
+                    <button (click)="edit(planificacion)"
+                        class="btn btn-primary bg-blue">editar</button>
+                    <button (click)="remove(planificacion)"
+                        class="btn btn-danger">eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------------------- POST ----------------------------->
+    <div class="vr"></div>
+    <div class="container">
+        <div class="title">
+            <span class="t-bold">Publicar nueva reservas</span>
+        </div>
+        <div class="container">
+            <form #form_data="ngForm" (ngSubmit)="add(form_data)" ngNativeValidate>
+
+                <div>
+                    <label>Elegir un restaurante:</label>
+                    <select name="restaurante" ngModel>
+                        <option *ngFor="let restaurante of restaurantes"
+                            [ngValue]="restaurante.id">{{restaurante.nombre}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>mesas totales:</label>
+                    <input type="number" 
+                        class="input-number form-control"
+                        name="mesas_totales" 
+                        [(ngModel)]="post_planificacion.new_mesas_totales">
+                </div>
+                
+                <div class="form-group">
+                    <label>mesas disponibles:</label>
+                    <input type="number" 
+                        class="input-number form-control"
+                        name="mesas_disponibles"
+                        [(ngModel)]="post_planificacion.new_mesas_totales">
+                </div>
+
+                <div class="form-group">
+                    <label>fecha:</label>
+                    <input type="date"
+                        class="input-date form-control" 
+                        name="fecha"
+                        [(ngModel)]="post_planificacion.new_date">
+                </div>
+                
+                <div class="form-group">
+                    <label>hora:</label>
+                    <input type="time" 
+                        class="form-control"
+                        name="time"
+                        min="9:00"
+                        max="22:00"
+                        [(ngModel)]="post_planificacion.new_time">
+                </div>
+
+                
+                <button type="submit" class="btn btn-primary bg-blue">Guardar cambios</button>
+                <div *ngIf="success">
+                    <span class="msg">
+                        Enviar 
+                    </span>
+                </div>                
+                
+            </form>
+        </div>
+    </div>
+
+</div>

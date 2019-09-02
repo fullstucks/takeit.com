@@ -13,7 +13,14 @@ import api from 'src/app/services/api';
 export class AdministrarRestaurantesComponent implements OnInit {
 
   restaurantes: Restaurant[] = []
+  planificaciones: any[] = []
+
+
   selected_restaurant:Restaurant
+  selected_planificacion: any
+
+
+  removing:boolean = false;
 
   
   constructor(private loginService : LoginService,
@@ -28,26 +35,44 @@ export class AdministrarRestaurantesComponent implements OnInit {
           console.log(data)
         }
       )
+    
   }
 
   eliminar(restaurant:Restaurant):void{
     this.selected_restaurant = restaurant
 
+    this.removing = true
+
     fetch(api.restaurante + restaurant.id + '/',{
       method:'delete',
       credentials: 'include'
     })
-    .then(response => console.log(response.json()))
+    .then(response =>{
+      console.log(response.json())
+      this.removing = false
+      this.removeRestaurante(this.selected_restaurant)
+    })
     .catch(e => console.log(e))
   }
 
-  editar(restaurant:Restaurant):void{
+
+
+  goEditar(restaurant:Restaurant):void{
     this.selected_restaurant = restaurant
     this.router.navigate(['administrarRestaurantes/editar/' + restaurant.id])
   }
 
-  onAdd():void{
+  goAdd():void{
     this.router.navigate(['/administrarRestaurantes/agregar'])
+  }
+
+  goPlanificar():void{
+    this.router.navigate(['administrarRestaurantes/planificar'])
+  }
+
+
+  removeRestaurante(restaurante):void{
+    this.restaurantes.splice(this.restaurantes.indexOf(restaurante), 1);
   }
 
 }

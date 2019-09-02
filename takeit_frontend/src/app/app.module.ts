@@ -6,6 +6,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { ChartsModule} from 'ng2-charts';
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -26,6 +27,7 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { AdministrarRestaurantesComponent } from './components/administrar-restaurantes/administrar-restaurantes.component';
 import { AdministrarRestaurantesAgregarComponent } from './components/administrar-restaurantes-agregar/administrar-restaurantes-agregar.component';
 import { AdministrarRestaurantesEditarComponent } from './components/administrar-restaurantes-editar/administrar-restaurantes-editar.component';
+import { AdministrarRestaurantesPlanificarComponent } from './components/administrar-restaurantes-planificar/administrar-restaurantes-planificar.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { AdministrarRestaurantesEditarComponent } from './components/administrar
     AdministrarRestaurantesComponent,
     AdministrarRestaurantesAgregarComponent,
     AdministrarRestaurantesEditarComponent,
+    AdministrarRestaurantesPlanificarComponent,
   ],
   imports: [
     BrowserModule,

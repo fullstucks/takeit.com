@@ -22,5 +22,6 @@ urlpatterns = [
     path(r'tag/list/', views.TagListView.as_view()),
     path(r'reserva/', views.ReservaView.as_view()),
     path(r'planificacion/', views.ReservaPlanificacionView.as_view()),
+    path(r'planificacion/<int:planificacion_id>/', views.ReservaPlanificacionModifyView.as_view()),
     path(r'resena/', views.ResenaView.as_view()),
 ]

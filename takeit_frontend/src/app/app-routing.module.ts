@@ -11,6 +11,7 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { AdministrarRestaurantesComponent } from './components/administrar-restaurantes/administrar-restaurantes.component';
 import { AdministrarRestaurantesEditarComponent } from './components/administrar-restaurantes-editar/administrar-restaurantes-editar.component';
 import { AdministrarRestaurantesAgregarComponent } from './components/administrar-restaurantes-agregar/administrar-restaurantes-agregar.component';
+import { AdministrarRestaurantesPlanificarComponent } from './components/administrar-restaurantes-planificar/administrar-restaurantes-planificar.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'administrarRestaurantes', component: AdministrarRestaurantesComponent},
   {path: 'administrarRestaurantes/editar/:restaurante_id', component: AdministrarRestaurantesEditarComponent},
   {path: 'administrarRestaurantes/agregar', component: AdministrarRestaurantesAgregarComponent},
+  {path: 'administrarRestaurantes/planificar', component: AdministrarRestaurantesPlanificarComponent},
   {path: '**', component:NotFoundComponent},
 ];
 
