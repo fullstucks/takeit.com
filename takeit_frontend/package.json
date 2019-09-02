@@ -22,10 +22,12 @@
     "@asymmetrik/ngx-leaflet": "^5.0.2",
     "chart.js": "^2.8.0",
     "leaflet": "^1.5.1",
+    "mandrill-api": "^1.0.45",
     "ng2-charts": "^2.3.0",
     "ng2-cookies": "^1.0.12",
     "ngx-toastr": "^10.0.4",
     "nodemailer": "^6.3.0",
+    "nodemailer-mandrill-transport": "^1.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

@@ -51,7 +51,7 @@
                       id="p1" placeholder="contraseña"
                       [(ngModel)]="user.password">
               </div>
-                <button (click)="login(user)" class="btn btn-primary bg-indigo">iniciar sesión</button>
+                <button (click)="login(user)" class="btn btn-primary bg-indigo submitLogin">iniciar sesión</button>
                 <div *ngIf="loginService.loading" class="loader-container">
                   <div class="circle"></div>
                   <div class="circle"></div>
@@ -59,7 +59,7 @@
                 </div>
             </form>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/signup">¿no tienes una cuenta? regístrate</a>
+            <a class="dropdown-item" routerLink="/signup">¿No tienes una cuenta? Regístrate</a>
           </div>
 
         </div>
