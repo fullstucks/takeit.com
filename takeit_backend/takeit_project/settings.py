@@ -1,5 +1,6 @@
 import os
 import datetime
+from .email_info import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -18,13 +19,13 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig'
 ]
 
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'takeitdotcom@gmail.com'
-EMAIL_HOST_PASSWORD = 'Takeit2019'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# Email config
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST =EMAIL_HOST
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_PORT = EMAIL_PORT
+#EMAIL_USE_SSL = EMAIL_USE_SSL
 
 
 MIDDLEWARE = [

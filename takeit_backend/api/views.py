@@ -1,4 +1,5 @@
 from django.db.models import Q
+from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
@@ -78,23 +79,28 @@ class RegistrationView(GenericAPIView):
         user.fecha_nacimiento = request.data['fecha_nacimiento']
         user.first_name = request.data['first_name']
         user.last_name = request.data['last_name']
+        user.email = request.data['email']
         user.es_admin_restaurante = request.data['es_admin_restaurante']
         user.save()
+        
+        # Envío de mail de confirmación
+        subject = "Confirmación de Registro Takeit.com"
+        msg = "Hola " + user.first_name + user.last_name + ".\nGracias por verificar tu cuenta, has sido registrado exitosamente."
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [user.email]
+        send_mail(subject, msg, from_email, to_list, fail_silently=False)
+        print(subject)
+        print(msg)
+        print(from_email)
+        print(to_list)
+
 
         # return Response(data={'msg': 'uuuupppssssss'})
         print(user)
-        # self.email(request)
+        
         # except Exception as error:
         # return Response(data={'msg': str(error)})
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
-
-    def email(self, request):
-        SUBJECT = "Confirmación de Registro Takeit.com"
-        BODY = "Gracias por verificar tu cuenta, has sido registrado exitosamente."
-        EMAIL_FROM = "takeitdotcom@gmail.com"
-        EMAIL_TO = ["jfabricioherrerac@gmail.com"]
-
-        return send_mail(SUBJECT, BODY, EMAIL_FROM, EMAIL_TO, fail_silently=False)
 
         #id = request.POST.get('id')
         #client = Client.objects.get(id=id)
