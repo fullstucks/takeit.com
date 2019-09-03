@@ -34,7 +34,6 @@ export class TakeitdataService {
   }
 
 
-
   getRestaurants(params:any):Observable<Restaurant[]>{
 
     return this.http.get<Restaurant[]>(api.restaurantes, {
@@ -43,18 +42,22 @@ export class TakeitdataService {
   }
 
 
-
   getRestaurantesFavOrOwned():Observable<Restaurant[]>{
 
     //let hd = new HttpHeaders()
     //hd.append('X-CSRF-Token', Cookie.get('csrftoken'))
 
-    console.log(Cookie.get('csrftoken'))
     return this.http.get<Restaurant[]>(api.restaurantes_fav_or_owned,{
       withCredentials: true
     })
   }
 
+
+  getPlanificaciones():Observable<any[]>{
+    return this.http.get<any[]>(api.planificacion, {
+      withCredentials: true
+    })
+  }
 
 
   getTagsList():Observable<any[]>{
@@ -71,18 +74,14 @@ export class TakeitdataService {
   }
 
 
-
-
   getTopZones(params:any):Observable<Zones[]>{
     return this.http.get<Zones[]>(api.zonas, {params})
   }
 
 
-
   getNews():Observable<Noticias[]>{
     return of(NOTICIAS)
   }
-
 
 
   getReservas():Observable<Reservas[]>{

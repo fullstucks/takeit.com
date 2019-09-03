@@ -8,26 +8,26 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
 ]
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'takeit',
-#        #'USER': 'postgres',
-#        #'PASSWORD': 'abcd5678',
-#        'USER': 'mglpg',
-#        'PASSWORD': 'xxxxxx',
-#        'HOST': '127.0.0.1',
-#        'PORT': '5432',
-#    }
-#}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'eniebmsy',
-        'USER': 'eniebmsy',
-        'PASSWORD': 'hAcUudJGv2SdeL5YHAqUidbgjVwU0TBq',
-        'HOST': 'motty.db.elephantsql.com',
+        'NAME': 'takeit',
+        #'USER': 'postgres',
+        #'PASSWORD': 'abcd5678',
+        'USER': 'mglpg',
+        'PASSWORD': 'xxxxxx',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
-    }
+   }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'eniebmsy',
+#        'USER': 'eniebmsy',
+#        'PASSWORD': 'hAcUudJGv2SdeL5YHAqUidbgjVwU0TBq',
+#        'HOST': 'motty.db.elephantsql.com',
+#        'PORT': '5432',
+#    }
+#}

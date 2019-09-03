@@ -1,0 +1,44 @@
+.containerx{
+    margin: 20px;
+}
+.gridx{
+    display: grid;
+    grid-template-columns: auto 2px auto;
+    grid-gap: 50px;
+}
+
+.vr{
+    border-left:1px solid #000;
+    height:500px;
+}
+
+.title{
+    font-size: 18pt;
+}
+
+.list-view{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.list-item{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.list-item:hover{
+    transition: 400ms;
+    box-shadow: 0px 5px 12px 1px #deecf0;
+}
+
+label{
+    font-size: 9pt;
+}
+
+.input-number{
+    width: 100px;
+}

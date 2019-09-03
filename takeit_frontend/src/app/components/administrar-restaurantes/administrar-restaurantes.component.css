@@ -75,3 +75,109 @@
     margin: 5px;
     color: rgb(0, 141, 206);
 }
+
+
+.anim-container{
+    position: relative;
+}
+
+
+.backblur{
+    position: absolute;
+    background: white;
+    opacity: .6;
+    width: 250px;
+    height: 400px;
+    z-index: 10;
+    top:0;
+}
+
+.anim{
+    position: absolute;
+    z-index: 20;
+    left: 25%;
+}
+
+.loader-msg{
+    position: absolute;
+    font-weight: bold;
+    color: rgba(3, 14, 34, 0.719);
+    margin-top: 140px;
+    left: 26%;
+    z-index: 20;
+}
+
+
+/* <----------------- loader -------------------------> */
+.loader-container {
+    padding-top: 100px;
+    height: 50px;
+    text-align: center;
+}
+
+.circle {
+    margin: 5px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    transform: scale(0);
+    animation: bulge 2s infinite ease-in-out;
+}
+
+.circle::after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scale(1);
+    animation: blow 2s infinite ease-in-out;
+}
+
+.circle:nth-child(1) {
+    background-color: #4695B8;
+    animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+    background-color: #67A142;
+    animation-delay: .25s;
+}
+
+.circle:nth-child(3) {
+    background-color: #8FC0A7;
+    animation-delay: .50s;
+}
+
+
+@keyframes bulge {
+    50% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes blow {
+    25% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

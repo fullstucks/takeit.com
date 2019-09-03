@@ -111,7 +111,7 @@ class RegistrationView(GenericAPIView):
 
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
-    permission_classes = [AllowAny]
+    #permission_classes = [AllowAny]
 
     def get(self, request):
         restaurant_id = request.query_params.get('restaurante_id')
@@ -249,7 +249,7 @@ class RestauranteModifyView(GenericAPIView):
     def delete(self, request, restaurante_id):
         restaurante = Restaurante.objects.get(pk=restaurante_id)
         restaurante.delete()
-        delete_restaurant(restaurant_id)
+        delete_restaurant(restaurante_id)
         return Response({'msg': 'yes'})
 
 
@@ -350,26 +350,65 @@ class ReservaPlanificacionView(GenericAPIView):
 
     def get(self, request):
         data = []
-        id_restaurante = request.query_params.get('id_restaurante')
+        id_restaurante = request.query_params.get('restaurante_id')
         if not id_restaurante:
-            return Response(status=200, data={'msg': 'at least you should send the id of the entity'})
+            planificaciones = []
 
-        data = ReservaPlanificacion.objects.filter(Q(restaurante=id_restaurante) &
-                                                   Q(mesas_disponibles__gt=0))
+            if request.user.is_authenticated:
+                restaurantes = request.user.restaurantes_fav_or_owned.all()
+                planificaciones = ReservaPlanificacion.objects.filter(
+                    restaurante__in=restaurantes
+                )
+            else:
+                planificaciones = ReservaPlanificacion.objects.filter(
+                    Q(mesas_disponibles__gt=0)
+                )
+            
+            serializer = self.get_serializer(planificaciones, many=True)
+            return Response(data=serializer.data)
+
+        data = ReservaPlanificacion.objects.filter(
+            Q(restaurante=id_restaurante) &
+            Q(mesas_disponibles__gt=0)
+        )
         serializer = self.get_serializer(data, many=True)
         return Response(data=serializer.data)
 
     def post(self, request):
-        serializer = self.get_serializer(data=request.data)
+        serializer = ReservaPlanificacionSaverSerializer(data=request.data)
         try:
-            print(request.user)
-            serializer.usuario = request.user
             serializer.is_valid(raise_exception=True)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
 
         serializer.save()
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
+
+class ReservaPlanificacionModifyView(GenericAPIView):
+    
+    serializer_class = ReservaPlanificacionSerializer
+
+    def put(self, request, planificacion_id):
+        planificacion = ReservaPlanificacion.objects.get(pk=planificacion_id)
+        serializer = ReservaPlanificacionSaverSerializer(planificacion, data=request.data)
+
+        try:
+            serializer.is_valid(raise_exception=True)
+        except ValidationError as error:
+            return Response(data={'msg': str(error)})
+
+        planificacion = serializer.save()
+
+        return Response(data={'msg': 'hecho.'})
+
+
+    def delete(self, request, planificacion_id):
+        planificacion = ReservaPlanificacion.objects.get(pk=planificacion_id)
+        planificacion.delete()
+
+        return Response(data={'msg': 'hecho.'})
+        
 
 
 class ResenaView(GenericAPIView):
