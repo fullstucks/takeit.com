@@ -82,8 +82,8 @@ class RegistrationView(GenericAPIView):
         user.save()
 
         # return Response(data={'msg': 'uuuupppssssss'})
-        print(user)
-        # self.email(request)
+        # print(user)
+        self.email(request)
         # except Exception as error:
         # return Response(data={'msg': str(error)})
         return Response(data={'msg': 'Registrado con éxito'}, status=200)

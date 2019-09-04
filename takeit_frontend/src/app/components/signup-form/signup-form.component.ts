@@ -15,12 +15,16 @@ export class SignupFormComponent implements OnInit {
   error:boolean = false
   error_msg:string = ""
 
+  es_admin_restaurante:boolean = false
+
   constructor() { }
 
   ngOnInit() {
   }
 
   signup(form_data:NgForm):void{
+
+    form_data.value.es_admin_restaurante = this.es_admin_restaurante
 
     console.log(form_data.value)
     if (this.validate(form_data.value)){
@@ -59,4 +63,10 @@ export class SignupFormComponent implements OnInit {
                     data.last_name
     return (data.password === data.password_again) && complete
   }
+
+
+  changed_is_admin(event: any, es_admin_restaurante:any):void{
+    this.es_admin_restaurante = !es_admin_restaurante
+  }
+
 }

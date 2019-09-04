@@ -68,7 +68,9 @@
             </div>
             <div class="form-group">
                 <label class="margin-l-m">¿Es dueño de restaurante? 
-                    <input type="checkbox" name="es_admin_restaurante" ngModel>
+                    <input type="checkbox" name="es_admin_restaurante" 
+                        [checked]="es_admin_restaurante"
+                        (change)="changed_is_admin($event, es_admin_restaurante)">
                 </label>
             </div>
 
