@@ -1,15 +1,16 @@
+import { Planificados } from './../models/planificaciones';
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { Zones} from '../models/tops';
 import { Restaurant } from '../models/restaurant';
-import { Planificados } from '../models/planificaciones';
 import { Noticias } from '../models/noticias';
 import { NOTICIAS } from '../mocks/mock-noticias';
 import { Reservas } from '../models/reservas';
 import { RESERVAS } from '../mocks/mock-reservas';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import {Cookie} from 'ng2-cookies';
 import api from './api';
-
+import { LoginService } from './login.service';
 
 
 @Injectable({
@@ -17,31 +18,81 @@ import api from './api';
 })
 export class TakeitdataService {
 
-  constructor(private http: HttpClient) { }
 
-  getRestaurant(id:number):Observable<any>{
+  constructor(private http: HttpClient, private loginService: LoginService) {
+   }
+
+
+
+  getRestaurant(id:number):Observable<Restaurant>{
+
     let params:any = {restaurante_id: id}
-    return this.http.get<Restaurant>(api.restaurante,{params})
+
+    return this.http.get<Restaurant>(api.restaurante, {
+      params: params
+    })
   }
+
 
   getRestaurants(params:any):Observable<Restaurant[]>{
-    return this.http.get<Restaurant[]>(api.restaurantes, {params})
+
+    return this.http.get<Restaurant[]>(api.restaurantes, {
+      params:params,
+    })
   }
+
+
+  getRestaurantesFavOrOwned():Observable<Restaurant[]>{
+
+    //let hd = new HttpHeaders()
+    //hd.append('X-CSRF-Token', Cookie.get('csrftoken'))
+
+    return this.http.get<Restaurant[]>(api.restaurantes_fav_or_owned,{
+      withCredentials: true
+    })
+  }
+
+
+  getPlanificaciones():Observable<any[]>{
+    return this.http.get<any[]>(api.planificacion, {
+      withCredentials: true
+    })
+  }
+  getReservasPlanificadas(id:number):Observable<any>{
+    let params:any = {id_restaurante: id}
+    return this.http.get<Planificados[]>(api.horariosPlanificados,{params})
+  }
+  createReserva(reserva): Observable<any>{
+    const body = {}
+    return this.http.post(api.reservas,{body})
+  }
+
+  getTagsList():Observable<any[]>{
+    return this.http.get<any[]>(api.tag_list,{
+      withCredentials: true
+    })
+  }
+
+
+  getZonasList():Observable<any[]>{
+    return this.http.get<any[]>(api.zona_list, {
+      withCredentials: true
+    })
+  }
+
 
   getTopZones(params:any):Observable<Zones[]>{
     return this.http.get<Zones[]>(api.zonas, {params})
   }
 
+
   getNews():Observable<Noticias[]>{
     return of(NOTICIAS)
   }
 
+
   getReservas():Observable<Reservas[]>{
     return of(RESERVAS)
   }
-  
-  getReservasPlanificadas(id:number):Observable<any>{
-    let params:any = {id_restaurante: id}
-    return this.http.get<Planificados[]>(api.horariosPlanificados,{params})
-  }
+
 }
