@@ -9,14 +9,14 @@
         <div id="form-reservation" class="format-general-form">
             <div id="img-form-reservation" class="back-img-form format-img-form">
                 <div id="name-restaurant-reservation" class="title-img-reservation">
-                    <h1 class="title-img-reservation">{{restaurant.nombre}}</h1>
+                    <h1 class="title-img-reservation">{{nameRestaurant}}</h1>
                 </div>
                 <div id="description-restaurant-reservation" class="paragraf-reservation">
-                    <p>{{restaurant.descripcion}}</p>
+                    <p>{{descriptionRestaurant}}</p>
                 </div>
             </div>
             <!--nav-form-reservation-->
-        <form id="nav-form">
+        <div id="nav-form">
             <div id="progressbar">
                     <li class="{{step1}}" (click)="goStep1()">Seleccionar tus entradas</li>
                     <li class="{{step2}}" (click)="goStep2()">Confirma tu reserva</li>
@@ -24,10 +24,10 @@
             </div>
 
             <!--ENTRADAS-->
-                <div  *ngIf="!isCollapsedEntradas" class="tickect-section" >
+                <form novalidate *ngIf="!isCollapsedEntradas" class="tickect-section" >
                     <div class="tickets-section-titlte">
                         <h1 class="subtitule-reservation">Selecciona tus entradas</h1>
-                        <h1 class="subtitule-reservation">Mesas disponibles: {{verSeleccion}}</h1>
+                        <h1 class="subtitule-reservation">Mesas disponibles: {{mesasDisponibles}}</h1>
                     </div>
                     
                     <div class="item-entradas">
@@ -35,8 +35,8 @@
                            <h4 class="textInBox-reservation">Fechas Disponibles</h4>
                            <select id="selectFecha" (change)="onChange($event.target.value)">
                                 <option value="">Seleccione una fecha</option>
-                                <option *ngFor="let plan of planificados" value="{{plan.mesas_disponibles}}">
-                                    {{plan.fecha}}  
+                                <option *ngFor="let plan of fechasHoraPlanificadas" value="{{plan}}">
+                                    {{plan[0]}}  
                                 </option>
                             </select>
                         </div>
@@ -45,13 +45,16 @@
                                 <h4 class="textInBox-reservation">Mesas a reservar: </h4>
                                 <input id="num-entradas" type="number" name="num-entradas" size="5">
                         </div>
-
-                        <h4 class="textInBox-reservation">$0.00</h4>
+                        <div id="select-sucursal" >
+                            <h4 class="textInBox-reservation">Horas disponibles</h4>
+                            <input class="btn btn-info" value="{{horaSeleccionada}}" type="button">   
+                        </div>
+                        
                     </div>
                      <div class="align-button">
-                    <button *ngIf="!isCollapsedEntradas" (click)="goStep2()" class="btn bg-indigo border-indigo t-white" value="Continuar"name="Continuar" id="cont-entradas">Continuar</button>
+                        <input *ngIf="!isCollapsedEntradas" (click)="goStep2()" class="btn bg-indigo border-indigo t-white" value="Continuar"name="Continuar" id="cont-entradas"/>
                     </div>
-                </div>
+                </form>
             
 
            <!--CONFIRMACION-->
@@ -99,7 +102,7 @@
                 </div>
             
            
-        </form>
+            </div>
             
         </div>
         
