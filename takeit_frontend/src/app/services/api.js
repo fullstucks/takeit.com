@@ -12,6 +12,9 @@ const api = {
     zonas: URL_ROOT + API_URL+'zona/',
     zona_list: URL_ROOT + API_URL+'zona/list/',
     tag_list: URL_ROOT + API_URL + 'tag/list/',
+    
+    reservas: URL_ROOT + 'api/reserva/',
+    horariosPlanificados: URL_ROOT + API_URL +  'planificacion/'
 }
 
 export default api

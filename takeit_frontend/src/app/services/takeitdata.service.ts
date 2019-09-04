@@ -1,3 +1,4 @@
+import { Planificados } from './../models/planificaciones';
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { Zones} from '../models/tops';
@@ -10,7 +11,6 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import {Cookie} from 'ng2-cookies';
 import api from './api';
 import { LoginService } from './login.service';
-
 
 
 @Injectable({
@@ -58,7 +58,14 @@ export class TakeitdataService {
       withCredentials: true
     })
   }
-
+  getReservasPlanificadas(id:number):Observable<any>{
+    let params:any = {id_restaurante: id}
+    return this.http.get<Planificados[]>(api.horariosPlanificados,{params})
+  }
+  createReserva(reserva): Observable<any>{
+    const body = {}
+    return this.http.post(api.reservas,{body})
+  }
 
   getTagsList():Observable<any[]>{
     return this.http.get<any[]>(api.tag_list,{
