@@ -4,7 +4,7 @@
   </a>
 
 
-  <!------------------ if logged ----------------------->
+  <!------------------ if no logged ----------------------->
   <ng-container *ngIf="!loginService.getSessionStatus()">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@
   </ng-container>
 
 
-  <!------------------ if no logged ----------------------->
+  <!------------------ if logged ----------------------->
   <ng-container *ngIf="loginService.getSessionStatus()">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,6 +85,8 @@
           <span>{{loginService.get_user_info().username}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right subitems">
+
+          <!------------------ if normal user  --------------->
           <button *ngIf="!loginService.get_user_info().es_admin_restaurante"
                   class="btn btn-secondary btnIcons" (click)="goMisReservas()">
             <i class="fa fa-book-open disabled" aria-hidden="true" href="#"></i>
@@ -93,12 +95,16 @@
 
           <!------------------ if restaurant admin  --------------->
           <ng-container *ngIf="loginService.get_user_info().es_admin_restaurante">
+            <button class="btn btn-secondary btnIcons" (click)="goAdministrarReservas()">
+                <i class="fa fa-book-open disabled" aria-hidden="true" href="#"></i>
+                <span class="text">Administrar Reservas</span>
+            </button>
             <button class="btn btn-secondary btnIcons" (click)="goAdministrarRestaurantes()">
               <i class="fa fa-book-open disabled" aria-hidden="true" href="#"></i>
               <span class="text">Administrar Restaurantes</span>
             </button>
           </ng-container>
-          <!-------------------------------------------------------->
+
           
           <button class="btn btn-secondary btnIcons" (click)="logout()">
             <i class="fa fa-sign-out-alt disabled" aria-hidden="true" href="#"></i>

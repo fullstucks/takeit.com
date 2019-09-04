@@ -12,6 +12,7 @@ import { AdministrarRestaurantesComponent } from './components/administrar-resta
 import { AdministrarRestaurantesEditarComponent } from './components/administrar-restaurantes-editar/administrar-restaurantes-editar.component';
 import { AdministrarRestaurantesAgregarComponent } from './components/administrar-restaurantes-agregar/administrar-restaurantes-agregar.component';
 import { AdministrarRestaurantesPlanificarComponent } from './components/administrar-restaurantes-planificar/administrar-restaurantes-planificar.component';
+import { AdministrarReservasComponent } from './components/administrar-reservas/administrar-reservas.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'administrarRestaurantes/editar/:restaurante_id', component: AdministrarRestaurantesEditarComponent},
   {path: 'administrarRestaurantes/agregar', component: AdministrarRestaurantesAgregarComponent},
   {path: 'administrarRestaurantes/planificar', component: AdministrarRestaurantesPlanificarComponent},
+  {path: 'administrarReservas', component: AdministrarReservasComponent},
   {path: '**', component:NotFoundComponent},
 ];
 
