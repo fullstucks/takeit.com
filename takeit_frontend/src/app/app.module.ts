@@ -29,6 +29,7 @@ import { AdministrarRestaurantesAgregarComponent } from './components/administra
 import { AdministrarRestaurantesEditarComponent } from './components/administrar-restaurantes-editar/administrar-restaurantes-editar.component';
 import { AdministrarRestaurantesPlanificarComponent } from './components/administrar-restaurantes-planificar/administrar-restaurantes-planificar.component';
 import { AdministrarRestaurantesStatsComponent } from './components/administrar-restaurantes-stats/administrar-restaurantes-stats.component';
+import { AdministrarReservasComponent } from './components/administrar-reservas/administrar-reservas.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AdministrarRestaurantesStatsComponent } from './components/administrar-
     AdministrarRestaurantesEditarComponent,
     AdministrarRestaurantesPlanificarComponent,
     AdministrarRestaurantesStatsComponent,
+    AdministrarReservasComponent,
   ],
   imports: [
     BrowserModule,

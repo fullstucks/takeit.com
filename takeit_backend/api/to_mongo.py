@@ -1,7 +1,7 @@
 from pymongo import MongoClient, DESCENDING
 import ssl
 
-client = MongoClient("mongodb://mglps:1controlXYZW@localhost")
+client = MongoClient("mongodb://localhost:27017/takeit")
 db = client.takeitdb
 print(db)
 

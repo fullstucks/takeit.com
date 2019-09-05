@@ -1,6 +1,8 @@
 from django.db.models import Q
 from django.conf import settings
 from django.core.mail import send_mail
+from django.template.loader import get_template
+from django.template import Context
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -88,16 +90,21 @@ class RegistrationView(GenericAPIView):
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
     def send_email(self, user):
-
-        subject = "Confirmación de Registro Takeit.com"
-        msg = "Hola " + user.first_name + user.last_name + ".\nGracias por verificar tu cuenta, has sido registrado exitosamente."
+        #Datos
+        username = user.username
+        full_name = user.first_name + " " + user.last_name
+        subject = "Confirmación de Registro"
+        msg = "Hola" + " " + full_name + "\n\n" + "Gracias por verificar tu cuenta, has sido registrado exitosamente." + "\n" + "Tu nombre de usuario es " + username + "\n\n" + "Atentamente," + "\n" + "Equipo de Takeit"
         from_email = settings.EMAIL_HOST_USER
         to_list = [user.email]
+
         send_mail(subject, msg, from_email, to_list, fail_silently=False)
+
         print(subject)
         print(msg)
         print(from_email)
         print(to_list)
+
 
 
 
@@ -274,35 +281,37 @@ class RestauranteListView(GenericAPIView):
         tag_id = request.query_params.get('tag_id')
 
         # < --------- using mongo ----------->
-        if recomended == '1':
-            data = get_restaurant_recomended(5)
-        elif tag_id:
-            data = get_restaurant_by_tag(tag_id)
-        elif not top and not search_input:
-            data = get_restaurante_all()
-        else:
-            top = top if top else '10'
-            search_input = search_input if search_input else ''
-            data = get_restaurant_by_search_input(search_input, top)
-
-        # < --------- using postgres ----------->
         # if recomended == '1':
-        #    data = Restaurante.objects.order_by(
-        #        'calificacion_prom', 'n_resenas')[:5]
+        #    data = get_restaurant_recomended(5)
         # elif tag_id:
-        #    data = Restaurante.objects.filter(tags__id=tag_id)
+        #    data = get_restaurant_by_tag(tag_id)
         # elif not top and not search_input:
-        #    data = Restaurante.objects.all()
+        #    data = get_restaurante_all()
         # else:
         #    top = top if top else '10'
         #    search_input = search_input if search_input else ''
-        #    data = Restaurante.objects.filter(
-        #        Q(nombre__icontains=search_input) |
-        #        Q(descripcion__icontains=search_input) |
-        #        Q(ubicacion__icontains=search_input)
-        #    )[:int(top)]
+        #    data = get_restaurant_by_search_input(search_input, top)
 
-        return Response(data=loads(dumps(data)))
+        # < --------- using postgres ----------->
+        if recomended == '1':
+            data = Restaurante.objects.order_by(
+                'calificacion_prom', 'n_resenas')[:5]
+        elif tag_id:
+            data = Restaurante.objects.filter(tags__id=tag_id)
+        elif not top and not search_input:
+            data = Restaurante.objects.all()
+            serializers = self.get_serializer(data, many=True)
+        else:
+            top = top if top else '10'
+            search_input = search_input if search_input else ''
+            data = Restaurante.objects.filter(
+                Q(nombre__icontains=search_input) |
+                Q(descripcion__icontains=search_input) |
+                Q(ubicacion__icontains=search_input)
+            )[:int(top)]
+            serializers = self.get_serializer(data, many=True)
+        # return Response(data=loads(dumps(data)))
+        return Response(data=serializers.data)
 
 
 class ReservaView(GenericAPIView):

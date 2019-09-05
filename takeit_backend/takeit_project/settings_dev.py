@@ -12,11 +12,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'takeit',
-        #'USER': 'postgres',
-        #'PASSWORD': 'abcd5678',
-        'USER': 'mglpg',
-        'PASSWORD': 'xxxxxx',
-        'HOST': '127.0.0.1',
+        'USER': 'postgres',
+        'PASSWORD': 'abcd5678',
+        'HOST': 'localhost',
         'PORT': '5432',
    }
 }

@@ -46,7 +46,10 @@ export class LoginService {
       console.log(data)
       if (data.es_admin_restaurante){
         Cookie.set('es_admin_restaurante', '1')
-        this.user_info.es_admin_restaurante = data.es_admin_restaurante
+        this.user_info.es_admin_restaurante = true
+      }else{
+        Cookie.delete('es_admin_restaurante')
+        this.user_info.es_admin_restaurante = false
       }
       Cookie.set('username', data.username)
       this.user_info.username = data.username
