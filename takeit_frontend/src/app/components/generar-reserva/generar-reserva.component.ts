@@ -6,7 +6,6 @@ import { Restaurant } from 'src/app/models/restaurant';
 import { Planificados } from 'src/app/models/planificaciones';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Reserva } from 'src/app/models/reserva';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-generar-reserva',
@@ -140,7 +139,7 @@ export class GenerarReservaComponent implements OnInit {
       asistion: false,
       detalles: "",
       usuario: 1,
-      n_mesas: parseInt(document.getElementById("num-entradas").value)
+      n_mesas: parseInt((document.getElementById("num-entradas")as HTMLInputElement).value)
     }
   console.log(this.reserva)
   }

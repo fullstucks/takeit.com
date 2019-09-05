@@ -106,8 +106,28 @@ class RegistrationView(GenericAPIView):
         print(to_list)
 
 
+# Clase para enviar formulario de Contáctenos
+#class NosotrosView(GenericAPIView):
+
+#    def get(self, request):
+#        return render(request, '404.html')
+
+#    def post(self, request):
+
+#        nombre = request.query_params.get('name_input'),
+#        apellido = request.query_params.get('lastname_input'),
+#        telefono = request.query_params.get('telephone_input'),
+#        ciudad = request.query_params.get('origin_input'),
+#        email = request.query_params.get('email_input'),
+#        asunto = request.query_params.get('subject_input'),
+        
+#        send_mail("Contáctenos", "INICIO DEL MENSAJE" + "\n" + "Nombres: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Teléfono: " + telefono + "\n" + "Ciu+dad: " + ciudad + "\n" + asunto + "\n" + "FIN DEL MENSAJE"
+#, email, settings.EMAIL_HOST_USER, fail_silently=False)
+        
+#        return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
 
+        
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
     #permission_classes = [AllowAny]
@@ -337,13 +357,35 @@ class ReservaView(GenericAPIView):
     def post(self, request):
 
         serializer = ReservaSaverSerializer(data=request.data)
+        usuario = serializer.Meta.model.usuario
+        id_reserva = serializer.Meta.model.pk
+        detalle = serializer.Meta.model.detalles
+
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
 
         serializer.save()
+        self.send_email(serializer)
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
+    def send_email(self, serializer):
+        usuario = serializer.Meta.model.usuario
+        id_reserva = serializer.Meta.model.pk
+        detalle = serializer.Meta.model.detalles
+        nombre = usuario.first_name
+        apellido = usuario.last_name
+        full_name = nombre + " " + apellido
+        mail = usuario.email
+
+        #Datos
+        subject = "Confirmación de Reserva"
+        msg = "Hola" + " " + full_name + "\n\n" + "Estos son los detalles de tu reserva:" + "\n" + detalle + "\n\n" + "Atentamente," + "\n" + "Equipo de Takeit"
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [mail]
+
+        send_mail(subject, msg, from_email, to_list, fail_silently=False)
 
 
 class ReservaPlanificacionView(GenericAPIView):
