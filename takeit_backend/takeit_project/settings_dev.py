@@ -12,20 +12,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'takeit',
-        #'USER': 'postgres',
-        #'PASSWORD': 'abcd5678',
-        'USER': 'mglpg',
-        'PASSWORD': 'xxxxxx',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
    }
-   # 'ENGINE': 'django.db.backends.postgresql',
-   # 'NAME': 'takeit',
-   # 'USER': 'postgres',
-   # 'PASSWORD': 'KND7777',
-   # 'HOST': 'localhost',
-   # 'PORT': '5432',
-}
+
 
 #DATABASES = {
 #    'default': {

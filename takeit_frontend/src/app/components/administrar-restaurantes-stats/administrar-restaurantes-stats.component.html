@@ -1,0 +1,65 @@
+<div>
+    <div class="container-fluid">
+        <h3 class="t-bold">Estadísticas</h3>
+        <hr class="my-4">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6>Reservas por mes</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas
+                            baseChart
+                            [chartType]="'line'"
+                            [datasets]="chartData"
+                            [labels]="chartLabels"
+                            [options]="chartOptions"
+                            [legend]="true"
+                            (chartClick)="onChartClick($event)">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6>Porcentaje de reservas de este mes por restaurante</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas
+                            baseChart
+                            [chartType]="'doughnut'"
+                            [datasets]="pieData"
+                            [labels]="pieLabels"
+                            [options]="pieOptions"
+                            [legend]="true"
+                            (chartClick)="onChartClick($event)">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h6>Top Restaurantes con Calificaciones</h6>
+                        </div>
+                        <div class="card-body">
+                            <canvas
+                                baseChart
+                                [chartType]="'horizontalBar'"
+                                [datasets]="barData"
+                                [labels]="barLabels"
+                                [options]="barOptions"
+                                [legend]="true"
+                                (chartClick)="onChartClick($event)">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        
+    </div>
+</div>

@@ -68,8 +68,9 @@ export class TakeitdataService {
     return this.http.get<Planificados[]>(api.horariosPlanificados,{params})
   }
   createReserva(reserva): Observable<any>{
-    const body = {}
-    return this.http.post(api.reservas,{body})
+    const body = {reserva_planificacion:reserva.id_reserva_planificacion, asistio:reserva.asistion,detalles:reserva.detalles,usuario:reserva.usuario}
+    console.log(body);
+    return this.http.post(api.reservar,body);
   }
 
   getTagsList():Observable<any[]>{

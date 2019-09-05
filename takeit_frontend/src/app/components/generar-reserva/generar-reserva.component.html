@@ -64,11 +64,12 @@
                     </div>
 
                     <div id="reservation-data" class="item-data">
-                            <h4 class="textInBox-reservation">Nombre cliente: </h4>
+                            <h3>¿Deseas confirmar tu reserva?</h3>
+                            <!--h4 class="textInBox-reservation">Nombre cliente: </h4>
                             <h4 class="textInBox-reservation">Número de entradas:</h4>
                             <h4 class="textInBox-reservation">Sucursal:</h4>
                             <h4 class="textInBox-reservation">Fecha y hora:</h4>
-                            <h4 class="textInBox-reservation">Valor total:</h4>
+                            <h4 class="textInBox-reservation">Valor total:</h4-->
                     </div>
                     
                     <div class="align-button">
@@ -94,10 +95,11 @@
                             <input class="card-flex" id="añoexp-tarjeta" type="number" placeholder="Año de expiración" name="añoexp-tarjeta"width="20%">
                             <input class="card-flex" id="cvv-tarjeta" type="text" placeholder="CVV/CSC" name="cvv-tarjeta"width="20%" >
                         </div>
+                        <h5>Si no desea realizar el pago ahora, presione Confirmar</h5>
                     </div>
                     
                     <div class="align-button">
-                            <input class="btn bg-indigo border-indigo t-white" type="submit" value="Confirmar" name="Confirmar" id="cont-entradas">
+                            <input class="btn bg-indigo border-indigo t-white" (click)="createReserva()" value="Confirmar" name="Confirmar" id="cont-entradas">
                     </div>
                 </div>
             

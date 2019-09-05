@@ -5,11 +5,12 @@ from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
 
-from rest_framework import status
+from rest_framework import status, viewsets
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.exceptions import ValidationError
+from rest_framework.viewsets import ViewSet
 from rest_framework_jwt.settings import api_settings
 from rest_framework_jwt.views import ObtainJSONWebToken
 
@@ -107,7 +108,28 @@ class RegistrationView(GenericAPIView):
         
 
 
+# Clase para enviar formulario de Contáctenos
+#class NosotrosView(GenericAPIView):
 
+#    def get(self, request):
+#        return render(request, '404.html')
+
+#    def post(self, request):
+
+#        nombre = request.query_params.get('name_input'),
+#        apellido = request.query_params.get('lastname_input'),
+#        telefono = request.query_params.get('telephone_input'),
+#        ciudad = request.query_params.get('origin_input'),
+#        email = request.query_params.get('email_input'),
+#        asunto = request.query_params.get('subject_input'),
+        
+#        send_mail("Contáctenos", "INICIO DEL MENSAJE" + "\n" + "Nombres: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Teléfono: " + telefono + "\n" + "Ciu+dad: " + ciudad + "\n" + asunto + "\n" + "FIN DEL MENSAJE"
+#, email, settings.EMAIL_HOST_USER, fail_silently=False)
+        
+#        return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
+
+        
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
     #permission_classes = [AllowAny]
@@ -296,6 +318,7 @@ class RestauranteListView(GenericAPIView):
             data = get_restaurant_by_search_input(search_input, top)
 
         # < --------- using postgres ----------->
+
         #if recomended == '1':
         #    data = Restaurante.objects.order_by(
         #        'calificacion_prom', 'n_resenas')[:5]
@@ -312,9 +335,10 @@ class RestauranteListView(GenericAPIView):
         #        Q(descripcion__icontains=search_input) |
         #        Q(ubicacion__icontains=search_input)
         #    )[:int(top)]
-        #    serializers = self.get_serializer(data, many=True)
+        #serializers = self.get_serializer(data, many=True)
+
         return Response(data=loads(dumps(data)))
-        #return Response(data=serializers.data)
+
 
 
 
@@ -336,15 +360,32 @@ class ReservaByUserView(GenericAPIView):
         return Response(data=serializer.data)
 
     def post(self, request):
-
-        serializer = ReservaSaverSerializer(data=request.data)
+        serializer = ReservaSerializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
 
         serializer.save()
+        self.send_mail(serializer)
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+        
+    def send_email(self, serializer):
+        usuario = serializer.Meta.model.usuario
+        id_reserva = serializer.Meta.model.pk
+        detalle = serializer.Meta.model.detalles
+        nombre = usuario.first_name
+        apellido = usuario.last_name
+        full_name = nombre + " " + apellido
+        mail = usuario.email
+
+        #Datos
+        subject = "Confirmación de Reserva"
+        msg = "Hola" + " " + full_name + "\n\n" + "Estos son los detalles de tu reserva:" + "\n" + detalle + "\n\n" + "Atentamente," + "\n" + "Equipo de Takeit"
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [mail]
+
+        send_mail(subject, msg, from_email, to_list, fail_silently=False)
 
 
 

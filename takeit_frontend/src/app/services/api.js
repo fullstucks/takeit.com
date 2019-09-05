@@ -14,9 +14,10 @@ const api = {
     zonas: URL_ROOT + API_URL+'zona/',
     zona_list: URL_ROOT + API_URL+'zona/list/',
     tag_list: URL_ROOT + API_URL + 'tag/list/',
-    
     reservas: URL_ROOT + API_URL +'reserva/',
     reserva_list: URL_ROOT + API_URL +'reserva/list/' ,
+    reservar: URL_ROOT + API_URL+ 'reserva/',
+    reservar2: URL_ROOT+API_URL+ 'reservar/',
     horariosPlanificados: URL_ROOT + API_URL +  'planificacion/'
 }
 

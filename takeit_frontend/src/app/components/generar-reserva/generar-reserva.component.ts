@@ -58,9 +58,17 @@ export class GenerarReservaComponent implements OnInit {
   }
 
 
-
-   /**createReserva(reserva: Reserva){
-    this.takeitDataService.createReserva()
+  createReserva=()=>{
+    console.log(this.reserva)
+    this.takeitDataService.createReserva(this.reserva).subscribe(
+      data =>{
+        console.log(data)
+        console.log("reservada con exito")
+      },
+      error =>{
+        console.log(error)
+      }
+    )
   }
   /**
    * obtains the restaurant's id through the url
@@ -108,7 +116,8 @@ export class GenerarReservaComponent implements OnInit {
     this.idPlanSelected=parseInt(this.verSeleccion[3])
     console.log(this.verSeleccion)
     console.log(this.horaSeleccionada)
-    this.reserva.id_reserva_planificacion=this.idPlanSelected
+    
+    console.log('reserva')
   }
   
   goBack(): void {
@@ -132,7 +141,15 @@ export class GenerarReservaComponent implements OnInit {
     this.step1="active";
     this.step2="active";
     this.step3="0";
-    
+
+    this.reserva={
+      id_reserva_planificacion: this.idPlanSelected,
+      asistion: false,
+      detalles: "",
+      usuario: 1,
+      n_mesas: parseInt((document.getElementById("num-entradas") as HTMLInputElement).value)
+    }
+  console.log(this.reserva)
   }
   goStep3(): void {
     this.isCollapsedEntradas =true;
