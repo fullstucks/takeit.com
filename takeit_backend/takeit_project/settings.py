@@ -15,7 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'django_seed',
     'api.apps.ApiConfig'
 ]
 
@@ -117,7 +116,7 @@ STATICFILES_DIRS = [
 ]
 
 
-os.environ['RUN_AS'] = ''
+os.environ['RUN_AS'] = 'dev'
 if os.environ['RUN_AS'] == 'prod':
     from .settings_prod import *
 else:

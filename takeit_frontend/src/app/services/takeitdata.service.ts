@@ -52,6 +52,11 @@ export class TakeitdataService {
     })
   }
 
+  getReservasList():Observable<any[]>{
+    return this.http.get<any[]>(api.reserva_list, {
+      withCredentials: true
+    })
+  }
 
   getPlanificaciones():Observable<any[]>{
     return this.http.get<any[]>(api.planificacion, {

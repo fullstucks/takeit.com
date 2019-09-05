@@ -1,1 +1,28 @@
-<p>administrar-reservas works!</p>
+<div class="container">
+    <div class="title">
+        <span class="t-bold">Reservas realizadas por los usuarios.</span>
+    </div>
+    <div class="container list-view">
+        <div *ngFor="let reserva of reservas" class="list-item">
+            <span><strong>{{reserva.reserva_planificacion.restaurante.nombre}}</strong></span>
+
+            <div class="form-group">
+                <span>Fecha y hora: {{reserva.reserva_planificacion.fecha}}</span>
+            </div>
+
+            <div class="form-group">
+                <span>Usuario: {{reserva.usuario.username}}</span>
+            </div>
+            
+            <div class="form-group">
+                <span>Detalles: {{reserva.detalles}}</span>
+            </div>
+
+            <div class="form-group">Asistió: {{reserva.asistio}}</div>
+
+            <div class="form-group">
+                <button (click)="confirmar(reserva)" class="btn btn-primary bg-blue">Confirmar asistencia</button>
+            </div>
+        </div>
+    </div>
+</div>

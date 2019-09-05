@@ -87,10 +87,11 @@ class ReservaPlanificacionSaverSerializer(serializers.ModelSerializer):
 class ReservaSerializer(serializers.ModelSerializer):
 
     reserva_planificacion = ReservaPlanificacionSerializer()
+    usuario = UsuarioSerializer()
 
     class Meta:
         model = Reserva
-        fields = ['reserva_planificacion', 'asistio', 'detalles']
+        fields = ['id', 'asistio', 'detalles', 'usuario', 'reserva_planificacion']
         #depth = 1
 
 

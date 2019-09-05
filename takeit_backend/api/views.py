@@ -51,6 +51,7 @@ class JWTAuthView(ObtainJSONWebToken):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
 class UsuarioView(GenericAPIView):
     serializer_class = UsuarioProfileSerializer
     permission_classes = [IsAuthenticated]
@@ -61,6 +62,7 @@ class UsuarioView(GenericAPIView):
         serializer = self.get_serializer(request.user)
 
         return Response(serializer.data)
+
 
 
 class RegistrationView(GenericAPIView):
@@ -89,15 +91,20 @@ class RegistrationView(GenericAPIView):
 
     def send_email(self, user):
 
-        subject = "Confirmación de Registro Takeit.com"
-        msg = "Hola " + user.first_name + user.last_name + ".\nGracias por verificar tu cuenta, has sido registrado exitosamente."
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [user.email]
-        send_mail(subject, msg, from_email, to_list, fail_silently=False)
-        print(subject)
-        print(msg)
-        print(from_email)
-        print(to_list)
+        try:
+            subject = "Confirmación de Registro Takeit.com"
+            msg = "Hola " + user.first_name + user.last_name + ".\nGracias por verificar tu cuenta, has sido registrado exitosamente."
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [user.email]
+            send_mail(subject, msg, from_email, to_list, fail_silently=False)
+            print(subject)
+            print(msg)
+            print(from_email)
+            print(to_list)
+        except Exception as e:
+            pass
+    
+        
 
 
 
@@ -180,6 +187,7 @@ class RestauranteView(GenericAPIView):
         return Response(status=200, data={'msg': 'created'})
 
 
+
 class RestauranteModifyView(GenericAPIView):
 
     def put(self, request, restaurante_id):
@@ -245,6 +253,7 @@ class RestauranteModifyView(GenericAPIView):
         return Response({'msg': 'yes'})
 
 
+
 class RestauranteFavOwned(GenericAPIView):
 
     serializer_class = RestauranteSerializer
@@ -262,6 +271,7 @@ class RestauranteFavOwned(GenericAPIView):
         return Response(data=serializer.data)
 
 
+
 class RestauranteListView(GenericAPIView):
     serializer_class = RestauranteSerializer
     permission_classes = [AllowAny]
@@ -274,55 +284,53 @@ class RestauranteListView(GenericAPIView):
         tag_id = request.query_params.get('tag_id')
 
         # < --------- using mongo ----------->
-        # if recomended == '1':
-        #    data = get_restaurant_recomended(5)
-        # elif tag_id:
-        #    data = get_restaurant_by_tag(tag_id)
-        # elif not top and not search_input:
-        #    data = get_restaurante_all()
-        # else:
-        #    top = top if top else '10'
-        #    search_input = search_input if search_input else ''
-        #    data = get_restaurant_by_search_input(search_input, top)
-
-        # < --------- using postgres ----------->
         if recomended == '1':
-            data = Restaurante.objects.order_by(
-                'calificacion_prom', 'n_resenas')[:5]
+            data = get_restaurant_recomended(5)
         elif tag_id:
-            data = Restaurante.objects.filter(tags__id=tag_id)
+            data = get_restaurant_by_tag(tag_id)
         elif not top and not search_input:
-            data = Restaurante.objects.all()
-            serializers = self.get_serializer(data, many=True)
+            data = get_restaurante_all()
         else:
             top = top if top else '10'
             search_input = search_input if search_input else ''
-            data = Restaurante.objects.filter(
-                Q(nombre__icontains=search_input) |
-                Q(descripcion__icontains=search_input) |
-                Q(ubicacion__icontains=search_input)
-            )[:int(top)]
-            serializers = self.get_serializer(data, many=True)
-        # return Response(data=loads(dumps(data)))
-        return Response(data=serializers.data)
+            data = get_restaurant_by_search_input(search_input, top)
+
+        # < --------- using postgres ----------->
+        #if recomended == '1':
+        #    data = Restaurante.objects.order_by(
+        #        'calificacion_prom', 'n_resenas')[:5]
+        #elif tag_id:
+        #    data = Restaurante.objects.filter(tags__id=tag_id)
+        #elif not top and not search_input:
+        #    data = Restaurante.objects.all()
+        #    serializers = self.get_serializer(data, many=True)
+        #else:
+        #    top = top if top else '10'
+        #    search_input = search_input if search_input else ''
+        #    data = Restaurante.objects.filter(
+        #        Q(nombre__icontains=search_input) |
+        #        Q(descripcion__icontains=search_input) |
+        #        Q(ubicacion__icontains=search_input)
+        #    )[:int(top)]
+        #    serializers = self.get_serializer(data, many=True)
+        return Response(data=loads(dumps(data)))
+        #return Response(data=serializers.data)
 
 
-class ReservaView(GenericAPIView):
+
+class ReservaByUserView(GenericAPIView):
     serializer_class = ReservaSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        user_id = request.query_params.get('user_id')
+        user = request.user
 
         reservas = []
-        if not user_id:
-            return Response(status=400,
-                            data={'msg': 'at least you should send the id of the user'})
 
         try:
-            reservas = Reserva.objects.filter(usuario_id=user_id)
+            reservas = Reserva.objects.filter(usuario=user)
         except Reserva.DoesNotExist:
-            return Response(status=400, data={'msg': 'no results for id: ' + user_id})
+            return Response(data=[])
 
         serializer = self.get_serializer(reservas, many=True)
         return Response(data=serializer.data)
@@ -337,6 +345,32 @@ class ReservaView(GenericAPIView):
 
         serializer.save()
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
+
+
+class ReservaModifyView(GenericAPIView):
+
+    def put(self, request, reserva_id):
+        reserva = Reserva.objects.get(pk=reserva_id)
+        reserva.asistio = True
+        reserva.save()
+
+        return Response(data={'msg': 'hecho'})
+
+
+
+class ReservaListView(GenericAPIView):
+    serializer_class = ReservaSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+
+        restaurantes = request.user.restaurantes_fav_or_owned.all()
+        reservas = Reserva.objects.filter(reserva_planificacion__restaurante__in=restaurantes)
+
+        serializer = self.get_serializer(reservas, many=True)
+        return Response(data=serializer.data)
+
 
 
 class ReservaPlanificacionView(GenericAPIView):
@@ -377,6 +411,7 @@ class ReservaPlanificacionView(GenericAPIView):
 
         serializer.save()
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
 
 
 class ReservaPlanificacionModifyView(GenericAPIView):
@@ -439,6 +474,7 @@ class ResenaView(GenericAPIView):
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
 
+
 class ZonaView(GenericAPIView):
     serializer_class = ZonaSerializer
 
@@ -458,6 +494,7 @@ class ZonaView(GenericAPIView):
         return Response(data=serializer.data)
 
 
+
 class ZonaListView(GenericAPIView):
     serializer_class = ZonaSerializer
 
@@ -465,6 +502,7 @@ class ZonaListView(GenericAPIView):
         data = Zona.objects.all()
         serializer = self.get_serializer(data, many=True)
         return Response(data=serializer.data)
+
 
 
 class FotosRestauranteView(GenericAPIView):
@@ -500,6 +538,7 @@ class FotosRestauranteView(GenericAPIView):
             'tamano': request.data['tamano']
         })
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
 
 
 class TagListView(GenericAPIView):

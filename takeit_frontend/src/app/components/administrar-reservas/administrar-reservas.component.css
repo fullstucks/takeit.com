@@ -1,0 +1,27 @@
+
+.title{
+    font-size: 18pt;
+}
+
+.list-view{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.list-item{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.list-item:hover{
+    transition: 300ms;
+    box-shadow: 0px 4px 12px 2px #deecf0;
+}
+
+span strong {
+    font-size: 14pt;
+}

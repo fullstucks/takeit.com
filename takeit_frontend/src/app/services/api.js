@@ -1,4 +1,6 @@
 const URL_ROOT = 'http://localhost:8000/'
+//const URL_ROOT = '/'
+
 const API_URL = 'api/'
 
 const api = {
@@ -13,7 +15,8 @@ const api = {
     zona_list: URL_ROOT + API_URL+'zona/list/',
     tag_list: URL_ROOT + API_URL + 'tag/list/',
     
-    reservas: URL_ROOT + 'api/reserva/',
+    reservas: URL_ROOT + API_URL +'reserva/',
+    reserva_list: URL_ROOT + API_URL +'reserva/list/' ,
     horariosPlanificados: URL_ROOT + API_URL +  'planificacion/'
 }
 
