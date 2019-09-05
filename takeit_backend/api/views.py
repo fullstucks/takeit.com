@@ -1,6 +1,8 @@
 from django.db.models import Q
 from django.conf import settings
 from django.core.mail import send_mail
+from django.template.loader import get_template
+from django.template import Context
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -88,16 +90,21 @@ class RegistrationView(GenericAPIView):
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
     def send_email(self, user):
-
-        subject = "Confirmación de Registro Takeit.com"
-        msg = "Hola " + user.first_name + user.last_name + ".\nGracias por verificar tu cuenta, has sido registrado exitosamente."
+        #Datos
+        username = user.username
+        full_name = user.first_name + " " + user.last_name
+        subject = "Confirmación de Registro"
+        msg = "Hola" + " " + full_name + "\n\n" + "Gracias por verificar tu cuenta, has sido registrado exitosamente." + "\n" + "Tu nombre de usuario es " + username + "\n\n" + "Atentamente," + "\n" + "Equipo de Takeit"
         from_email = settings.EMAIL_HOST_USER
         to_list = [user.email]
+
         send_mail(subject, msg, from_email, to_list, fail_silently=False)
+
         print(subject)
         print(msg)
         print(from_email)
         print(to_list)
+
 
 
 
