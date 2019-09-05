@@ -349,31 +349,16 @@ class ReservaView(GenericAPIView):
         return Response(data=serializer.data)
 
     def post(self, request):
-        reserva = Reserva.objects(reserva_planificacion=request.data['reserva_planificacion'],
-                                           asistio=request.data['asistio'],
-                                           detalles=request.data['detalles'],
-                                           usuario=request.user.id)
-        serializer = self.get_serializer(reserva, many=True)
-        serializer.save()
-        print("<--------------------->")
-        #reserva.save()
-
-        return Response(data={'msg': 'Registrado con éxito'}, status=200)
-
-        serializer = ReservaSaverSerializer(data=request.data)
-        usuario = serializer.Meta.model.usuario
-        id_reserva = serializer.Meta.model.pk
-        detalle = serializer.Meta.model.detalles
-
+        serializer = ReservaSerializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
 
         serializer.save()
-        self.send_email(serializer)
+        self.send_mail(serializer)
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
-
+        
     def send_email(self, serializer):
         usuario = serializer.Meta.model.usuario
         id_reserva = serializer.Meta.model.pk
