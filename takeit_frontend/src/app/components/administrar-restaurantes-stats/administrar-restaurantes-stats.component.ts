@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Restaurant } from 'src/app/models/restaurant';
+import { TakeitdataService } from 'src/app/services/takeitdata.service';
+import { Reserva } from 'src/app/models/reserva';
+
 
 @Component({
   selector: 'app-administrar-restaurantes-stats',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministrarRestaurantesStatsComponent implements OnInit {
 
-  constructor() { }
+  restaurantes: Restaurant[] = []
+  constructor(private takeitDataService: TakeitdataService) { }
 
   ngOnInit() {
+    this.takeitDataService.getRestaurantesFavOrOwned()
+      .subscribe(
+        data => {
+          this.restaurantes = data
+          this.plotData()
+        }
+      );
   }
 
   chartOptions = {
@@ -38,13 +50,30 @@ export class AdministrarRestaurantesStatsComponent implements OnInit {
   };
 
   barData = [
-    { data: [38, 22, 40]}
+    { data: []}
   ];
 
-  barLabels = ['Restaurante 1','Restaurante 2','Restaurante 3'];
+  barLabels = [];
 
   barOptions = {
     responsive: true
   };
+
+  plotData() {
+
+    let best_restaurants = []
+    if (this.restaurantes.length >= 3){
+      best_restaurants = this.restaurantes.sort((r1, r2) => r1.calificacion_prom - r2.calificacion_prom).slice(0, 3);
+      
+    }
+    else {
+      best_restaurants = this.restaurantes.sort((r1, r2) => r1.calificacion_prom - r2.calificacion_prom).slice (0, this.restaurantes.length+1);
+    }
+    best_restaurants.forEach(r => {
+      this.barData[0]['data'].push(r.calificacion_prom);
+      this.barLabels.push(r.nombre);
+    });
+    
+  }
 
 }
