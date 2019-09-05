@@ -6,7 +6,6 @@ import { Restaurant } from 'src/app/models/restaurant';
 import { Planificados } from 'src/app/models/planificaciones';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Reserva } from 'src/app/models/reserva';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-generar-reserva',
@@ -59,9 +58,17 @@ export class GenerarReservaComponent implements OnInit {
   }
 
 
-  createReserva(){
-    this.takeitDataService.createReserva(this.reserva)
-    console.log("reservada con exito")
+  createReserva=()=>{
+    console.log(this.reserva)
+    this.takeitDataService.createReserva(this.reserva).subscribe(
+      data =>{
+        console.log(data)
+        console.log("reservada con exito")
+      },
+      error =>{
+        console.log(error)
+      }
+    )
   }
   /**
    * obtains the restaurant's id through the url
@@ -140,7 +147,7 @@ export class GenerarReservaComponent implements OnInit {
       asistion: false,
       detalles: "",
       usuario: 1,
-      n_mesas: parseInt(document.getElementById("num-entradas").value)
+      n_mesas: parseInt(document.getElementById("num-entradas").nodeValue)
     }
   console.log(this.reserva)
   }
