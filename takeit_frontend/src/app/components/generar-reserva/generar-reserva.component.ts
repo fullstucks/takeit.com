@@ -147,7 +147,7 @@ export class GenerarReservaComponent implements OnInit {
       asistion: false,
       detalles: "",
       usuario: 1,
-      n_mesas: parseInt(document.getElementById("num-entradas").nodeValue)
+      n_mesas: parseInt((document.getElementById("num-entradas")as HTMLInputElement).value)
     }
   console.log(this.reserva)
   }

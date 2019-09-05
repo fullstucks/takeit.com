@@ -17,7 +17,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_seed',
     'api.apps.ApiConfig',
-    
 ]
 
 # Email config
@@ -28,6 +27,7 @@ EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
 EMAIL_USE_SSL = EMAIL_USE_SSL
 
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
