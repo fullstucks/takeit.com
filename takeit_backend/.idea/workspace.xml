@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="852e68c1-75d8-4f53-9891-aba5b634f8a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/takeit.com.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/to_mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/to_mongo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/takeit_project/settings_dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/takeit_project/settings_dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/components/generar-reserva/generar-reserva.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../takeit_frontend/src/app/services/takeitdata.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../takeit_frontend/src/app/services/takeitdata.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,13 +17,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="307" selection-start-line="307" selection-end-line="307" />
+            <state relative-caret-position="625">
+              <caret line="345" selection-start-line="345" selection-end-line="345" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/takeit_project/views.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -114,7 +126,7 @@
             <path>
               <item name="takeit_backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="takeit_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="takeit_project" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -152,7 +164,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -192,10 +204,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/takeit_project/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1965">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="307" selection-start-line="307" selection-end-line="307" />
+        <state relative-caret-position="625">
+          <caret line="345" selection-start-line="345" selection-end-line="345" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
