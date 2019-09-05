@@ -1,17 +1,16 @@
 from django.db.models import Q
 from django.conf import settings
 from django.core.mail import send_mail
-from django.template.loader import get_template
-from django.template import Context
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
 
-from rest_framework import status
+from rest_framework import status, viewsets
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.exceptions import ValidationError
+from rest_framework.viewsets import ViewSet
 from rest_framework_jwt.settings import api_settings
 from rest_framework_jwt.views import ObtainJSONWebToken
 
@@ -90,24 +89,40 @@ class RegistrationView(GenericAPIView):
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
     def send_email(self, user):
-        #Datos
-        username = user.username
-        full_name = user.first_name + " " + user.last_name
-        subject = "Confirmación de Registro"
-        msg = "Hola" + " " + full_name + "\n\n" + "Gracias por verificar tu cuenta, has sido registrado exitosamente." + "\n" + "Tu nombre de usuario es " + username + "\n\n" + "Atentamente," + "\n" + "Equipo de Takeit"
+
+        subject = "Confirmación de Registro Takeit.com"
+        msg = "Hola " + user.first_name + user.last_name + ".\nGracias por verificar tu cuenta, has sido registrado exitosamente."
         from_email = settings.EMAIL_HOST_USER
         to_list = [user.email]
-
         send_mail(subject, msg, from_email, to_list, fail_silently=False)
-
         print(subject)
         print(msg)
         print(from_email)
         print(to_list)
 
 
+# Clase para enviar formulario de Contáctenos
+#class NosotrosView(GenericAPIView):
+
+#    def get(self, request):
+#        return render(request, '404.html')
+
+#    def post(self, request):
+
+#        nombre = request.query_params.get('name_input'),
+#        apellido = request.query_params.get('lastname_input'),
+#        telefono = request.query_params.get('telephone_input'),
+#        ciudad = request.query_params.get('origin_input'),
+#        email = request.query_params.get('email_input'),
+#        asunto = request.query_params.get('subject_input'),
+        
+#        send_mail("Contáctenos", "INICIO DEL MENSAJE" + "\n" + "Nombres: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Teléfono: " + telefono + "\n" + "Ciu+dad: " + ciudad + "\n" + asunto + "\n" + "FIN DEL MENSAJE"
+#, email, settings.EMAIL_HOST_USER, fail_silently=False)
+        
+#        return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
 
+        
 class RestauranteView(GenericAPIView):
     serializer_class = RestauranteSerializer
     #permission_classes = [AllowAny]
@@ -281,37 +296,36 @@ class RestauranteListView(GenericAPIView):
         tag_id = request.query_params.get('tag_id')
 
         # < --------- using mongo ----------->
-        # if recomended == '1':
-        #    data = get_restaurant_recomended(5)
-        # elif tag_id:
-        #    data = get_restaurant_by_tag(tag_id)
-        # elif not top and not search_input:
-        #    data = get_restaurante_all()
-        # else:
-        #    top = top if top else '10'
-        #    search_input = search_input if search_input else ''
-        #    data = get_restaurant_by_search_input(search_input, top)
-
-        # < --------- using postgres ----------->
         if recomended == '1':
-            data = Restaurante.objects.order_by(
-                'calificacion_prom', 'n_resenas')[:5]
+            data = get_restaurant_recomended(5)
         elif tag_id:
-            data = Restaurante.objects.filter(tags__id=tag_id)
+            data = get_restaurant_by_tag(tag_id)
         elif not top and not search_input:
-            data = Restaurante.objects.all()
-            serializers = self.get_serializer(data, many=True)
+            data = get_restaurante_all()
         else:
             top = top if top else '10'
             search_input = search_input if search_input else ''
-            data = Restaurante.objects.filter(
-                Q(nombre__icontains=search_input) |
-                Q(descripcion__icontains=search_input) |
-                Q(ubicacion__icontains=search_input)
-            )[:int(top)]
-            serializers = self.get_serializer(data, many=True)
-        # return Response(data=loads(dumps(data)))
-        return Response(data=serializers.data)
+            data = get_restaurant_by_search_input(search_input, top)
+
+        # < --------- using postgres ----------->
+        # if recomended == '1':
+        #    data = Restaurante.objects.order_by(
+        #        'calificacion_prom', 'n_resenas')[:5]
+        # elif tag_id:
+        #    data = Restaurante.objects.filter(tags__id=tag_id)
+        # elif not top and not search_input:
+        #    data = Restaurante.objects.all()
+        # else:
+        #    top = top if top else '10'
+        #    search_input = search_input if search_input else ''
+        #    data = Restaurante.objects.filter(
+        #        Q(nombre__icontains=search_input) |
+        #        Q(descripcion__icontains=search_input) |
+        #        Q(ubicacion__icontains=search_input)
+        #    )[:int(top)]
+
+        return Response(data=loads(dumps(data)))
+
 
 
 class ReservaView(GenericAPIView):
@@ -335,15 +349,47 @@ class ReservaView(GenericAPIView):
         return Response(data=serializer.data)
 
     def post(self, request):
+        reserva = Reserva.objects(reserva_planificacion=request.data['reserva_planificacion'],
+                                           asistio=request.data['asistio'],
+                                           detalles=request.data['detalles'],
+                                           usuario=request.user.id)
+        serializer = self.get_serializer(reserva, many=True)
+        serializer.save()
+        print("<--------------------->")
+        #reserva.save()
+
+        return Response(data={'msg': 'Registrado con éxito'}, status=200)
 
         serializer = ReservaSaverSerializer(data=request.data)
+        usuario = serializer.Meta.model.usuario
+        id_reserva = serializer.Meta.model.pk
+        detalle = serializer.Meta.model.detalles
+
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as error:
             return Response(data={'msg': str(error)})
 
         serializer.save()
+        self.send_email(serializer)
         return Response(data={'msg': 'Registrado con éxito'}, status=200)
+
+    def send_email(self, serializer):
+        usuario = serializer.Meta.model.usuario
+        id_reserva = serializer.Meta.model.pk
+        detalle = serializer.Meta.model.detalles
+        nombre = usuario.first_name
+        apellido = usuario.last_name
+        full_name = nombre + " " + apellido
+        mail = usuario.email
+
+        #Datos
+        subject = "Confirmación de Reserva"
+        msg = "Hola" + " " + full_name + "\n\n" + "Estos son los detalles de tu reserva:" + "\n" + detalle + "\n\n" + "Atentamente," + "\n" + "Equipo de Takeit"
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [mail]
+
+        send_mail(subject, msg, from_email, to_list, fail_silently=False)
 
 
 class ReservaPlanificacionView(GenericAPIView):

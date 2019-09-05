@@ -58,9 +58,17 @@ export class GenerarReservaComponent implements OnInit {
   }
 
 
-  createReserva(){
-    this.takeitDataService.createReserva(this.reserva)
-    console.log("reservada con exito")
+  createReserva=()=>{
+    console.log(this.reserva)
+    this.takeitDataService.createReserva(this.reserva).subscribe(
+      data =>{
+        console.log(data)
+        console.log("reservada con exito")
+      },
+      error =>{
+        console.log(error)
+      }
+    )
   }
   /**
    * obtains the restaurant's id through the url
